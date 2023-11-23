@@ -2,7 +2,7 @@
 #include <string>
 #include <list>
    
-class Usuario{
+class Usuario {
 public:
    Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email);
     
