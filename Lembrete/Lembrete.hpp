@@ -22,10 +22,24 @@ public:
     /// @return String da mensagem
     std::string getMensagem() const;
     
-    /// @brief Adiciona/Altera uma mensagem especifica de um lembrete
+    /// @brief Muda a data de um lembrete
     ///
-    /// @param texto A mensagem a ser mudada/adicionada
-    void alterarMensagem (std::string texto);
+    /// @param novaData A nova data a ser adicionada
+    ///
+    /// @attention A data informada deve estar no formato: DD/MM/AAAA
+    void setData(const std::string& novaData);
+
+    /// @brief Muda o horario de um compromisso
+    ///
+    /// @param novoHorario O novo horario a ser colocado
+    ///
+    /// @attention O horario informado deve estar no formato: HH:MM:SS
+    void setHorario(const std::string& novoHorario);
+
+    /// @brief Adiciona uma mensagem para um lembrete
+    ///
+    /// @param texto A mensagem a ser adicionada
+    void setMensagem(std::string texto);
     
 private:
     std::string _data; ///< Armazena a data do lembrete
@@ -44,6 +58,11 @@ public:
     ///
     /// @param lembrete O lembrete a ser removido
     static void removerLembrete(Lembrete* lembrete, std::string* user_email);
+
+    /// @brief Procura pelo lembrete pela mensagem
+    ///
+    /// @param mensagem A mensagem do lembrete a ser buscado
+    static Lembrete* buscarLembrete(std::string* mensagem);
 
 protected:
     static std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos

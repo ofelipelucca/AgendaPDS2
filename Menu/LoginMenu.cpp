@@ -47,19 +47,18 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
     case 2: {
 
       std::string register_email;
-      std::string register_nome;
-      std::string register_sobrenome;
-      std::string register_idade; 
-
       std::cout << "> Insira o seu email: ";
       std::cin >> register_email;
 
+      std::string register_nome;
       std::cout << "> Insira o seu primeiro nome: ";
       std::cin >> register_nome;
       
+      std::string register_sobrenome;
       std::cout << "> Insira o seu sobrenome: ";
       std::cin >> register_sobrenome;
 
+      std::string register_idade;
       std::cout << "> Insira a sua idade: ";
       std::cin >> register_idade; 
 
