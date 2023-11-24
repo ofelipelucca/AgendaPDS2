@@ -20,12 +20,12 @@ std::string Usuario::getEmail() const {
     return this->_email; ///< Retorna o email
 }
 
-void Usuario::mudarEmail(std::string novo_email) {
+void Usuario::mudarEmail(std::string* novo_email) {
     try {
         
         if (checkUsuario(novo_email)) throw std::logic_error("O email fornecido ja esta em uso");
 
-        std::istringstream iss(novo_email);
+        std::istringstream iss(*novo_email);
         std::string usuario, dominio;
 
         /// Quebra o novo email em partes, para fazer as verificacoes necessarias
@@ -44,7 +44,7 @@ void Usuario::mudarEmail(std::string novo_email) {
             throw std::invalid_argument("Dominio do email invalido");
         }
 
-        this->_email = novo_email; ///< Atribui o novo email
+        this->_email = *novo_email; ///< Atribui o novo email
     }
     catch (const std::invalid_argument& e) {
         std::cout << "Email deve estar no formato: usuario@dominio.com" << std::endl
@@ -71,10 +71,16 @@ void ListaUsuario::removerUsuario(Usuario* usuario) {
     _listadeusuario.erase(usuario->getEmail()); ///< Removendo o Usuario da lista
 }
 
-bool ListaUsuario::checkUsuario(std::string email) const {
+bool ListaUsuario::checkUsuario(std::string* email) const {
 
-    auto it = _listadeusuario.find(email); ///< Procura pelo usuario na lista
+    auto it = _listadeusuario.find(*email); ///< Procura pelo usuario na lista
 
-    if (it != _listadeusuario.end()) return true;
-    else return false;
+    return (it != _listadeusuario.end());
+}
+
+bool ListaUsuario::checkUsuario(std::string* email, std::string* nome) const {
+
+    auto it = _listadeusuario.find(*email); ///< Procura pelo usuario na lista
+
+    return (it != _listadeusuario.end() && it->second.getEmail() == *email);
 }
