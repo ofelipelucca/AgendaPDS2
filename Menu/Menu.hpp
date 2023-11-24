@@ -11,6 +11,16 @@ public:
   /// @return O proximo menu.
   virtual PrimeiroMenu *next(unsigned opcao) = 0;
 
+  /// @brief Busca pelo usuario logado
+  ///
+  /// @return String com email do usuario logado
+  std::string getUsuario() const;
+
+  /// @brief Guarda o usuario logado
+  ///
+  /// @param user_email O email do usuario logado 
+  void setUsuario(std::string user_email);
+
   /// @brief Muda o titulo do menu
   ///
   /// @param novoTitulo O novo titulo do menu
@@ -30,6 +40,7 @@ public:
   virtual void renderizar() const;
   
 private:
+  std::string _user_email; ///< Armazena o email do usuario logado
   std::string _titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
   std::string _subtitulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
   std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu

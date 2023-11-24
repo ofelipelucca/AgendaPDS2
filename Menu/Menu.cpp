@@ -2,6 +2,16 @@
 
 #include <iostream>
 
+std::string PrimeiroMenu::getUsuario() const {
+
+  return this->_user_email;
+} 
+
+void PrimeiroMenu::setUsuario(std::string user_email) {
+
+  this->_user_email = user_email;
+}
+
 void PrimeiroMenu::setTitulo(std::string novoTitulo) {
   
   this->_titulo = novoTitulo;

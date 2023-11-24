@@ -5,11 +5,12 @@
 #include <iostream>
 #include <string>
 
-
-UsuarioMenu::UsuarioMenu() {
-  opcoes.push_back("1 --> Lembretes");
-  opcoes.push_back("2 --> Compromissos");
-  opcoes.push_back("3 --> Tarefas");
+UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
+  
+  setTitulo("Que bom ter voce de volta, " + *user_email);
+  setSubtitulo("Calendario da semana:");
+  setOpcoes({"1 --> Compromissos", "2 --> Lembretes", "3 --> Tarefas"});
+  setUsuario(*user_email);
 }
 
 PrimeiroMenu *UsuarioMenu::next(unsigned option) {
@@ -20,7 +21,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
     //imprime o calendario da semana 
 
     std::cout << '\n' '\n' << "Aqui estão seus lembretes: " << std::endl;
-    std::cout << '\n' << verLembretes() << std::endl;
+    std::cout << '\n' << ListaLembrete::verLembretes(getUsuario()) << std::endl;
     // imprime os lembretes atuais 
     
     ///...
