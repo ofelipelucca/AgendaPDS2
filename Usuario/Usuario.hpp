@@ -43,15 +43,15 @@ public:
   /// @param usuario O Usuario a ser removido
   void removerUsuario(Usuario* usuario);
 
-  /// @brief checar se o usuário existe
+  /// @brief Checar se o usuario existe
   ///
-  /// @details checar email e o nome 
+  /// @details Verifica se o email ja esta cadastrado
   ///
-  /// @param usuario O Usuario a ser adicionado
+  /// @param usuario O usuario a ser verificado
   ///
-  /// @return verdaderio (se existir) ou falso (caso contrario) 
+  /// @return True se o usuario existe, false caso contrario 
   bool checkUsuario(Usuario& usuario);
 
 private:
   std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios
-};
+};  

@@ -56,14 +56,19 @@ void Usuario::mudaremail(std::string novo_email) {
 
 void ListaUsuario::adicionarUsuario(Usuario* usuario) {
     
-    _listadeusuario.push_back(*usuario); ///< Adicionando o Usuario na lista
+    std::string email = usuario->getemail();
+
+    _listadeusuario.insert(std::make_pair(usuario->getemail(), *usuario)); ///< Adicionando o email do usuario na lista
 }
 
 void ListaUsuario::removerUsuario(Usuario* usuario) {
 
-    _listadeusuario.remove(*usuario); ///< Removendo o Usuario da lista
+    _listadeusuario.erase(usuario->getemail()); ///< Removendo o Usuario da lista
 }
 bool ListaUsuario::checkUsuario(Usuario& usuario) {
-    
-    _listadeusuario.find(usuario);
+
+    auto it = _listadeusuario.find(usuario.getemail()); ///< Procura pelo usuario na lista
+
+    if (it != _listadeusuario.end()) return true;
+    else return false;
 }
