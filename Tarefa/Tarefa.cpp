@@ -189,7 +189,10 @@ void Tarefa::setEstado(const std::string& novoEstado) {
     }    
 }
 
-Compromisso::Compromisso(std::string& data, std::string& local, std::string& titulo, std::string& descricao, std::string& horario, std::string& estado, unsigned prioridade) : Tarefa(titulo, descricao, data, prioridade, estado) { _local = local; _horario = horario;
+Compromisso::Compromisso(std::string& data, std::string& local, std::string& titulo, std::string& descricao, std::string& horario,
+            std::string& estado, unsigned prioridade) : Tarefa(titulo, descricao, data, prioridade, estado) {
+    _local = local;
+    _horario = horario;
 }
 
 std::string Compromisso::getCor() const {
@@ -396,6 +399,11 @@ void ListaTarefa::removerTarefa(Tarefa* tarefa, std::string* user_email) {
     }
 }
 
+unsigned ListaTarefa::tamanho() {
+
+    return _listadeTarefa.size(); ///< Retornando o tamanho da lista
+}
+
 void ImprimirTarefas::verTarefas(std::string* user_email) {
     
     /// Imprime as tarefas atuais da lista
@@ -436,6 +444,7 @@ void ListaCompromisso::adicionarCompromisso(Compromisso* compromisso, std::strin
     _listadeCompromisso.insert(std::make_pair(*user_email, compromisso)); ///< Adicionando o compromisso na lista
 }
 
+
 void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string* user_email) {
 
     /// Itera sobre a lista procurando pelo compromisso fornecido e o email do usuario logado
@@ -449,6 +458,11 @@ void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string*
         
         _listadeCompromisso.erase(it); ///< Remove o compromisso da lista
     }
+}
+
+unsigned ListaCompromisso::tamanho() {
+
+    return _listadeCompromisso.size(); ///< Retornando o tamanho da lista
 }
 
 void ImprimirCompromissos::verCompromissos(std::string* user_email) {
