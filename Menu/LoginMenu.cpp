@@ -7,8 +7,10 @@
 #include <string>
 
 MenuLogin::MenuLogin() {
-  _opcoes.push_back("1 --> Entrar");
-  _opcoes.push_back("2 --> Cadastrar Usuario");
+
+  setTitulo("Seja bem-vindo ao Gerenciador de Tarefas! ");
+  setSubtitulo("Escolha uma opcao:");
+  setOpcoes({"1 --> Fazer login", "2 --> Fazer novo cadastro"});
 }
 
 PrimeiroMenu *MenuLogin::next(unsigned option) {

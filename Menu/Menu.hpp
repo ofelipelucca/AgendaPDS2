@@ -11,12 +11,27 @@ public:
   /// @return O proximo menu.
   virtual PrimeiroMenu *next(unsigned opcao) = 0;
 
+  /// @brief Muda o titulo do menu
+  ///
+  /// @param novoTitulo O novo titulo do menu
+  void setTitulo(std::string novoTitulo);
+
+  /// @brief Muda o subtitulo do menu
+  ///
+  /// @param novoSubtitulo O novo subtitulo do menu
+  void setSubtitulo(std::string novoSubtitulo);
+
+  /// @brief Muda as opcoes do menu
+  ///
+  /// @param novasOpcoes As novas opcoes a serem adicionadas
+  void setOpcoes(std::vector<std::string> novasOpcoes);
+
   /// @brief Renderiza as opçoes do menu.
   virtual void renderizar() const;
   
 private:
-  std::string titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
-  std::string segundotitulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
-  std::vector<std::string> opcoes = {"0 --> Sair"}; ///< Armazena as opçoes do menu+
-  PrimeiroMenu *_anterior;
+  std::string _titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
+  std::string _subtitulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
+  std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu
+  PrimeiroMenu *_anterior; ///< Armazena o ponteiro para o menu anterior
 };
