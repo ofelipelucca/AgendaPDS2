@@ -1,7 +1,8 @@
 #pragma once
+
 #include "Menu.hpp"
-#include "Usuario.hpp"
 #include "UsuarioMenu.hpp"
+#include "../Usuario/Usuario.hpp"
 
 class MenuLogin : public PrimeiroMenu {
 public:

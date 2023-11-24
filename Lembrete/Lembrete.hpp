@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 #include <list>
    
@@ -9,7 +10,7 @@ public:
     /// @brief Busca pela data do lembrete
     ///
     /// @return String da data 
-    std::string getdata() const;
+    std::string getData() const;
     
     /// @brief Busca pelo horario do lembrete
     ///

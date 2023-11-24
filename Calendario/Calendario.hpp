@@ -1,10 +1,12 @@
 #pragma once
+
+#include "../Tarefa/Tarefa.hpp"
+#include "../Lembrete/Lembrete.hpp"
+
 #include <iostream>
 #include <vector>
 #include <string>
 #include <map>
-#include "../Tarefa/Tarefa.hpp"
-#include "../Lembrete/Lembrete.hpp"
 
 class Calendario {
 public:

@@ -1,5 +1,6 @@
 #include "Lembrete.hpp"
 #include "../Exceçoes/Exceções.hpp"
+
 #include <string>
 #include <iostream>
 
@@ -9,7 +10,7 @@ Lembrete::Lembrete(const std::string& horario, const std::string& mensagem, cons
     _mensagem = mensagem;
 }
 
-std::string Lembrete::getdata() const {
+std::string Lembrete::getData() const {
 
     return this->_data; ///< Retorna a data
 }

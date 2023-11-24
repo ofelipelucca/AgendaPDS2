@@ -1,5 +1,6 @@
 #include "Usuario.hpp"
 #include "../Exceçoes/Exceções.hpp"
+
 #include <iostream>
 #include <string>
 #include <sstream>

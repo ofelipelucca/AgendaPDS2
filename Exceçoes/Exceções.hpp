@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdexcept>
 
 /// @brief Lida com as exceçoes geradas pelo programa

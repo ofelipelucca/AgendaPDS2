@@ -1,14 +1,14 @@
 #include "Menu.hpp"
 #include "LoginMenu.hpp"
-#include "Usuario.hpp"
 #include "UsuarioMenu.hpp"
+#include "../Usuario/Usuario.hpp"
 
 #include <iostream>
 #include <string>
 
 MenuLogin::MenuLogin() {
-  opcoes.push_back("1 --> Entrar");
-  opcoes.push_back("2 --> Cadastrar Usuario");
+  _opcoes.push_back("1 --> Entrar");
+  _opcoes.push_back("2 --> Cadastrar Usuario");
 }
 
 PrimeiroMenu *MenuLogin::next(unsigned option) {
@@ -17,13 +17,16 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
   case 1: {
     std::string login_email;
     std::cout << "> Digite seu email: ";
-    std::cin >> ;
+    std::cin >> login_email;
 
     std::string login_nome;
     std::cout << "> Digite seu nome: ";
-    std::cin >> ;
+    std::cin >> login_nome;
 
     //logica para ver se usuario existe ou não (checar email e nome na lista de usuarios)
+    Usuario user_login;
+
+    user_login.checkUsuario(login_email, login_nome);
     
     // Ex: bool confirmarlogin( std::string login_email, std::string login_nome ) ...
 

@@ -1,10 +1,11 @@
 #pragma once
+
 #include "LoginMenu.hpp"
 #include "Menu.hpp"
-#include "Usuario.hpp"
-#include "Tarefa.hpp"
-#include "Lembrete.hpp"
-#include "Calendario.hpp"
+#include "../Usuario/Usuario.hpp"
+#include "../Tarefa/Tarefa.hpp"
+#include "../Lembrete/Lembrete.hpp"
+#include "../Calendario/Calendario.hpp"
 
 #include <string>
 

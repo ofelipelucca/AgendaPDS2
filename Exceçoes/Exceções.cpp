@@ -1,4 +1,5 @@
 #include "Exceções.hpp"
+
 #include <iostream>
 
 void handleExcecao(const std::exception& e) {
