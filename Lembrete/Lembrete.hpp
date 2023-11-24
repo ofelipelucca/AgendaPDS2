@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <list>
+#include <unordered_map>
    
 class Lembrete {
 public:
@@ -38,16 +38,16 @@ public:
     /// @brief Adiciona um Lembrete a lista de Lembretes
     ///
     /// @param lembrete O lembrete a ser adicionado
-    void adicionarLembrete(Lembrete* lembrete);
+    void adicionarLembrete(Lembrete* lembrete, std::string* user_email);
     
     /// @brief Remove um lembrete da lista
     ///
     /// @param lembrete O lembrete a ser removido
-    void removerLembrete(Lembrete* lembrete);
+    void removerLembrete(Lembrete* lembrete, std::string* user_email);
 
     /// @brief Imprime todos lembretes da lista 
-    void verLembretes();
+    void verLembretes(std::string* user_email);
     
 private:
-    std::list<Lembrete> _listadeLembretes; ///< Armazena todos os lembretes ativos
+    std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos
 };
