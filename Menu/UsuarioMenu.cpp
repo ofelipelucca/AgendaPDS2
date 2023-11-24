@@ -9,7 +9,7 @@ UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
   
   setTitulo("Que bom ter voce de volta, " + *user_email + "!");
   setSubtitulo("Calendario da semana:");
-  setOpcoes({"1 --> Compromissos", "2 --> Lembretes", "3 --> Tarefas"});
+  setOpcoes({"1 --> Lembretes", "2 --> Compromissos", "3 --> Tarefas"});
   setUsuario(*user_email);
 
   Calendario user_calendario;
