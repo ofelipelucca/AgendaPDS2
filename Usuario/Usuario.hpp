@@ -2,24 +2,24 @@
 #include <string>
 #include <unordered_map>
    
-class Usuario {
+class Usuario : public ListaUsuario {
 public:
    Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email);
     
    /// @brief Busca pelo nome do usuario 
    ///
    /// @return String do nome
-   std::string getnome() const;
+   std::string getNome() const;
    
    /// @brief Busca pelo email do usuario 
    ///
    /// @return String do email
-   std::string getemail() const; 
+   std::string getEmail() const; 
     
    /// @brief Muda o email de um usuario
    ///
    /// @param texto O email a ser alterado
-   void mudaremail (std::string texto);
+   void mudarEmail(std::string texto);
       
 private:
    std::string _nome; ///< Armazena o primeiro nome do usuario
@@ -47,10 +47,10 @@ public:
   ///
   /// @details Verifica se o email ja esta cadastrado
   ///
-  /// @param usuario O usuario a ser verificado
+  /// @param email O email do usuario a ser verificado
   ///
   /// @return True se o usuario existe, false caso contrario 
-  bool checkUsuario(Usuario& usuario);
+  bool checkUsuario(std::string email) const;
 
 private:
   std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios
