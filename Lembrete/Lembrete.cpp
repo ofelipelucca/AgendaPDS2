@@ -69,7 +69,7 @@ void ListaLembrete::removerLembrete(Lembrete* lembrete, std::string* user_email)
     }
 }
 
-void ListaLembrete::verLembretes(std::string* user_email) {
+void ImprimirLembretes::verLembretes(std::string* user_email) {
     
     /// Imprime os lembretes atuais da lista
     for (const auto& lembrete : _listadeLembretes) {

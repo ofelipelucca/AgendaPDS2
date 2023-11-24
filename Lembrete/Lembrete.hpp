@@ -38,16 +38,21 @@ public:
     /// @brief Adiciona um Lembrete a lista de Lembretes
     ///
     /// @param lembrete O lembrete a ser adicionado
-    void adicionarLembrete(Lembrete* lembrete, std::string* user_email);
+    static void adicionarLembrete(Lembrete* lembrete, std::string* user_email);
     
     /// @brief Remove um lembrete da lista
     ///
     /// @param lembrete O lembrete a ser removido
-    void removerLembrete(Lembrete* lembrete, std::string* user_email);
+    static void removerLembrete(Lembrete* lembrete, std::string* user_email);
 
+protected:
+    static std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos
+};
+
+class ImprimirLembretes : public ListaLembrete {
+public:
     /// @brief Imprime todos lembretes da lista 
-    void verLembretes(std::string* user_email);
-    
-private:
-    std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos
+    ///
+    /// @param user_email O email do usuario logado
+    static void verLembretes(std::string* user_email);
 };

@@ -396,7 +396,7 @@ void ListaTarefa::removerTarefa(Tarefa* tarefa, std::string* user_email) {
     }
 }
 
-void ListaTarefa::verTarefas(std::string* user_email) const {
+void ImprimirTarefas::verTarefas(std::string* user_email) {
     
     /// Imprime as tarefas atuais da lista
     for (const auto& tarefa : _listadeTarefa) {
@@ -451,7 +451,7 @@ void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string*
     }
 }
 
-void ListaCompromisso::verCompromissos(std::string* user_email) const {
+void ImprimirCompromissos::verCompromissos(std::string* user_email) {
 
     /// Imprime os compromissos atuais da lista
     for (const auto& compromisso : _listadeCompromisso) {
