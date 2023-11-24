@@ -64,7 +64,7 @@ void Usuario::mudarEmail(std::string* novo_email) {
 
 void ListaUsuario::adicionarUsuario(Usuario* usuario) {
     
-    _listadeusuario.insert(std::make_pair(usuario->getEmail(), *usuario)); ///< Adicionando o email do usuario na lista
+    _listadeusuario.insert(std::make_pair(usuario->getEmail(), *usuario)); ///< Adicionando o email do usuario logado na lista
 }
 
 void ListaUsuario::removerUsuario(Usuario* usuario) {
@@ -74,14 +74,14 @@ void ListaUsuario::removerUsuario(Usuario* usuario) {
 
 bool ListaUsuario::checkUsuario(std::string* email) const {
 
-    auto it = _listadeusuario.find(*email); ///< Procura pelo usuario na lista
+    auto it = _listadeusuario.find(*email); ///< Procura o usuario na lista pelo email
 
     return (it != _listadeusuario.end());
 }
 
 bool ListaUsuario::checkUsuario(std::string* email, std::string* nome) const {
 
-    auto it = _listadeusuario.find(*email); ///< Procura pelo usuario na lista
+    auto it = _listadeusuario.find(*email); ///< Procura o usuario na lista pelo email
 
     return (it != _listadeusuario.end() && it->second.getEmail() == *email);
 }

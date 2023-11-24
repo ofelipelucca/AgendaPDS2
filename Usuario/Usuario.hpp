@@ -67,5 +67,5 @@ public:
   bool checkUsuario(std::string* email, std::string* nome) const;
 
 private:
-  std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios
+  std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios <email, Usuario>
 };  
