@@ -1,6 +1,9 @@
 #pragma once
 
 #include "UsuarioMenu.hpp"
+#include "LembreteMenu.hpp"
+#include "CompromissoMenu.hpp"
+#include "TarefaMenu.hpp"
 
 #include <iostream>
 #include <string>
@@ -18,6 +21,7 @@ UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
 }
 
 PrimeiroMenu *UsuarioMenu::next(unsigned option) {
+
   switch (option) {
     case 1: {
 
@@ -25,7 +29,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       
       ImprimirLembretes::verLembretes(&getUsuario());
       
-      return new LembreteMenu();
+      return new LembreteMenu(&getUsuario());
       ///vai para o menu dos lembretes (a criar)
       /// conferir se o parametro é o usuário mesmo
     }
@@ -35,7 +39,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       
       ImprimirCompromissos::verCompromissos(&getUsuario());
       
-      return new CompromissoMenu();
+      return new CompromissoMenu(&getUsuario());
       ///vai para o menu dos Compromissos (a criar)
       /// conferir se o parametro é o usuário mesmo
     }
@@ -45,7 +49,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       
       ImprimirTarefas::verTarefas(&getUsuario());
 
-      return new TarefaMenu();
+      return new TarefaMenu(&getUsuario());
       ///vai para o menu das Tarefas (a criar) 
       /// conferir se o parametro é o usuário mesmo
     }

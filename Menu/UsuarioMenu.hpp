@@ -11,11 +11,11 @@
 
 class UsuarioMenu : public PrimeiroMenu {
 public:
-  /// @brief Constrói um menu do Usuário.  
+  /// @brief Constroi o menu do usuario.  
   UsuarioMenu(std::string *login_nome, std::string *login_email);
 
-  /// @brief Constrói próximo menu 
+  /// @brief Constroi o proximo menu 
   ///
-  /// @return O próximo menu que o usuario escolheu.
+  /// @return O proximo menu que o usuario escolheu.
   PrimeiroMenu *next(unsigned option) override;
 };

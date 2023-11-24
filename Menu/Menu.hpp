@@ -8,7 +8,7 @@ public:
   /// @brief Destrutor para destruiçao de subclasses
   virtual ~PrimeiroMenu() = default;
 
-  /// @return O proximo menu.
+  /// @return O proximo menu
   virtual PrimeiroMenu *next(unsigned opcao) = 0;
 
   /// @brief Busca pelo usuario logado
@@ -36,7 +36,7 @@ public:
   /// @param novasOpcoes As novas opcoes a serem adicionadas
   void setOpcoes(std::vector<std::string> novasOpcoes);
 
-  /// @brief Renderiza as opçoes do menu.
+  /// @brief Renderiza as opçoes do menu
   virtual void renderizar() const;
   
 private:

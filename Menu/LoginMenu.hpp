@@ -6,11 +6,11 @@
 
 class MenuLogin : public PrimeiroMenu {
 public:
-  /// @brief Constrói um menu de login.
+  /// @brief Controi o menu de login
   MenuLogin();
 
-  /// @brief Constrói próximo menu 
+  /// @brief Constroi proximo menu 
   ///
-  /// @return O próximo menu que o usuario escolheu.
+  /// @return O proximo menu que o usuario escolheu.
   PrimeiroMenu *next(unsigned opcao) override;
 };
