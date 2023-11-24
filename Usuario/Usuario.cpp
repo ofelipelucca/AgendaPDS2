@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
+ 
 Usuario::Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email) {
     _nome = nome;
     _sobrenome = sobrenome;
@@ -52,4 +52,18 @@ void Usuario::mudaremail(std::string novo_email) {
 
         handleExcecao(e);
     }
+}
+
+void ListaUsuario::adicionarUsuario(Usuario* usuario) {
+    
+    _listadeusuario.push_back(*usuario); ///< Adicionando o Usuario na lista
+}
+
+void ListaUsuario::removerUsuario(Usuario* usuario) {
+
+    _listadeusuario.remove(*usuario); ///< Removendo o Usuario da lista
+}
+bool ListaUsuario::checkUsuario(Usuario& usuario) {
+    
+    _listadeusuario.find(usuario);
 }

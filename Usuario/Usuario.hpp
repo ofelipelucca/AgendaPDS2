@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <list>
+#include <unordered_map>
    
 class Usuario {
 public:
@@ -22,10 +22,10 @@ public:
    void mudaremail (std::string texto);
       
 private:
-   std::string nome; ///< Armazena o primeiro nome do usuario
-   std::string sobrenome; ///< Armazena o sobrenome do usuario
-   std::string idade; ///< Armazena a idade do usuario
-   std::string email; ///< Armazena o email do usuario
+   std::string _nome; ///< Armazena o primeiro nome do usuario
+   std::string _sobrenome; ///< Armazena o sobrenome do usuario
+   std::string _idade; ///< Armazena a idade do usuario
+   std::string _email; ///< Armazena o email do usuario
 };
 
 class ListaUsuario {
@@ -43,9 +43,15 @@ public:
   /// @param usuario O Usuario a ser removido
   void removerUsuario(Usuario* usuario);
 
-  /// @brief Mostra os Usuario da lista de Usuarios
-  void verUsuarios() const;
+  /// @brief checar se o usuário existe
+  ///
+  /// @details checar email e o nome 
+  ///
+  /// @param usuario O Usuario a ser adicionado
+  ///
+  /// @return verdaderio (se existir) ou falso (caso contrario) 
+  bool checkUsuario(Usuario& usuario);
 
 private:
-  std::list<Usuario> _listadeusuario; ///< Armazena a lista de usuarios
+  std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios
 };

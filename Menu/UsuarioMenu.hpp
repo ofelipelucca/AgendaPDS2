@@ -8,15 +8,13 @@
 
 #include <string>
 
-class UsuarioMenu : public Menu {
+class UsuarioMenu : public PrimeiroMenu {
 public:
-/// @brief Constrói um menu do Usuário.  
-UsuarioMenu(Usuario const &Usuario);
+  /// @brief Constrói um menu do Usuário.  
+  UsuarioMenu();
 
   /// @brief Constrói próximo menu 
   ///
   /// @return O próximo menu que o usuario escolheu.
   PrimeiroMenu *next(unsigned option) override;
-private:
-  Usuario const &_Usuario;
 };

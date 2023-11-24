@@ -17,11 +17,11 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
   case 1: {
     std::string login_email;
     std::cout << "> Digite seu email: ";
-    std::cin >> login_email;
+    std::cin >> ;
 
     std::string login_nome;
     std::cout << "> Digite seu nome: ";
-    std::cin >> login_nome;
+    std::cin >> ;
 
     //logica para ver se usuario existe ou não (checar email e nome na lista de usuarios)
     
@@ -44,24 +44,24 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
     // criar um usuario 
 
     std::cout << "> Email: ";
-    std::cin >> Usuario.email;
+    std::cin >> ;
     // usar função de alocar email
     
     std::cout << "> Primeiro nome: ";
-    std::cin >> Usuario.nome;
+    std::cin >> 
     //usar função de alocar nome
     
     std::cout << "> Sobrenome: ";
-    std::cin >> Usuario.sobrenome;
+    std::cin >> ;
     //usar função de alocar sobrenome
 
     std::cout << "> Idade: ";
-    std::cin >> Usuario.idade;
+    std::cin >> ;
     //usar função de alocar idade 
 
     std::cout << "Salvando usuário" << std::endl;
 
-    return new UsuarioMenu(usuario);
+    return new UsuarioMenu();
   }
   
   }
