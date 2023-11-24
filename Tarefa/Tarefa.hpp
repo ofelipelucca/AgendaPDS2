@@ -70,7 +70,7 @@ public:
   ///
   /// @param novoEstado O novo estado a ser colocado
   ///
-  /// @attention O estado varia entre: feito deletar em seguida), em progresso, não feito (alertar).
+  /// @attention O estado varia entre: feito (deletar em seguida), em progresso, não feito (alertar).
   void setEstado(const std::string& novoEstado);
    
 private:
@@ -79,7 +79,7 @@ private:
   std::string _data; ///< Armazena a data (em string) da tarefa 
   unsigned _prioridade; ///< Armazena a prioridade da tarefa 
   std::string _estado; ///< Armazena o estado da tarefa 
-};
+ };
 
 class Compromisso : public Tarefa {
 public:
@@ -129,22 +129,24 @@ private:
 
 class ListaTarefa {
 public:
-  //ListaTarefa();
-  //~ListaTarefa();
-
   /// @brief Adiciona uma tarefa na lista de tarefas
   ///
-  /// @param user_email O email do usuario logado
-  ///
   /// @param tarefa A tarefa a ser adicionada
+  ///
+  /// @param user_email O email do usuario logado
   static void adicionarTarefa(Tarefa* tarefa, std::string* user_email);
 
   /// @brief Remove uma tarefa da lista de tarefas
   ///
-  /// @param user_email O email do usuario logado
-  ///
   /// @param tarefa a Tarefa a ser removida
+  ///
+  /// @param user_email O email do usuario logado
   static void removerTarefa(Tarefa* tarefa, std::string* user_email);
+
+  /// @brief Calcula o tamanho da lista
+  ///
+  /// @return Um unsigned com o tamanho
+  unsigned tamanho();
   
 protected:
   static std::unordered_map<std::string, Tarefa*> _listadeTarefa; ///< Armazena a lista de tarefas <email, Tarefa>
@@ -152,22 +154,24 @@ protected:
 
 class ListaCompromisso {
 public:
-  //ListaCompromisso();
-  //~ListaCompromisso();
-
   /// @brief Adiciona um compromisso a lista de compromissos
   ///
-  /// @param user_email O email do usuario logado
-  ///
   /// @param compromisso O compromisso a ser adicionado
+  ///
+  /// @param user_email O email do usuario logado
   static void adicionarCompromisso(Compromisso* compromisso, std::string* user_email);
 
   /// @brief Remove um compromisso da lista de compromissos
   ///
-  /// @param user_email O email do usuario logado
-  ///
   /// @param compromisso O compromisso a ser removido
+  ///
+  /// @param user_email O email do usuario logado
   static void removerCompromisso(Compromisso* compromisso, std::string* user_email);
+
+  /// @brief Calcula o tamanho da lista
+  ///
+  /// @return Um unsigned com o tamanho
+  unsigned tamanho();
 
 protected:
   static std::unordered_map<std::string, Compromisso*> _listadeCompromisso; ///< Armazena a lista de comprimissos
