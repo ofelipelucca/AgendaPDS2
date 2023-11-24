@@ -51,22 +51,27 @@ void Lembrete::alterarMensagem(std::string nova_mensagem) {
 
 void ListaLembrete::adicionarLembrete(Lembrete* lembrete, std::string* user_email) {
 
-    _listadeLembretes.insert(std::make_pair(*user_email, lembrete)); ///< Adicionando o compromisso na lista
+    _listadeLembretes.insert(std::make_pair(*user_email, lembrete)); ///< Adicionando o lembrete na lista
 }
 
 void ListaLembrete::removerLembrete(Lembrete* lembrete, std::string* user_email) {
     
     /// Itera sobre a lista procurando pelo lembrete fornecido e o email do usuario logado
     auto it = std::find_if(
-    _listadeLembretes.begin(),
-    _listadeLembretes.end(), 
-    [user_email, lembrete](const auto & p) { return (p->first == user_email && p->second == lembrete);}
+        _listadeLembretes.begin(), _listadeLembretes.end(), 
+        [user_email, lembrete](const auto & p) 
+        { return (p->first == user_email && p->second == lembrete); }
     );
 
     if (it != _listadeLembretes.end()) {
         
         _listadeLembretes.erase(it); ///< Remove o lembrete da lista
     }
+}
+
+unsigned ListaLembrete::tamanho() {
+
+    return _listadeLembretes.size(); ///< Retorna o tamanho do mapa
 }
 
 void ImprimirLembretes::verLembretes(std::string* user_email) {
