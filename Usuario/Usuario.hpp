@@ -5,28 +5,45 @@
    
 class Usuario : public ListaUsuario {
 public:
-   Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email);
-    
-   /// @brief Busca pelo nome do usuario 
-   ///
-   /// @return String do nome
-   std::string getNome() const;
-   
-   /// @brief Busca pelo email do usuario 
-   ///
-   /// @return String do email
-   std::string getEmail() const; 
-    
-   /// @brief Muda o email de um usuario
-   ///
-   /// @param texto O email a ser alterado
-   void mudarEmail(std::string* texto);
+  Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email);
       
+  /// @brief Busca pelo nome do usuario 
+  ///
+  /// @return String do nome
+  std::string getNome() const;
+
+  /// @brief Busca pela idade do usuario
+  ///
+  /// @return String da idade 
+  std::string getIdade() const;
+    
+  /// @brief Busca pelo email do usuario 
+  ///
+  /// @return String do email
+  std::string getEmail() const; 
+
+  /// @brief Muda o nome e sobrenome de um usuario
+  ///
+  /// @param nome O nome do usuario 
+  ///
+  /// @param sobrenome O sobrenome do usuario 
+  void setNome(std::string nome, std::string sobrenome);
+
+  /// @brief Muda a idade de um usuario
+  ///
+  /// @param idade A nova idade 
+  void setIdade(std::string* idade);
+      
+  /// @brief Muda o email de um usuario
+  ///
+  /// @param email O email a ser alterado
+  void setEmail(std::string* email);
+        
 private:
-   std::string _nome; ///< Armazena o primeiro nome do usuario
-   std::string _sobrenome; ///< Armazena o sobrenome do usuario
-   std::string _idade; ///< Armazena a idade do usuario
-   std::string _email; ///< Armazena o email do usuario
+  std::string _nome; ///< Armazena o primeiro nome do usuario
+  std::string _sobrenome; ///< Armazena o sobrenome do usuario
+  std::string _idade; ///< Armazena a idade do usuario
+  std::string _email; ///< Armazena o email do usuario
 };
 
 class ListaUsuario {

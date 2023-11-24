@@ -20,7 +20,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
     case 1: {
 
       std::string login_email;
-      std::cout << "> Digite seu email: ";
+      std::cout << std::endl << "> Digite seu email: ";
       std::cin >> login_email;
 
       std::string login_nome;
@@ -30,11 +30,9 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
       std::cout << "Fazendo login..." << std::endl;
 
       /// Verifica se o usuario esta cadastrado no sistema com o email e nome fornecidos
-      ListaUsuario user_login;
-      
-      if (user_login.checkUsuario(&login_email, &login_nome)) { 
+      if (Usuario::checkUsuario(&login_email, &login_nome)) { 
         
-        std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")" << std::endl; 
+        std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")!" << std::endl; 
         
         return new UsuarioMenu(&login_nome, &login_email);
       }
