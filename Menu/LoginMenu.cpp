@@ -66,12 +66,10 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
       std::cout << "Cadastrando usuario..." << std::endl;
 
       Usuario* new_user = new Usuario(register_nome, register_sobrenome, register_idade, register_email);
+      
+      ListaUsuario::adicionarUsuario(new_user);
 
-      ListaUsuario new_user_register;
-
-      new_user_register.adicionarUsuario(new_user);
-
-      if (new_user_register.checkUsuario(&register_email, &register_nome)) {
+      if (ListaUsuario::checkUsuario(&register_email, &register_nome)) {
         
         std::cout << "Usuario " << register_nome << " (" << register_email << ") cadastrado com sucesso!" << std::endl;
         

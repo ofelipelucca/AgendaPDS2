@@ -72,14 +72,14 @@ void ListaUsuario::removerUsuario(Usuario* usuario) {
     _listadeusuario.erase(usuario->getEmail()); ///< Removendo o Usuario da lista
 }
 
-bool ListaUsuario::checkUsuario(std::string* email) const {
+bool ListaUsuario::checkUsuario(std::string* email) {
 
     auto it = _listadeusuario.find(*email); ///< Procura o usuario na lista pelo email
 
     return (it != _listadeusuario.end());
 }
 
-bool ListaUsuario::checkUsuario(std::string* email, std::string* nome) const {
+bool ListaUsuario::checkUsuario(std::string* email, std::string* nome) {
 
     auto it = _listadeusuario.find(*email); ///< Procura o usuario na lista pelo email
 

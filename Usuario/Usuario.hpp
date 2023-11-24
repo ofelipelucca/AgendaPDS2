@@ -31,18 +31,15 @@ private:
 
 class ListaUsuario {
 public:
-  ListaUsuario();
-  ~ListaUsuario();
-
   /// @brief Adiciona um Usuario a lista de Usuarios
   ///
   /// @param usuario O Usuario a ser adicionado
-  void adicionarUsuario(Usuario* usuario);
+  static void adicionarUsuario(Usuario* usuario);
 
   /// @brief Remove um Usuario da lista de Usuarios
   ///
   /// @param usuario O Usuario a ser removido
-  void removerUsuario(Usuario* usuario);
+  static void removerUsuario(Usuario* usuario);
 
   /// @overload
   ///
@@ -53,7 +50,7 @@ public:
   /// @param email O email do usuario a ser verificado
   ///
   /// @return True se o usuario existe, false caso contrario 
-  bool checkUsuario(std::string* email) const;
+  static bool checkUsuario(std::string* email);
 
   /// @overload
   ///
@@ -64,8 +61,8 @@ public:
   /// @param nome O nome fornecido 
   ///
   /// @return True se o nome e o email correpondem, false caso contrario
-  bool checkUsuario(std::string* email, std::string* nome) const;
+  static bool checkUsuario(std::string* email, std::string* nome);
 
 private:
-  std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios <email, Usuario>
+  static std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios <email, Usuario>
 };  
