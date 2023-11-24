@@ -17,12 +17,22 @@ public:
     /// @param value As atividades que serão inseridas
     void inserir(std::string key, std::vector<std::string> value);
 
+    /// @brief Calcula o tamanho do mapa de horários
+    ///
+    /// @return Um unsigned com o tamanho
+    unsigned size_mapaHorario();
+
     /// @brief Insere um horário com atividades(ou não) em um determinado dia
     ///
     /// @param key O dia
     ///
     /// @param value As atividades que serão inseridas
-    void inserir(std::string key);  
+    void inserir(std::string key); 
+
+    /// @brief Calcula o tamanho da agenda
+    ///
+    /// @return Um unsigned com o tamanho
+    unsigned size_agenda();
 
     /// @brief Imprime o calendario do dia escolhido
     ///

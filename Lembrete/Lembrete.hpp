@@ -52,11 +52,15 @@ public:
     /// @brief Adiciona um Lembrete a lista de Lembretes
     ///
     /// @param lembrete O lembrete a ser adicionado
+    ///
+    /// @param user_email O email do usuário logado
     static void adicionarLembrete(Lembrete* lembrete, std::string* user_email);
     
     /// @brief Remove um lembrete da lista
     ///
     /// @param lembrete O lembrete a ser removido
+    ///
+    /// @param user_email O email do usuário logado
     static void removerLembrete(Lembrete* lembrete, std::string* user_email);
 
     /// @brief Procura pelo lembrete pela mensagem
@@ -64,8 +68,13 @@ public:
     /// @param mensagem A mensagem do lembrete a ser buscado
     static Lembrete* buscarLembrete(std::string* mensagem);
 
+    /// @brief Calcula o tamanho do mapa
+    ///
+    /// @return Um unsigned com o tamanho
+    unsigned tamanho();
+    
 protected:
-    static std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos
+    static std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos para cada usuario
 };
 
 class ImprimirLembretes : public ListaLembrete {
