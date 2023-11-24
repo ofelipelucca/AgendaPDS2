@@ -189,10 +189,7 @@ void Tarefa::setEstado(const std::string& novoEstado) {
     }    
 }
 
-Compromisso::Compromisso(std::string& data, std::string& local, std::string& titulo, std::string& descricao, std::string& horario,
-            std::string& estado, unsigned prioridade) : Tarefa(titulo, descricao, data, prioridade, estado) {
-    _local = local;
-    _horario = horario;
+Compromisso::Compromisso(std::string& data, std::string& local, std::string& titulo, std::string& descricao, std::string& horario, std::string& estado, unsigned prioridade) : Tarefa(titulo, descricao, data, prioridade, estado) { _local = local; _horario = horario;
 }
 
 std::string Compromisso::getCor() const {
@@ -379,99 +376,127 @@ std::string setCorPrioridade(unsigned prioridade) {
     }
 }
 
-void ListaTarefa::adicionarTarefa(Tarefa* tarefa) {
-    
-    _listadeTarefa.push_back(*tarefa); ///< Adicionando a tarefa na lista
+void ListaTarefa::adicionarTarefa(Tarefa* tarefa, std::string* user_email) {
+
+    _listadeTarefa.insert(std::make_pair(*user_email, tarefa)); ///< Adicionando a tarefa na lista
 }
 
-void ListaTarefa::removerTarefa(Tarefa* tarefa) {
+void ListaTarefa::removerTarefa(Tarefa* tarefa, std::string* user_email) {
 
-    _listadeTarefa.remove(*tarefa); ///< Removendo a tarefa da lista
-}
+    /// Itera sobre a lista procurando pela tarefa fornecida e o email do usuario logado
+    auto it = std::find_if(
+    _listadeTarefa.begin(),
+    _listadeTarefa.end(), 
+    [user_email, tarefa](const auto & p) { return (p->first == user_email && p->second == tarefa);}
+    );
 
-void ListaTarefa::verTarefas() const {
-    
-    /// Imprime as tarefas atuais da lista
-    for (const auto& tarefa : _listadeTarefa) {
+    if (it != _listadeTarefa.end()) {
         
-        /// Obtem a prioridade
-        unsigned prioridade = tarefa.getPrioridade();
-
-        /// Obtem a cor
-        std::string cor = setCorPrioridade(prioridade);
-        
-        std::cout << "----------" << std::endl
-
-        << cor
-
-        << "Titulo: " << tarefa.getTitulo() << std::endl
-
-        << "\033[0m" ///< Restaura a cor padrao do texto
-        
-        << "Descriçao: " << tarefa.getDescricao() << std::endl
-        
-        << "Data: " << tarefa.getData() << std::endl
-
-        << "Prioridade: " << tarefa.getPrioridade() << std::endl
-        
-        << "Estado: " << tarefa.getEstado() << std::endl
-
-        << std::endl;        
+        _listadeTarefa.erase(it); ///< Remove a tarefa da lista
     }
 }
 
-void ListaCompromisso::adicionarCompromisso(Compromisso* compromisso) {
+void ListaTarefa::verTarefas(std::string* user_email) const {
     
-    _listadeCompromisso.push_back(*compromisso); ///< Adicionando o compromisso na lista
+    /// Imprime as tarefas atuais da lista
+    for (const auto& tarefa : _listadeTarefa) {
+
+        /// Verifica se a tarefa pertence ao usuario
+        if (tarefa.first == *user_email) {
+            
+            /// Obtem a prioridade
+            unsigned prioridade = tarefa.second->getPrioridade();
+
+            /// Obtem a cor
+            std::string cor = setCorPrioridade(prioridade);
+            
+            std::cout << "----------" << std::endl
+
+            << cor
+
+            << "Titulo: " << tarefa.second->getTitulo() << std::endl
+
+            << "\033[0m" ///< Restaura a cor padrao do texto
+            
+            << "Descriçao: " << tarefa.second->getDescricao() << std::endl
+            
+            << "Data: " << tarefa.second->getData() << std::endl
+
+            << "Prioridade: " << tarefa.second->getPrioridade() << std::endl
+            
+            << "Estado: " << tarefa.second->getEstado() << std::endl
+
+            << std::endl;
+        }        
+    }
 }
 
-void ListaCompromisso::removerCompromisso(Compromisso* compromisso) {
-
-    _listadeCompromisso.remove(*compromisso); ///< Removendo o compromisso da lista
+void ListaCompromisso::adicionarCompromisso(Compromisso* compromisso, std::string* user_email) {
+    
+    _listadeCompromisso.insert(std::make_pair(*user_email, compromisso)); ///< Adicionando o compromisso na lista
 }
 
-void ListaCompromisso::verCompromissos() const {
+void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string* user_email) {
+
+    /// Itera sobre a lista procurando pelo compromisso fornecido e o email do usuario logado
+    auto it = std::find_if(
+    _listadeCompromisso.begin(),
+    _listadeCompromisso.end(), 
+    [user_email, compromisso](const auto & p) { return (p->first == user_email && p->second == compromisso);}
+    );
+
+    if (it != _listadeCompromisso.end()) {
+        
+        _listadeCompromisso.erase(it); ///< Remove o compromisso da lista
+    }
+}
+
+void ListaCompromisso::verCompromissos(std::string* user_email) const {
 
     /// Imprime os compromissos atuais da lista
     for (const auto& compromisso : _listadeCompromisso) {
-     
-        /// Obtem a prioridade
-        unsigned prioridade = compromisso.getPrioridade();
-
-        /// Obtem a cor
-        std::string cor_prioridade = setCorPrioridade(prioridade);
-
-        std::string cor_compromisso = compromisso.getCor();
         
-        std::cout << "----------" << std::endl
+        /// Verifica se o compromisso pertence ao usuario
+        if (compromisso.first == *user_email) {
+            
+            /// Obtem a prioridade
+            unsigned prioridade = compromisso.second->getPrioridade();
 
-        << cor_prioridade ///< Muda a cor do texto, de acordo com a prioridade
-        
-        << "Titulo: " << compromisso.getTitulo() << std::endl;
+            /// Obtem a cor
+            std::string cor_prioridade = setCorPrioridade(prioridade);
 
-        /// Verifica se o compromisso tem uma cor definida pelo usuario
-        /// Se nao tem, volta para a cor padrao do texto
-        if (!cor_compromisso.empty()) {
+            std::string cor_compromisso = compromisso.second->getCor();
+            
+            std::cout << "----------" << std::endl
 
-            std::cout << cor_compromisso; ///< Muda a cor do texto para a cor escolhida pelo usuario
-        }
-        else {
+            << cor_prioridade ///< Muda a cor do texto, de acordo com a prioridade
+            
+            << "Titulo: " << compromisso.second->getTitulo() << std::endl;
 
-            std::cout << "\033[0m"; ///< Restaura a cor padrao do texto
-        }
-        
-        std::cout << "Descriçao: " << compromisso.getDescricao() << std::endl
-        
-        << "Data: " << compromisso.getData() << ", às " << compromisso.getHorario() << std::endl
-        
-        << "Local: " << compromisso.getLocal() << std::endl
-        
-        << "Prioridade: " << compromisso.getPrioridade() << std::endl
+            /// Verifica se o compromisso tem uma cor definida pelo usuario
+            /// Se nao tem, volta para a cor padrao do texto
+            if (!cor_compromisso.empty()) {
 
-        << "Estado: " << compromisso.getEstado() << std::endl
-        
-        << "\033[0m" ///< Restaura a cor padrao do texto
+                std::cout << cor_compromisso; ///< Muda a cor do texto para a cor escolhida pelo usuario
+            }
+            else {
 
-        << std::endl;        
+                std::cout << "\033[0m"; ///< Restaura a cor padrao do texto
+            }
+            
+            std::cout << "Descriçao: " << compromisso.second->getDescricao() << std::endl
+            
+            << "Data: " << compromisso.second->getData() << ", às " << compromisso.second->getHorario() << std::endl
+            
+            << "Local: " << compromisso.second->getLocal() << std::endl
+            
+            << "Prioridade: " << prioridade << std::endl
+
+            << "Estado: " << compromisso.second->getEstado() << std::endl
+            
+            << "\033[0m" ///< Restaura a cor padrao do texto
+
+            << std::endl;
+        }        
     }
 }

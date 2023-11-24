@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <list>
+#include <unordered_map>
 
 /// @brief Obtem a cor para imprimir de acordo com o nivel de prioridade
 ///
@@ -79,7 +79,7 @@ private:
   std::string _data; ///< Armazena a data (em string) da tarefa 
   unsigned _prioridade; ///< Armazena a prioridade da tarefa 
   std::string _estado; ///< Armazena o estado da tarefa 
- };
+};
 
 class Compromisso : public Tarefa {
 public:
@@ -134,19 +134,25 @@ public:
 
   /// @brief Adiciona uma tarefa na lista de tarefas
   ///
-  /// @param tarefa a tarefa a ser adicionada
-  void adicionarTarefa(Tarefa* tarefa);
+  /// @param user_email O email do usuario logado
+  ///
+  /// @param tarefa A tarefa a ser adicionada
+  void adicionarTarefa(Tarefa* tarefa, std::string* user_email);
 
   /// @brief Remove uma tarefa da lista de tarefas
   ///
+  /// @param user_email O email do usuario logado
+  ///
   /// @param tarefa a Tarefa a ser removida
-  void removerTarefa(Tarefa* tarefa);
+  void removerTarefa(Tarefa* tarefa, std::string* user_email);
 
-  /// @brief Mostra a lista de tarefas
-  void verTarefas() const;
+  /// @brief Mostra a lista de tarefas do usuario logado
+  /// 
+  /// @param user_email O email do usuario logado
+  void verTarefas(std::string* user_email) const;
   
 private:
-  std::list<Tarefa> _listadeTarefa; ///< Armazena a lista de tarefas
+  std::unordered_map<std::string, Tarefa*> _listadeTarefa; ///< Armazena a lista de tarefas <email, Tarefa>
 };
 
 class ListaCompromisso {
@@ -156,17 +162,23 @@ public:
 
   /// @brief Adiciona um compromisso a lista de compromissos
   ///
+  /// @param user_email O email do usuario logado
+  ///
   /// @param compromisso O compromisso a ser adicionado
-  void adicionarCompromisso(Compromisso* compromisso);
+  void adicionarCompromisso(Compromisso* compromisso, std::string* user_email);
 
   /// @brief Remove um compromisso da lista de compromissos
   ///
+  /// @param user_email O email do usuario logado
+  ///
   /// @param compromisso O compromisso a ser removido
-  void removerCompromisso(Compromisso* compromisso);
+  void removerCompromisso(Compromisso* compromisso, std::string* user_email);
 
-  /// @brief Mostra os compromisso da lista de compromissos
-  void verCompromissos() const;
+  /// @brief Mostra a lista de compromissos do usuario logado
+  ///
+  /// @param user_email O email do usuario logado
+  void verCompromissos(std::string* user_email) const;
 
 private:
-  std::list<Compromisso> _listadeCompromisso; ///< Armazena a lista de comprimissos
+  std::unordered_map<std::string, Compromisso*> _listadeCompromisso; ///< Armazena a lista de comprimissos
 };
