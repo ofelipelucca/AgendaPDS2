@@ -7,6 +7,9 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
+
+#define STRING(num) #num
 
 UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
   
@@ -17,7 +20,18 @@ UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
 
   Calendario user_calendario;
 
-  user_calendario.imprimirCalendario(); ///< Imprimindo o calendario da semana
+  // Pega a data atual do computador do usuario
+  std::time_t t = std::time(nullptr);
+  std::tm* now = std::localtime(&t);
+
+  // Transforma em uma string no formato: DD/MM/AAAA
+  std::string dia = STRING(now->tm_mday);
+  dia += '/';
+  dia += STRING(now->tm_mon + 1);
+  dia += '/';
+  dia += STRING(now->tm_year + 1900);
+
+  user_calendario.imprimirCalendario(dia); ///< Imprimindo o calendario da semana
 }
 
 PrimeiroMenu *UsuarioMenu::next(unsigned option) {
@@ -30,7 +44,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       ImprimirLembretes::verLembretes(&getUsuario());
       
       return new LembreteMenu(&getUsuario());
-      ///vai para o menu dos lembretes (a criar)
+      /// vai para o menu dos lembretes (a criar)
       /// conferir se o parametro é o usuário mesmo
     }
     case 2: {
