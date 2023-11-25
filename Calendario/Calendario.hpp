@@ -34,10 +34,10 @@ public:
     /// @return Um unsigned com o tamanho
     unsigned size_agenda();
 
-    /// @brief Imprime o calendario do dia escolhido
+    /// @brief Imprime o calendario de 7 dias a partir do dia escolhido (Contando com ele)
     ///
-    /// @param dia O dia escolhido
-    void imprimirCalendario(std::string dia);
+    /// @param data O primero dia da sequência a ser mostrada
+    void imprimirCalendario(std::string data);
 
 private:
     std::map<std::string, std::vector<std::string>> _mapaHorario; ///< Mapa para armazenar as atividades por horário
