@@ -4,7 +4,12 @@
 #include "Tarefa.hpp"
 
 TEST_CASE("Criando uma instância de Tarefa") {
-    Tarefa t("Estudar", "Estudar para a prova de PDS2 do dia 30/11", "20/11/2023", 3, "não feito");
+    std::string str1 = "Estudar";
+    std::string str2 = "Estudar para a prova de PDS2";
+    std::string str3 = "29/11/2023";
+    std::string str4 = "não feito";
+
+    Tarefa t(str1, str2, str3, 2, str4);
 
     SUBCASE("Verificando os campos do objeto") {
         CHECK_EQ(t.getTitulo(), "Estudar");
@@ -15,18 +20,24 @@ TEST_CASE("Criando uma instância de Tarefa") {
     }
 
     SUBCASE("Salvando o objeto na lista de tarefas") {
-        ListaTarefa xs();
+        ListaTarefa xs;
+        std::string str = "pedroperreira31@gmail.com";
 
-        xs.adicionarTarefa(t, "pedroperreira31@gmail.com");
+        xs.adicionarTarefa(&t, &str);
         CHECK_EQ(xs.tamanho(), 1);
 
-        xs.removerTarefa(t, "pedroperreira31@gmail.com");
+        xs.removerTarefa(&t, &str);
         CHECK_EQ(xs.tamanho(), 0);
     }
 }
 
 TEST_CASE("Alterando uma Tarefa") {
-    Tarefa t("Estudar", "Estudar para a prova de PDS2 do dia 30/11", "28/11/2023", 3, "não feito");
+    std::string str1 = "Estudar";
+    std::string str2 = "Estudar para a prova de PDS2";
+    std::string str3 = "29/11/2023";
+    std::string str4 = "não feito";
+
+    Tarefa t(str1, str2, str3, 2, str4);
 
     t.setTitulo("VPLs");
     t.setDescricao("Terminar de fazer as VPLs");
@@ -42,7 +53,14 @@ TEST_CASE("Alterando uma Tarefa") {
 }
 
 TEST_CASE("Criando uma instância de Compromisso") {
-    Compromisso c("24/11/2023", "UFMG", "Reunião", "Reunião com o grupo para terminar o trabalho", "16:30:00", "não feito", 2);
+    std::string str1 = "24/11/2023";
+    std::string str2 = "UFMG";
+    std::string str3 = "Reunião";
+    std::string str4 = "Reunião com o grupo para terminar o trabalho";
+    std::string str5 = "16:30:00";
+    std::string str6 = "não feito";
+
+    Compromisso c(str1, str2, str3, str4, str5, str6, 2);
     
     SUBCASE("Verificando os campos do objeto") {
         CHECK_EQ(c.getLocal(), "UFMG");
@@ -50,18 +68,26 @@ TEST_CASE("Criando uma instância de Compromisso") {
     }
 
     SUBCASE("Salvando o objeto na lista de compromissos") {
-        ListaCompromisso xs();
+        ListaCompromisso xs;
+        std::string str = "pedroperreira31@gmail.com";
 
-        xs.adicionarCompromisso(c, "pedroperreira31@gmail.com");
+        xs.adicionarCompromisso(&c, &str);
         CHECK_EQ(xs.tamanho(), 1);
 
-        xs.removerCompromisso(c, "pedroperreira31@gmail.com");
+        xs.removerCompromisso(&c, &str);
         CHECK_EQ(xs.tamanho(), 0);
     }
 }
 
 TEST_CASE("Alterando um Compromisso") {
-    Compromisso c("24/11/2023", "UFMG", "Reunião", "Reunião com o grupo para terminar o trabalho", "16:30:00", "não feito", 2);
+    std::string str1 = "24/11/2023";
+    std::string str2 = "UFMG";
+    std::string str3 = "Reunião";
+    std::string str4 = "Reunião com o grupo para terminar o trabalho";
+    std::string str5 = "16:30:00";
+    std::string str6 = "não feito";
+
+    Compromisso c(str1, str2, str3, str4, str5, str6, 2);
 
     c.setCor("azul");
     c.setLocal("CEU");

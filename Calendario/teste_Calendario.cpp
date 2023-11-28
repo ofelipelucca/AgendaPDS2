@@ -4,7 +4,7 @@
 #include "Calendario.hpp"
 
 TEST_CASE("Mapeando atividades para o calendário") {
-    Calendario c();
+    Calendario c;
 
     SUBCASE("Mapeando atividades para um horário") {
         c.inserir("10:00:00", {"Estudar para a prova"});

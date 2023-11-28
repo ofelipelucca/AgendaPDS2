@@ -4,7 +4,12 @@
 #include "Usuario.hpp"
 
 TEST_CASE("Criando uma instância de Usuario") {
-    Usuario p("Pedro", "Perreira", 20, "pedroperreira31@gmail.com");
+    std::string str1 = "Pedro";
+    std::string str2 = "Perreira";
+    std::string str3 = "pedroperreira31@gmail.com";
+    std::string str4 = "20";
+
+    Usuario p(str1, str2, str4, str3);
 
     SUBCASE("Verificando os campos do objeto") {
         CHECK_EQ(p.getNome(), "Pedro Perreira");
@@ -13,23 +18,34 @@ TEST_CASE("Criando uma instância de Usuario") {
     }
 
     SUBCASE("Salvando o objeto na lista de usuarios") {
-        ListaUsuario xs();
+        std::string str1 = "pedroperreira31@gmail.com";
+        std::string str2 = "João Bastos";
 
-        xs.adicionarUsuario(p);
-        CHECK(xs.checkUsuario("pedroperreira31@gmail.com"));
-        CHECK_FALSE(xs.checkUsuario("pedroperreira31@gmail.com", "João Bastos"));
+        ListaUsuario xs;
 
-        xs.removerUsuario(p);
-        CHECK_FALSE(xs.checkUsuario("pedroperreira31@gmail.com"));
+        xs.adicionarUsuario(&p);
+        CHECK(xs.checkUsuario(&str1));
+        CHECK_FALSE(xs.checkUsuario(&str1, &str2));
+
+        xs.removerUsuario(&p);
+        CHECK_FALSE(xs.checkUsuario(&str1));
     }
 }
 
 TEST_CASE("Alterando um Usuario") {
-    Usuario p("Pedro", "Perreira", 20, "pedroperreira31@gmail.com");
+    std::string str1 = "Pedro";
+    std::string str2 = "Perreira";
+    std::string str3 = "pedroperreira31@gmail.com";
+    std::string str4 = "20";
+
+    Usuario p(str1, str2, str4, str3);
+
+    std::string str5 = "18";
+    std::string str6 = "gabrielsouza82@yahoo.com";
 
     p.setNome("Gabriel", "Souza");
-    p.setIdade("18");
-    p.setEmail("gabrielsouza82@yahoo.com");
+    p.setIdade(&str5);
+    p.setEmail(&str6);
 
     CHECK_EQ(p.getNome(), "Gabriel Souza");
     CHECK_EQ(p.getIdade(), "18");
