@@ -4,7 +4,6 @@
 #include "UsuarioMenu.hpp"
 
 #include <string>
-//Teste
 
 class TarefaMenu : public PrimeiroMenu {
 public:
