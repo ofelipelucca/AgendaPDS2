@@ -8,8 +8,6 @@
 #include <iostream>
 
 int main() {
-  PrimeiroMenu *old_menu = nullptr;
-  
   MenuLogin login;
   login.renderizar();
   // renderiza a pagina do menu
@@ -17,14 +15,14 @@ int main() {
   unsigned escolha;
   std::cin >> escolha;
 
-  PrimeiroMenu *menu = login.next(escolha, old_menu);
+  PrimeiroMenu *menu = login.next(escolha, nullptr);
   //pega a escolha do usuário e atribue a função
 
   while (menu != nullptr) {
     menu->renderizar();
     std::cin >> escolha;
 
-    old_menu = menu;
+    PrimeiroMenu *old_menu = menu;
     menu = menu->next(escolha, old_menu);
 
     delete old_menu;

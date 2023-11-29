@@ -8,7 +8,13 @@ public:
   /// @brief Destrutor para destruiçao de subclasses
   virtual ~PrimeiroMenu() = default;
 
-  /// @return O proximo menu
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
   virtual PrimeiroMenu *next(unsigned opcao, PrimeiroMenu *old_menu) = 0;
 
   /// @brief Busca pelo usuario logado
