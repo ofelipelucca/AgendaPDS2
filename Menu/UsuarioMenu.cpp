@@ -11,7 +11,7 @@
 
 #define STRING(num) #num
 
-UsuarioMenu::UsuarioMenu(std::string* user_nome, std::string* user_email) {
+UsuarioMenu::UsuarioMenu(std::string* user_email) {
   
   setTitulo("Que bom ter voce de volta, " + *user_email + "!");
   setSubtitulo("Calendario da semana:");
@@ -44,9 +44,8 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       ImprimirLembretes::verLembretes(&getUsuario());
       
       return new LembreteMenu(&getUsuario());
-      /// vai para o menu dos lembretes (a criar)
-      /// conferir se o parametro é o usuário mesmo
     }
+
     case 2: {
 
       std::cout << std::endl << "Aqui estao seus compromissos salvos: " << std::endl;
@@ -54,9 +53,8 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       ImprimirCompromissos::verCompromissos(&getUsuario());
       
       return new CompromissoMenu(&getUsuario());
-      ///vai para o menu dos Compromissos (a criar)
-      /// conferir se o parametro é o usuário mesmo
     }
+
     case 3: {
 
       std::cout << std::endl << "Aqui estao suas tarefas salvas: " << std::endl;
@@ -64,11 +62,13 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
       ImprimirTarefas::verTarefas(&getUsuario());
 
       return new TarefaMenu(&getUsuario());
-      ///vai para o menu das Tarefas (a criar) 
-      /// conferir se o parametro é o usuário mesmo
+    }
+
+    default: {
+
+      std::cout << "Opcao invalida!" << std::endl;
+      std::cout << "Escolha uma opcao valida!" << std::endl;
+      return new UsuarioMenu(&getUsuario());
     }
   }
-
-  // TODO: próximo menu
-  return nullptr;
 }

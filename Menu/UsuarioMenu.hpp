@@ -12,7 +12,7 @@
 class UsuarioMenu : public PrimeiroMenu {
 public:
   /// @brief Constroi o menu do usuario.  
-  UsuarioMenu(std::string *login_nome, std::string *login_email);
+  UsuarioMenu(std::string *login_email);
 
   /// @brief Constroi o proximo menu 
   ///

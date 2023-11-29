@@ -10,7 +10,7 @@ public:
   /// @brief Constroi o menu dos lembretes  
   LembreteMenu(std::string *login_email);
 
-  /// @brief Constroi proximo menu 
+  /// @brief Constroi o proximo menu 
   ///
   /// @return O proximo menu que o usuario escolheu
   PrimeiroMenu *next(unsigned option) override;

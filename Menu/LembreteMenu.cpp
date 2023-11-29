@@ -169,8 +169,6 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
 
         /// @todo retornar para o menu de lembretes
         return new LembreteMenu(&getUsuario());
-
-
     }
     case 4: {
 
@@ -178,10 +176,10 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
         return new UsuarioMenu(&login_nome, &login_email);
     }
     default: {
+        
         std::cout << "Opcao invalida!" << std::endl;
         std::cout << "Escolha uma opcao valida!" << std::endl;
         return new LembreteMenu(&getUsuario());
     }
   }
-  // TODO: próximo menu
 }

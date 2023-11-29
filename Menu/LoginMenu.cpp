@@ -16,7 +16,6 @@ MenuLogin::MenuLogin() {
 PrimeiroMenu *MenuLogin::next(unsigned option) {
   
   switch (option) {
-    
     case 1: {
 
       std::string login_email;
@@ -27,18 +26,20 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
       std::cout << "> Digite seu nome: ";
       std::cin >> login_nome;
 
-      std::cout << "Fazendo login..." << std::endl;
+      std::cout << "Fazendo login..." << std::endl << std::endl;
 
       /// Verifica se o usuario esta cadastrado no sistema com o email e nome fornecidos
       if (Usuario::checkUsuario(&login_email, &login_nome)) { 
         
-        std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")!" << std::endl; 
+        std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")!" << std::endl;
         
         return new UsuarioMenu(&login_nome, &login_email);
       }
       else {
-
-        /// @todo Tratar o erro de login caso o usuario nao esteja registrado ainda (lançar exception e retornar para o menu login)
+        std::cout << "Usuario nao encontrado!" << std::endl << std::endl;
+        std::cout << "Ainda nao possui uma conta? Seleciona a opcao 2 para criar um novo cadastro." << std::endl << std::endl;
+        
+        return new MenuLogin();
       }
     }
     
@@ -58,27 +59,42 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
 
       std::string register_idade;
       std::cout << "> Insira a sua idade: ";
-      std::cin >> register_idade; 
+      std::cin >> register_idade;
 
-      std::cout << "Cadastrando usuario..." << std::endl;
+      if (ListaUsuario::checkUsuario(&register_email)) {
 
-      Usuario* new_user = new Usuario(register_nome, register_sobrenome, register_idade, register_email);
-      
-      ListaUsuario::adicionarUsuario(new_user);
+        std::cout << "O email informado ja esta cadastrado, favor inserir outro!" << std::endl << std::endl;
+        std::cout << "Se deseja acessar a plataforma, selecione a opcao 1." << std::endl << std::endl;
 
-      if (ListaUsuario::checkUsuario(&register_email, &register_nome)) {
+        return new MenuLogin();
+      } else {
+
+        std::cout << "Cadastrando usuario..." << std::endl;
+
+        Usuario* new_user = new Usuario(register_nome, register_sobrenome, register_idade, register_email);
         
-        std::cout << "Usuario " << register_nome << " (" << register_email << ") cadastrado com sucesso!" << std::endl;
-        
-        return new UsuarioMenu(&register_nome, &register_email);
-      }
-      else {
+        ListaUsuario::adicionarUsuario(new_user);
 
-        /// @todo Nao foi possivel cadastrar o novo usuario, retornar para o menu login
+        if (ListaUsuario::checkUsuario(&register_email, &register_nome)) {
+          
+          std::cout << "Usuario " << register_nome << " (" << register_email << ") cadastrado com sucesso!" << std::endl;
+          
+          return new UsuarioMenu(&register_nome, &register_email);
+        }
+        else {
+
+          std::cout << "Nao foi possivel cadastrar o novo usuario!" << std::endl;
+
+          return new MenuLogin();
+        }
       }
     }
-  }
 
-  /// @todo menu anterior
-  return ;
+    default: {
+
+      std::cout << "Opcao invalida!" << std::endl;
+      std::cout << "Escolha uma opcao valida!" << std::endl;
+      return new MenuLogin();
+    }
+  }
 }
