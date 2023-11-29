@@ -173,7 +173,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
     case 4: {
 
         /// @todo retornar para o menu do usuario
-        return new UsuarioMenu(&login_nome, &login_email);
+        return new UsuarioMenu(&getUsuario());
     }
     default: {
         

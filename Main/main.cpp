@@ -20,15 +20,14 @@ int main() {
   //pega a escolha do usuário e atribue a função
 
   while (menu != nullptr) {
-  menu->renderizar();
-  std::cin >> escolha;
+    menu->renderizar();
+    std::cin >> escolha;
 
-  PrimeiroMenu *old_menu = menu;
-  menu = menu->next(escolha);
+    PrimeiroMenu *old_menu = menu;
+    menu = menu->next(escolha);
 
-  delete old_menu;
-}
+    delete old_menu;
+  }
   
-
   return 0;
 }

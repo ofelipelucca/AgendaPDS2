@@ -10,7 +10,7 @@ MenuLogin::MenuLogin() {
 
   setTitulo("Seja bem-vindo ao Gerenciador de Tarefas! ");
   setSubtitulo("Escolha uma opcao:");
-  setOpcoes({"1 --> Fazer login", "2 --> Fazer novo cadastro"});
+  setOpcoes({"1 --> Fazer login", "2 --> Fazer novo cadastro", "3 --> Sair do programa"});
 }
 
 PrimeiroMenu *MenuLogin::next(unsigned option) {
@@ -33,7 +33,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
         
         std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")!" << std::endl;
         
-        return new UsuarioMenu(&login_nome, &login_email);
+        return new UsuarioMenu(&login_email);
       }
       else {
         std::cout << "Usuario nao encontrado!" << std::endl << std::endl;
@@ -79,7 +79,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
           
           std::cout << "Usuario " << register_nome << " (" << register_email << ") cadastrado com sucesso!" << std::endl;
           
-          return new UsuarioMenu(&register_nome, &register_email);
+          return new UsuarioMenu(&getUsuario());
         }
         else {
 
@@ -88,6 +88,12 @@ PrimeiroMenu *MenuLogin::next(unsigned option) {
           return new MenuLogin();
         }
       }
+    }
+
+    case 3: {
+
+      std::cout << "Saindo do programa..." <<  std::endl;
+      return nullptr;
     }
 
     default: {

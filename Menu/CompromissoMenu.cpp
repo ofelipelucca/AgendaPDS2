@@ -39,7 +39,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option) {
             // Voltar para o menu anterior (pode ser o Menu Principal ou outro)
             std::cout << "Voltando..." << std::endl;
 
-            return new UsuarioMenu(&login_nome, &login_email);
+            return new UsuarioMenu(&getUsuario());
         default:
 
             std::cout << "Opcao invalida!" << std::endl;

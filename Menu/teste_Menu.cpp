@@ -29,9 +29,8 @@ TEST_CASE("Criando o menu de tarefas") {
 }
 
 TEST_CASE("Criando o menu do usuário") {
-    std::string nome = "Pedro Perreira";
     std::string email = "pedroperreira31@gmail.com";
 
-    UsuarioMenu menu(&nome, &email);
+    UsuarioMenu menu(&email);
     CHECK_EQ(menu.getUsuario(), email);
 }
