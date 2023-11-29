@@ -17,7 +17,7 @@ LembreteMenu::LembreteMenu(std::string* user_email) {
   setUsuario(*user_email);
 }
 
-PrimeiroMenu *LembreteMenu::next(unsigned option) {
+PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
   switch (option) {
     case 1: {
@@ -170,7 +170,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
     case 4: {
 
         std::cout << "Voltando..." << std::endl;
-        return getAnterior();
+        return old_menu;
     }
     default: {
         

@@ -12,5 +12,5 @@ public:
   /// @brief Constroi o proximo menu 
   ///
   /// @return O proximo menu que o usuario escolheu.
-  PrimeiroMenu *next(unsigned opcao) override;
+  PrimeiroMenu *next(unsigned opcao, PrimeiroMenu *old_menu) override;
 };

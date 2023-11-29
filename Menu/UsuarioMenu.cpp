@@ -34,7 +34,7 @@ UsuarioMenu::UsuarioMenu(std::string* user_email) {
   user_calendario.imprimirCalendario(dia); ///< Imprimindo o calendario da semana
 }
 
-PrimeiroMenu *UsuarioMenu::next(unsigned option) {
+PrimeiroMenu *UsuarioMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
   switch (option) {
     case 1: {
@@ -67,7 +67,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
     case 4: {
       
       std::cout << "Voltando..." << std::endl;
-      return getAnterior();
+      return old_menu;
     }
 
     default: {

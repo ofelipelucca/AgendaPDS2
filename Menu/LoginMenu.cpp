@@ -13,7 +13,7 @@ MenuLogin::MenuLogin() {
   setOpcoes({"1 --> Fazer login", "2 --> Fazer novo cadastro", "3 --> Sair do programa"});
 }
 
-PrimeiroMenu *MenuLogin::next(unsigned option) {
+PrimeiroMenu *MenuLogin::next(unsigned option, PrimeiroMenu *old_menu) {
   
   switch (option) {
     case 1: {
