@@ -15,7 +15,7 @@ UsuarioMenu::UsuarioMenu(std::string* user_email) {
   
   setTitulo("Que bom ter voce de volta, " + *user_email + "!");
   setSubtitulo("Calendario da semana:");
-  setOpcoes({"1 --> Lembretes", "2 --> Compromissos", "3 --> Tarefas", "4 --> Deslogar"});
+  setOpcoes({"1 --> Lembretes", "2 --> Compromissos", "3 --> Tarefas", "4 --> Deslogar", "5 --> Sair"});
   setUsuario(*user_email);
 
   Calendario user_calendario;
@@ -68,6 +68,12 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option, PrimeiroMenu *old_menu) {
       
       std::cout << "Voltando..." << std::endl;
       return old_menu;
+    }
+
+    case 5: {
+      
+      std::cout << "Saindo do progama..." << std::endl;
+      return nullptr;
     }
 
     default: {

@@ -93,7 +93,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option, PrimeiroMenu *old_menu) {
     case 3: {
 
       std::cout << "Saindo do programa..." <<  std::endl;
-      return old_menu;
+      return nullptr;
     }
 
     default: {
