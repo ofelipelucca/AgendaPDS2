@@ -23,7 +23,7 @@ int main() {
   menu->renderizar();
   std::cin >> escolha;
 
-  Menu *old_menu = menu;
+  PrimeiroMenu *old_menu = menu;
   menu = menu->next(escolha);
 
   delete old_menu;
