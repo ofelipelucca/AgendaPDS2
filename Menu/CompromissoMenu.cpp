@@ -36,10 +36,8 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option) {
             return new CompromissoMenu(&getUsuario());
         case 4:
 
-            // Voltar para o menu anterior (pode ser o Menu Principal ou outro)
             std::cout << "Voltando..." << std::endl;
-
-            return new UsuarioMenu(&getUsuario());
+            return getAnterior();
         default:
 
             std::cout << "Opcao invalida!" << std::endl;

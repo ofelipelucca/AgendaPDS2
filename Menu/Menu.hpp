@@ -16,6 +16,11 @@ public:
   /// @return String com email do usuario logado
   std::string getUsuario() const;
 
+  /// @brief Busca pelo menu anterior
+  ///
+  /// @return Ponteiro para o menu anterior
+  PrimeiroMenu *getAnterior() const;
+
   /// @brief Guarda o usuario logado
   ///
   /// @param user_email O email do usuario logado 
@@ -44,5 +49,5 @@ private:
   std::string _titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
   std::string _subtitulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
   std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu
-  PrimeiroMenu *_anterior; ///< Armazena o ponteiro para o menu anterior
+  PrimeiroMenu *_anterior; ///< Armazena um ponteiro para o menu anterior
 };

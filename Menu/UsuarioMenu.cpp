@@ -65,7 +65,9 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option) {
     }
 
     case 4: {
-      ///@todo Voltar para o menu de login
+      
+      std::cout << "Voltando..." << std::endl;
+      return getAnterior();
     }
 
     default: {

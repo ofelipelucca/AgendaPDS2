@@ -7,6 +7,11 @@ std::string PrimeiroMenu::getUsuario() const {
   return this->_user_email;
 } 
 
+PrimeiroMenu *PrimeiroMenu::getAnterior() const {
+
+  return this->_anterior;
+}
+
 void PrimeiroMenu::setUsuario(std::string user_email) {
 
   this->_user_email = user_email;
