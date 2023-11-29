@@ -7,7 +7,7 @@ CompromissoMenu::CompromissoMenu(std::string *login_email) {
     setUsuario(*login_email);
     setTitulo("Menu de Compromissos");
     setSubtitulo("Escolha uma opção:");
-    setOpcoes({"1 --> Ver Compromissos", "2 --> Adicionar Compromisso", "3 --> Remover Compromisso", "4 --> Voltar"});
+    setOpcoes({"1 --> Ver Compromissos", "2 --> Adicionar Compromisso", "3 --> Remover Compromisso", "4 --> Voltar", "5 --> Sair"});
 }
 
 PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
@@ -38,6 +38,11 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
             std::cout << "Voltando..." << std::endl;
             return old_menu;
+        case 5: {
+      
+            std::cout << "Saindo do progama..." << std::endl;
+            return nullptr;
+    }
         default:
 
             std::cout << "Opcao invalida!" << std::endl;

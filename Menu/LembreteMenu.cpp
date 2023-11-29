@@ -13,12 +13,12 @@ LembreteMenu::LembreteMenu(std::string* user_email) {
   
   setTitulo("Menu de Lembretes! ");
   setSubtitulo("Escolha uma opçao:");
-  setOpcoes({"1 --> Adicionar um novo lembrete", "2 --> Remover um lembrete", "3 --> Editar um lembrete", "4 --> Voltar"});
+  setOpcoes({"1 --> Adicionar um novo lembrete", "2 --> Remover um lembrete", "3 --> Editar um lembrete", "4 --> Voltar", "5 --> Sair"});
   setUsuario(*user_email);
 }
 
 PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
-
+  
   switch (option) {
     case 1: {
 
@@ -172,6 +172,13 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         std::cout << "Voltando..." << std::endl;
         return old_menu;
     }
+    
+    case 5: {
+      
+      std::cout << "Saindo do progama..." << std::endl;
+      return nullptr;
+    }
+
     default: {
         
         std::cout << "Opcao invalida!" << std::endl;
