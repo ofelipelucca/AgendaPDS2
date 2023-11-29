@@ -1,6 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.hpp"
-
 #include "Notificação.hpp"
 
 TEST_CASE("Criando uma instância de Notificacao") {
