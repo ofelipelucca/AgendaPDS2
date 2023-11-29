@@ -49,6 +49,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
             std::cout << "Nao foi possivel adicionar o novo lembrete." << std::endl;
         }
         /// @todo retornar para o menu de lembretes
+        return new LembreteMenu(&getUsuario());
     }
     case 2: {
 
@@ -72,6 +73,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
         }
 
         /// @todo retornar para o menu de lembretes
+        return new LembreteMenu(&getUsuario());
 
     }
     case 3: {
@@ -166,12 +168,14 @@ PrimeiroMenu *LembreteMenu::next(unsigned option) {
         }
 
         /// @todo retornar para o menu de lembretes
+        return new LembreteMenu(&getUsuario());
 
 
     }
     case 4: {
 
         /// @todo retornar para o menu do usuario
+        return new UsuarioMenu(&login_nome, &login_email);
     }
   }
 

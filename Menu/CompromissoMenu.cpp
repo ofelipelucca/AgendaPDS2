@@ -11,33 +11,37 @@ CompromissoMenu::CompromissoMenu(std::string *login_email) {
 }
 
 PrimeiroMenu *CompromissoMenu::next(unsigned option) {
-    PrimeiroMenu *proximoMenu = nullptr;
-
+    
     switch (option) {
         case 1:
             // Implementar a visualização dos compromissos
             // Chame a função para mostrar os compromissos aqui
             std::cout << "Visualizando Compromissos..." << std::endl;
-            break;
+            
+            return new CompromissoMenu(&getUsuario());
         case 2:
             // Implementar a adição de um compromisso
             // Chame a função para adicionar compromisso aqui
             std::cout << "Adicionando Compromisso..." << std::endl;
-            break;
+            
+            return new CompromissoMenu(&getUsuario());
         case 3:
             // Implementar a remoção de um compromisso
             // Chame a função para remover compromisso aqui
             std::cout << "Removendo Compromisso..." << std::endl;
-            break;
+            
+            return new CompromissoMenu(&getUsuario());
         case 4:
             // Voltar para o menu anterior (pode ser o Menu Principal ou outro)
             std::cout << "Voltando..." << std::endl;
-            break;
+
+            return new UsuarioMenu(&login_nome, &login_email);
+       
         default:
             std::cout << "Opção inválida!" << std::endl;
             break;
     }
 
     // Retorna o próximo menu, se houver
-    return proximoMenu;
+    return nullptr;
 }
