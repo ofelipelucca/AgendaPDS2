@@ -17,5 +17,3 @@ O objetivo principal desse tipo de projeto é oferecer uma plataforma intuitiva 
 `Thiago Tobias Valente de Oliveira Santos`
 `Roberto Júnior Cassimiro Campolina`
 `Daniel Bozi Portes`
-
-Teste commit
