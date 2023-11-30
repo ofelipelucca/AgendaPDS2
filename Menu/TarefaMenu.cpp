@@ -1,7 +1,10 @@
 #pragma once
 
 #include "UsuarioMenu.hpp"
+#include "Usuario.hpp"
 #include "TarefaMenu.hpp"
+#include "LembreteMenu.hpp"
+#include "CompromissoMenu.hpp"
 
 #include <iostream>
 #include <string>
@@ -106,9 +109,9 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << std::endl << "Voce deseja..." << std::endl
             << "1 --> Editar Título" << std::endl
             << "2 --> Editar Descricao" << std::endl
-            << "3 --> Editar Data" << std::endl;
+            << "3 --> Editar Data" << std::endl
             << "4 --> Editar Prioridade" << std::endl
-            << "5 --> Editar Estado" << std::endl
+            << "5 --> Editar Estado" << std::end;
 
             unsigned opcao_editar;
 
@@ -161,7 +164,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
                     std::cout << "Alterando Descricao...";
 
-                    tarefa->setDescricao(novo_titulo);  
+                    tarefa->setDescricao(novo_descricao);  
 
                     if (tarefa->getDescricao() == novo_descricao) {
 
