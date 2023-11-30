@@ -13,7 +13,7 @@ TarefaMenu::TarefaMenu(std::string *login_email) {
   
   setTitulo("Menu de Tarefas! ");
   setSubtitulo("Escolha uma opçao:");
-  setOpcoes({"1 --> Adicionar um novo Tarefa", "2 --> Remover um Tarefa", "3 --> Editar uma Tarefa", "4 --> Voltar", "5 --> Sair"});
+  setOpcoes({"1 --> Adicionar um nova Tarefa", "2 --> Remover um Tarefa", "3 --> Editar uma Tarefa", "4 --> Voltar", "5 --> Sair"});
   setUsuario(*user_email);
 }
 
@@ -32,7 +32,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         std::cin >> nova_tarefa_descricao;
 
         std::string nova_tarefa_data;
-        std::cout << "Insira uma data para sua Tarefa" << std::endl;
+        std::cout << "Insira uma data para sua Tarefa no formato DD/MM/AAA" << std::endl;
         std::cin >> nova_tarefa_data;
 
         unsigned nova_tarefa_prioridade;
