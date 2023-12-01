@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <algorithm>
 #include <unordered_map>
 
 /// @brief Obtem a cor para imprimir de acordo com o nivel de prioridade

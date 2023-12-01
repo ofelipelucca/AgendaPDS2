@@ -96,7 +96,7 @@ void Usuario::setEmail(std::string* novo_email) {
 
     try {
 
-        if (checkUsuario(novo_email)) throw std::logic_error("O email fornecido ja esta em uso");
+        if (ListaUsuario::checkUsuario(novo_email)) throw std::logic_error("O email fornecido ja esta em uso");
 
         std::istringstream iss(*novo_email);
         std::string usuario, dominio;
