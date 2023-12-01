@@ -4,11 +4,11 @@
 // Implementação dos métodos da classe CompromissoMenu
 
 CompromissoMenu::CompromissoMenu(std::string *login_email) {
-    setUsuario(*login_email);
+    
     setTitulo("Menu de Compromissos");
     setSubtitulo("Escolha uma opção:");
     setOpcoes({"1 --> Adicionar novo Compromisso", "2 --> Remover Compromisso", "5 --> Editar Compromisso " "4 --> Voltar", "5 --> Sair"});
-    setUsuario(*user_email);
+    setUsuario(*login_email);
 }
 
 PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {

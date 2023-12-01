@@ -10,11 +10,11 @@
 #include <string>
 
 TarefaMenu::TarefaMenu(std::string *login_email) {
-  
+
   setTitulo("Menu de Tarefas! ");
   setSubtitulo("Escolha uma opçao:");
   setOpcoes({"1 --> Adicionar um nova Tarefa", "2 --> Remover um Tarefa", "3 --> Editar uma Tarefa", "4 --> Voltar", "5 --> Sair"});
-  setUsuario(*user_email);
+  setUsuario(*login_email);
 }
 
 PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
