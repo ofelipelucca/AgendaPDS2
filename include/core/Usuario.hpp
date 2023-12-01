@@ -48,6 +48,7 @@ private:
 
 class ListaUsuario {
 public:
+  ListaUsuario() { const std::unordered_map<std::string, Usuario> _listadeusuario(); }
   /// @brief Adiciona um Usuario a lista de Usuarios
   ///
   /// @param usuario O Usuario a ser adicionado
