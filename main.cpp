@@ -1,9 +1,9 @@
-#include "Menu.hpp"
-#include "LoginMenu.hpp"
-#include "UsuarioMenu.hpp"
-#include "LembreteMenu.hpp"
-#include "CompromissoMenu.hpp"
-#include "TarefaMenu.hpp"
+#include "../include/menu/Menu.hpp"
+#include "../include/menu/Login.hpp"
+#include "../include/menu/Usuario.hpp"
+#include "../include/menu/Lembrete.hpp"
+#include "../include/menu/Compromisso.hpp"
+#include "../include/menu/Tarefa.hpp"
 
 #include <iostream>
 
