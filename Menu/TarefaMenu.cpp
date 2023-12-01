@@ -52,7 +52,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         ListaTarefa::adicionarTarefa(new_Tarefa, &getUsuario());
 
         // não achei uma função dessa para Tarefa
-        if (ListaTarefa::buscarTarefa(& ) != nullptr) {
+        if (ListaTarefa::buscarTarefa(nova_tarefa_titulo) != nullptr) {
 
             std::cout << "A Tarefa adicionada com sucesso!" << std::endl;
         }
@@ -72,7 +72,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         std::cout << "Buscando pela Tarefa..." << std::endl;
         
         //precisa criar a função a baixo
-        Tarefa* tarefa = ListaTarefa::buscarTarefa(&titulo_Tarefa);
+        Tarefa* tarefa = ListaTarefa::buscarTarefa(titulo_Tarefa);
 
         if (tarefa != nullptr) {
 
@@ -95,7 +95,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         std::cout << "Buscando pela Tarefa..." << std::endl;
         
-        Tarefa* tarefa = ListaTarefa::buscarTarefa(&titulo_Tarefa);
+        Tarefa* tarefa = ListaTarefa::buscarTarefa(titulo_Tarefa);
 
         if (tarefa != nullptr) {
 
@@ -111,7 +111,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             << "2 --> Editar Descricao" << std::endl
             << "3 --> Editar Data" << std::endl
             << "4 --> Editar Prioridade" << std::endl
-            << "5 --> Editar Estado" << std::end;
+            << "5 --> Editar Estado" << std::endl;
 
             unsigned opcao_editar;
 
@@ -126,7 +126,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
                     tarefa->setTitulo(novo_titulo);
 
-                    Tarefa* tarefa_alterado = ListaTarefa::buscarTarefa(&novo_titulo);  
+                    Tarefa* tarefa_alterado = ListaTarefa::buscarTarefa(novo_titulo);  
 
                     if (tarefa_alterado != nullptr && tarefa_alterado->getData() == tarefa->getData() && tarefa_alterado->getDescricao() == tarefa->getDescricao()) {
 

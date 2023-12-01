@@ -143,6 +143,11 @@ public:
   /// @param user_email O email do usuario logado
   static void removerTarefa(Tarefa* tarefa, std::string* user_email);
 
+  /// @brief Busca uma Tarefa pelo seu Título
+  ///
+  /// @param tarefa_titulo o Título da Tarefa a ser procurada
+  static Tarefa* buscarTarefa(std::string tarefa_titulo);
+
   /// @brief Calcula o tamanho da lista
   ///
   /// @return Um unsigned com o tamanho
@@ -167,6 +172,11 @@ public:
   ///
   /// @param user_email O email do usuario logado
   static void removerCompromisso(Compromisso* compromisso, std::string* user_email);
+
+  /// @brief Busca uma Compromisso pelo seu Título
+  ///
+  /// @param compromisso_titulo O Título do Compromisso a ser buscado
+  static Compromisso* buscarCompromisso(std::string compromisso_titulo);
 
   /// @brief Calcula o tamanho da lista
   ///

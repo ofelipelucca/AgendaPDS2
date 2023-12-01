@@ -52,7 +52,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         ListaCompromisso::adicionarCompromisso(new_compromisso, &getUsuario());
 
         // não achei uma função dessa para compromisso
-        if (ListaCompromisso::buscarCompromisso(&new_compromisso) != nullptr) {
+        if (ListaCompromisso::buscarCompromisso(nova_compromisso_titulo) != nullptr) {
 
             std::cout << "A compromisso adicionada com sucesso!" << std::endl;
         }
@@ -73,7 +73,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         std::cout << "Buscando pelo Compromisso..." << std::endl;
         
         //precisa criar a função a baixo
-        Compromisso* compromisso = ListaCompromisso::buscarCompromisso(&titulo_Compromisso);
+        Compromisso* compromisso = ListaCompromisso::buscarCompromisso(titulo_Compromisso);
 
         if (compromisso != nullptr) {
             
@@ -97,7 +97,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         std::cout << "Buscando pela compromisso..." << std::endl;
         
-        Compromisso* compromisso = ListaCompromisso::buscarCompromisso(&titulo_compromisso);
+        Compromisso* compromisso = ListaCompromisso::buscarCompromisso(titulo_compromisso);
 
         if (compromisso != nullptr) {
 
@@ -132,7 +132,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
                     compromisso->setTitulo(novo_titulo);
 
-                    Compromisso* compromisso_alterado = ListaCompromisso::buscarCompromisso(&novo_titulo);  
+                    Compromisso* compromisso_alterado = ListaCompromisso::buscarCompromisso(novo_titulo);  
 
                     if (compromisso_alterado != nullptr && compromisso_alterado->getData() == compromisso->getData() && compromisso_alterado->getDescricao() == compromisso->getDescricao()) {
 
