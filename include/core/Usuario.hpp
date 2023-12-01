@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
    
-class Usuario : public ListaUsuario {
+class Usuario {
 public:
   Usuario(std::string& nome, std::string& sobrenome, std::string& idade, std::string& email);
       
