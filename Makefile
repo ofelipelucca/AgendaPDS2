@@ -62,52 +62,57 @@ Este Makefile assume que você tem a seguinte estrutura de diretórios:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# Configurações do compilador
-CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra
+# Makefile para AgendaPDS2
 
-# Diretórios dos arquivos fonte e objetos
-SRC_DIR = src
-OBJ_DIR = obj
-TEST_DIR = tests
+# Compilador
+CXX := g++
+# Opções de compilação
+CXXFLAGS := -std=c++11 -Wall -Wextra -Iinclude
+
+# Diretórios
+SRCDIR := src
+INCDIR := include
+TESTDIR := test
+BUILDDIR := build
+BINDIR := bin
 
 # Arquivos fonte
-SRCS = $(wildcard $(SRC_DIR)/*/*.cpp) $(wildcard $(SRC_DIR)/*.cpp)
-OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
+SOURCES := $(wildcard $(SRCDIR)/*/*.cpp)
+TESTSOURCES := $(wildcard $(TESTDIR)/*/*.cpp)
+OBJECTS := $(patsubst $(SRCDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
+TESTOBJECTS := $(patsubst $(TESTDIR)/%.cpp,$(BUILDDIR)/%_test.o,$(TESTSOURCES))
+EXECUTABLE := $(BINDIR)/agenda
 
-# Alvos
-TARGET = AgendaPDS2
-TEST_TARGET = test
+# Comando padrão
+default: build
 
-# Compilar tudo
-.PHONY: all
-all: build test run
+# Regras de compilação
+$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Compilar aplicação principal
-.PHONY: build
-build: $(TARGET)
+$(BUILDDIR)/%_test.o: $(TESTDIR)/%.cpp
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+# Regras de construção
+build: $(OBJECTS)
+	@mkdir -p $(BINDIR)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(EXECUTABLE)
 
-# Compilar testes
-.PHONY: test
-test: $(TEST_TARGET)
-	./$(TEST_TARGET)
+# Regras de teste
+test: CXXFLAGS += -I$(TESTDIR)
+test: $(TESTOBJECTS) $(OBJECTS)
+	@mkdir -p $(BINDIR)
+	$(CXX) $(CXXFLAGS) $(TESTOBJECTS) $(OBJECTS) -o $(EXECUTABLE)_test
+	./$(EXECUTABLE)_test
 
-$(TEST_TARGET): $(filter-out $(OBJ_DIR)/main.o, $(OBJS))
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# Executar a aplicação
-.PHONY: run
+# Regras de execução
 run: build
-	./$(TARGET)
+	./$(EXECUTABLE)
 
-# Compilar objetos
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-# Limpar arquivos temporários
-.PHONY: clean
+# Limpeza
 clean:
-	rm -f $(OBJ_DIR)/*.o $(TARGET) $(TEST_TARGET)
+	rm -rf $(BUILDDIR) $(BINDIR)
+
+.PHONY: build test run clean
