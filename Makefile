@@ -1,35 +1,64 @@
 Certifique-se de ajustar os caminhos e flags de compilação conforme necessário para o seu ambiente.
 Para usar o Makefile, basta executar os comandos make build, make test ou make run no terminal. Certifique-se de ter o g++ instalado em seu sistema.
 Este Makefile assume que você tem a seguinte estrutura de diretórios:
+
 - AgendaPDS2
-  - src
-    - Calendario
-      - Calendario.cpp
+  - .vscode
+    - settings.json
+  - doc
+    - Doxyfile
+      - html
+        - //arquivos de documentação 
+      
+      - rtf 
+        - //arquivos de documentação
+
+    - Cartoes CRC.pdf
+  - include
+    - core
       - Calendario.hpp
-      - teste_Calendario.cpp
-    - Exceções
-      - Exceções.cpp
-      - Exceções.hpp
-    - Lembrete
-      - Lembrete.cpp
+      - Excecoes.hpp
       - Lembrete.hpp
-      - teste_Lembrete.cpp
-    - Menu
-      - ...
-    - Notificação
-      - Notificação.cpp
-      - Notificação.hpp
-      - teste_Notificação.cpp
-    - Tarefa
-      - Tarefa.cpp
+      - Notificacao.hpp
       - Tarefa.hpp
-      - teste_Tarefa.cpp
-    - Usuario
-      - teste_Usuario.cpp
-      - Usuario.cpp
       - Usuario.hpp
-  - obj
+    - menu
+      - Compromisso.hpp
+      - Lembrete.hpp
+      - Login.hpp
+      - Menu
+      - Tarefa.hpp
+      - Usuario.hpp
+
+  - src
+   - core
+      - Calendario.cpp
+      - Excecoes.cpp
+      - Lembrete.cpp
+      - Notificacao.cpp
+      - Tarefa.cpp
+      - Usuario.cpp
+    - menu
+      - Compromisso.cpp
+      - Lembrete.cpp
+      - Login.cpp
+      - Menu.cpp
+      - Tarefa.cpp
+      - Usuario.cpp
+  - test
+    - core
+      - Calendario.cpp
+      - Lembrete.hpp
+      - Notificacao.hpp
+      - Tarefa.hpp
+      - Usuario.hpp
+
+    - storage
+      - doctest.hpp
+      - driver.cpp
+  - main.cpp
   - Makefile
+  - README.md
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
