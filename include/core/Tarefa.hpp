@@ -130,6 +130,8 @@ private:
 
 class ListaTarefa {
 public:
+  ListaTarefa() { const _listadeTarefa = std::unordered_map<std::string, Tarefa*>(); }
+
   /// @brief Adiciona uma tarefa na lista de tarefas
   ///
   /// @param tarefa A tarefa a ser adicionada
@@ -160,6 +162,8 @@ protected:
 
 class ListaCompromisso {
 public:
+  ListaCompromisso() { const _listadeCompromisso = std::unordered_map<std::string, Compromisso*>(); }
+
   /// @brief Adiciona um compromisso a lista de compromissos
   ///
   /// @param compromisso O compromisso a ser adicionado
