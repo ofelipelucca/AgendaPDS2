@@ -1,5 +1,5 @@
 #include "../storage/doctest.hpp"
-#include "../include/core/Notificação.hpp"
+#include "../include/core/Notificacao.hpp"
 
 TEST_CASE("Criando uma instância de Notificacao") {
     Notificacao n(0, 10);

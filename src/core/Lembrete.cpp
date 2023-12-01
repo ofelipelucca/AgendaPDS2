@@ -1,5 +1,5 @@
 #include "../include/core/Lembrete.hpp"
-#include "../include/core/Exceções.hpp"
+#include "../include/core/Excecoes.hpp"
 
 #include <string>
 #include <iostream>

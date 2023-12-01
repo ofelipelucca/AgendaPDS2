@@ -1,4 +1,4 @@
-#include "../include/core/Notificação.hpp"
+#include "../include/core/Notificacao.hpp"
 
 #include <iostream>
 
