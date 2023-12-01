@@ -50,6 +50,8 @@ private:
 
 class ListaLembrete {
 public:
+    ListaLembrete() { const _listadeLembretes = std::unordered_map<std::string, Lembrete*>(); }
+
     /// @brief Adiciona um Lembrete a lista de Lembretes
     ///
     /// @param lembrete O lembrete a ser adicionado
