@@ -130,7 +130,7 @@ private:
 
 class ListaTarefa {
 public:
-  ListaTarefa() { const _listadeTarefa = std::unordered_map<std::string, Tarefa*>(); }
+  ListaTarefa() { const auto _listadeTarefa = std::unordered_map<std::string, Tarefa*>(); }
 
   /// @brief Adiciona uma tarefa na lista de tarefas
   ///
@@ -162,7 +162,7 @@ protected:
 
 class ListaCompromisso {
 public:
-  ListaCompromisso() { const _listadeCompromisso = std::unordered_map<std::string, Compromisso*>(); }
+  ListaCompromisso() { const auto _listadeCompromisso = std::unordered_map<std::string, Compromisso*>(); }
 
   /// @brief Adiciona um compromisso a lista de compromissos
   ///
