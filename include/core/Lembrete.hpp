@@ -25,17 +25,17 @@ public:
     
     /// @brief Muda a data de um lembrete
     ///
-    /// @param novaData A nova data a ser adicionada
+    /// @param nova_Data A nova data a ser adicionada
     ///
     /// @attention A data informada deve estar no formato: DD/MM/AAAA
-    void setData(const std::string& novaData);
+    void setData(const std::string& nova_Data);
 
     /// @brief Muda o horario de um compromisso
     ///
-    /// @param novoHorario O novo horario a ser colocado
+    /// @param novo_Horario O novo horario a ser colocado
     ///
     /// @attention O horario informado deve estar no formato: HH:MM:SS
-    void setHorario(const std::string& novoHorario);
+    void setHorario(const std::string& novo_Horario);
 
     /// @brief Adiciona uma mensagem para um lembrete
     ///

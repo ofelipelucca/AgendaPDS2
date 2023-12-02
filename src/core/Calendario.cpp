@@ -4,21 +4,21 @@
 
 void Calendario::inserir(std::string key, std::vector<std::string> value) {
 
-    _mapaHorario.insert(std::pair<std::string, std::vector<std::string>>(key, value));
+    _mapa_Horario.insert(std::pair<std::string, std::vector<std::string>>(key, value));
 }
 
-unsigned Calendario::size_mapaHorario() {
+unsigned Calendario::sizeMapaHorario() {
 
-    return _mapaHorario.size();
+    return _mapa_Horario.size();
 }
 
 void Calendario::inserir(std::string key) {
 
-    _agenda.insert(std::pair<std::string, std::map<std::string, std::vector<std::string>>>(key, _mapaHorario));
-    _mapaHorario.clear();
+    _agenda.insert(std::pair<std::string, std::map<std::string, std::vector<std::string>>>(key, _mapa_Horario));
+    _mapa_Horario.clear();
 }
 
-unsigned Calendario::size_agenda() {
+unsigned Calendario::sizeAgenda() {
 
     return _agenda.size();
 }
@@ -42,17 +42,17 @@ void Calendario::imprimirCalendario(std::string data) {
             ano ++;
         }
 
-        std::string diaAtual = STRING(dia);
-        diaAtual += '/';
-        diaAtual += STRING(mes);
-        diaAtual += '/';
-        diaAtual += STRING(ano);
+        std::string dia_Atual = STRING(dia);
+        dia_Atual += '/';
+        dia_Atual += STRING(mes);
+        dia_Atual += '/';
+        dia_Atual += STRING(ano);
 
-        auto it = (_agenda.find(diaAtual)->second).begin();
+        auto it = (_agenda.find(dia_Atual)->second).begin();
 
-        std::cout << "Atividades do dia " << diaAtual << ": " << std::endl << std::endl;
+        std::cout << "Atividades do dia " << dia_Atual << ": " << std::endl << std::endl;
 
-        while (it != (_agenda.find(diaAtual)->second).end()) {
+        while (it != (_agenda.find(dia_Atual)->second).end()) {
             std::cout << "Horário: " << it->first << std::endl << std::endl << "Atividades: " << std::endl << std::endl;
 
             if ((it->second).size() == 0) {

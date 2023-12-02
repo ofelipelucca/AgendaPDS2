@@ -29,7 +29,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option, PrimeiroMenu *old_menu) {
       std::cout << "Fazendo login..." << std::endl << std::endl;
 
       /// Verifica se o usuario esta cadastrado no sistema com o email e nome fornecidos
-      if (Usuario::checkUsuario(&login_email, &login_nome)) { 
+      if (ListaUsuario::checkUsuario(&login_email, &login_nome)) { 
         
         std::cout << "Logado com sucesso em: " << login_nome << " (" << login_email << ")!" << std::endl;
         

@@ -44,35 +44,35 @@ public:
   
   /// @brief Muda o titulo de uma tarefa
   ///
-  /// @param novoTitulo O novo titulo a ser colocado
-  void setTitulo(const std::string& novoTitulo);
+  /// @param novo_Titulo O novo titulo a ser colocado
+  void setTitulo(const std::string& novo_Titulo);
 
   /// @brief Muda a descriçao de uma tarefa
   ///
-  /// @param novaDescricao A nova descriçao a ser colocada
-  void setDescricao(const std::string& novaDescricao);
+  /// @param nova_Descricao A nova descriçao a ser colocada
+  void setDescricao(const std::string& nova_Descricao);
 
   /// @brief Muda a data de uma tarefa
   ///
-  /// @param novaData A nova data a ser colocada
+  /// @param nova_Data A nova data a ser colocada
   ///
   /// @attention A data informada deve estar no formato: DD/MM/AAAA
-  void setData(const std::string& novaData);
+  void setData(const std::string& nova_Data);
 
   /// @brief Muda a prioridade de uma tarefa
   ///
-  /// @param novaPrioridade A nova prioridade a ser colocada
+  /// @param nova_Prioridade A nova prioridade a ser colocada
   ///
   /// @attention A prioridade varia entre: 
   /// 1 --> menos importante, 2 --> importante, 3 --> muito importante.
-  void setPrioridade(unsigned novaPrioridade);
+  void setPrioridade(unsigned nova_Prioridade);
 
   /// @brief Muda o estado de uma tarefa
   ///
-  /// @param novoEstado O novo estado a ser colocado
+  /// @param novo_Estado O novo estado a ser colocado
   ///
   /// @attention O estado varia entre: feito (deletar em seguida), em progresso, não feito (alertar).
-  void setEstado(const std::string& novoEstado);
+  void setEstado(const std::string& novo_Estado);
    
 private:
   std::string _titulo; ///< Armazena o titulo da tarefa 
@@ -107,20 +107,20 @@ public:
   ///
   /// @attention Cores aceitas: 'laranja', 'azul', 'roxo', 'rosa'
   ///
-  /// @param novaCor A nova cor a ser adicionada
-  void setCor(const std::string& novaCor);
+  /// @param nova_Cor A nova cor a ser adicionada
+  void setCor(const std::string& nova_Cor);
 
   /// @brief Muda o local de um compromisso
   ///
-  /// @param novoLocal O novo local a ser colocado 
-  void setLocal(const std::string& novoLocal);
+  /// @param novo_Local O novo local a ser colocado 
+  void setLocal(const std::string& novo_Local);
 
   /// @brief Muda o horario de um compromisso
   ///
-  /// @param novoHorario O novo horario a ser colocado
+  /// @param novo_Horario O novo horario a ser colocado
   ///
   /// @attention O horario informado deve estar no formato: HH:MM:SS
-  void setHorario(const std::string& novoHorario);
+  void setHorario(const std::string& novo_Horario);
 
 private:
   std::string _cor; ///< Armazena a cor do comprimisso, escolhida pelo usuario

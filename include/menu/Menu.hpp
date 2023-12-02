@@ -29,13 +29,13 @@ public:
 
   /// @brief Muda o titulo do menu
   ///
-  /// @param novoTitulo O novo titulo do menu
-  void setTitulo(std::string novoTitulo);
+  /// @param novo_Titulo O novo titulo do menu
+  void setTitulo(std::string novo_Titulo);
 
   /// @brief Muda o subtitulo do menu
   ///
-  /// @param novoSubtitulo O novo subtitulo do menu
-  void setSubtitulo(std::string novoSubtitulo);
+  /// @param novo_Subtitulo O novo subtitulo do menu
+  void setSubtitulo(std::string novo_Subtitulo);
 
   /// @brief Muda as opcoes do menu
   ///
@@ -48,6 +48,6 @@ public:
 private:
   std::string _user_email; ///< Armazena o email do usuario logado
   std::string _titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
-  std::string _subtitulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
+  std::string _sub_titulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
   std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu
 };

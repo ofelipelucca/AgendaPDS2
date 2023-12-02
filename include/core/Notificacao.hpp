@@ -8,7 +8,7 @@
 
 class Notificacao {
 public:
-    Notificacao(const int horaAntes, const int minAntes);
+    Notificacao(const int hora_Antes, const int min_Antes);
     
     /// @brief Compara com o horario real e notifica um compromisso no horario programado
     ///
@@ -32,7 +32,7 @@ public:
     bool checkEstado();
 
 private:
-    int _minAntes; ///< Armazena os minutos de antecedencia da notificaçao (1 a 59) 
-    int _horaAntes; ///< Armazena as horas de antecedencia da notificaçao (1 a 23)
+    int _min_Antes; ///< Armazena os minutos de antecedencia da notificaçao (1 a 59) 
+    int _hora_Antes; ///< Armazena as horas de antecedencia da notificaçao (1 a 23)
     bool _estado; ///< Armazena o estado da notificação (ativada = true, desativada = false)
 };

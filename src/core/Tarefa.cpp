@@ -39,15 +39,15 @@ std::string Tarefa::getEstado() const {
     return this->_estado; ///< Retorna o estado
 }
 
-void Tarefa::setTitulo(const std::string& novoTitulo) {
+void Tarefa::setTitulo(const std::string& novo_Titulo) {
 
     try {
         const size_t MAX_CARACTERES = 50; ///< Limite de caracteres para o novo titulo
 
         /// Verifica se o novo titulo eh valido
-        if (!novoTitulo.length() >= MAX_CARACTERES || !novoTitulo.empty()) {
+        if (!novo_Titulo.length() >= MAX_CARACTERES || !novo_Titulo.empty()) {
 
-            this->_titulo = novoTitulo; ///< Atribui o novo titulo
+            this->_titulo = novo_Titulo; ///< Atribui o novo titulo
         }
         else {
 
@@ -62,15 +62,15 @@ void Tarefa::setTitulo(const std::string& novoTitulo) {
     }
 }
 
-void Tarefa::setDescricao(const std::string& novaDescricao) {
+void Tarefa::setDescricao(const std::string& nova_Descricao) {
 
     try {
         const size_t MAX_CARACTERES = 120; ///< Limite de caracteres para a nova descricao
 
         /// Verifica se a nova descricao eh valida
-        if (!novaDescricao.length() || !novaDescricao.empty()) {
+        if (!nova_Descricao.length() || !nova_Descricao.empty()) {
 
-            this->_descricao = novaDescricao; //< Atribui a nova descricao
+            this->_descricao = nova_Descricao; //< Atribui a nova descricao
         }
         else {
         
@@ -85,11 +85,11 @@ void Tarefa::setDescricao(const std::string& novaDescricao) {
     }
 }
 
-void Tarefa::setData(const std::string& novaData) {
+void Tarefa::setData(const std::string& nova_Data) {
 
     try {
         /// Verifica o formato da nova data
-        std::istringstream iss(novaData);
+        std::istringstream iss(nova_Data);
         int dia, mes, ano;
         char limitador; ///< Limitador deve ser '/'
 
@@ -122,7 +122,7 @@ void Tarefa::setData(const std::string& novaData) {
             throw std::logic_error("Data no passado");
         }
 
-        this->_data = novaData; ///< Atribui a nova data
+        this->_data = nova_Data; ///< Atribui a nova data
     }
     catch (const std::invalid_argument& e) {
         
@@ -142,12 +142,12 @@ void Tarefa::setData(const std::string& novaData) {
     }
 }
 
-void Tarefa::setPrioridade(const unsigned novaPrioridade) {
+void Tarefa::setPrioridade(const unsigned nova_Prioridade) {
     try {
         /// Verifica se a nova prioridade eh valida
-        if (novaPrioridade == 1 || novaPrioridade == 2 || novaPrioridade == 3) {
+        if (nova_Prioridade == 1 || nova_Prioridade == 2 || nova_Prioridade == 3) {
         
-            this->_prioridade = novaPrioridade; ///< Atribui a nova prioridade
+            this->_prioridade = nova_Prioridade; ///< Atribui a nova prioridade
         }
         else {
 
@@ -165,13 +165,13 @@ void Tarefa::setPrioridade(const unsigned novaPrioridade) {
     }
 }
 
-void Tarefa::setEstado(const std::string& novoEstado) {
+void Tarefa::setEstado(const std::string& novo_Estado) {
 
     try {    
         /// Verifica se o novo estado eh valido
-        if (novoEstado == "feito" || novoEstado == "em progresso" || novoEstado == "não feito") {
+        if (novo_Estado == "feito" || novo_Estado == "em progresso" || novo_Estado == "não feito") {
         
-            this->_estado = novoEstado; ///< Atribui o novo estado
+            this->_estado = novo_Estado; ///< Atribui o novo estado
         }
         else {
 
@@ -210,30 +210,30 @@ std::string Compromisso::getHorario() const {
     return this->_horario; ///< Retorna o horario
 }
 
-void Compromisso::setCor(const std::string& novaCor) {
+void Compromisso::setCor(const std::string& nova_Cor) {
 
     try {
 
         // Escolher a cor com base na prioridade
         std::string cor;
         
-        if (novaCor == "laranja") {
+        if (nova_Cor == "laranja") {
 
             this->_cor = "\033[38;2;247;99;25m"; ///< Atribui a cor laranja
         }
-        else if (novaCor == "azul") {
+        else if (nova_Cor == "azul") {
 
             this->_cor = "\033[38;2;25;84;247m"; ///< Atribui a cor azul
         }
-        else if (novaCor == "roxo") {
+        else if (nova_Cor == "roxo") {
 
             this->_cor = "\033[38;2;140;25;247m"; ///< Atribui a cor roxa
         }
-        else if (novaCor == "rosa") {
+        else if (nova_Cor == "rosa") {
 
             this->_cor = "\033[38;2;247;25;180m"; ///< Atribui a cor rosa
         }
-        else if (!novaCor.empty()) {
+        else if (!nova_Cor.empty()) {
 
             throw std::invalid_argument("Cor invalida");
         }
@@ -250,15 +250,15 @@ void Compromisso::setCor(const std::string& novaCor) {
     }
 }
 
-void Compromisso::setLocal(const std::string& novoLocal) {
+void Compromisso::setLocal(const std::string& novo_Local) {
 
     try {
         const size_t MAX_CARACTERES = 100; ///< Limite de caracteres para o novo local
 
         /// Verifica se o novo local eh valido
-        if (!novoLocal.length() >= MAX_CARACTERES || !novoLocal.empty()) {
+        if (!novo_Local.length() >= MAX_CARACTERES || !novo_Local.empty()) {
 
-            this->_local = novoLocal; ///< Atribui o novo local
+            this->_local = novo_Local; ///< Atribui o novo local
         }
         else {
 
@@ -273,11 +273,11 @@ void Compromisso::setLocal(const std::string& novoLocal) {
     }
 }
 
-void Compromisso::setHorario(const std::string& novoHorario) {
+void Compromisso::setHorario(const std::string& novo_Horario) {
 
         try {
         /// Verifica o formato do novo horario
-        std::istringstream iss(novoHorario);
+        std::istringstream iss(novo_Horario);
         int HH, MM, SS;
         char limitador; ///< Limitador deve ser ':'
 
@@ -330,11 +330,11 @@ void Compromisso::setHorario(const std::string& novoHorario) {
                 throw std::logic_error("Horario no passado");
             }
 
-            this->_horario = novoHorario; ///< Atribui o novo horario
+            this->_horario = novo_Horario; ///< Atribui o novo horario
         }
         else {
 
-            this->_horario = novoHorario; ///< Atribui o novo horario
+            this->_horario = novo_Horario; ///< Atribui o novo horario
         }
     }
     catch (const std::invalid_argument& e) {

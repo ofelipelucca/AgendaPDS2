@@ -29,10 +29,10 @@ std::string Lembrete::getMensagem() const {
     return this->_mensagem; ///< Retorna a mensagem
 }
 
-void Lembrete::setData(const std::string& nova_data) {
+void Lembrete::setData(const std::string& nova_Data) {
     try {
         /// Verifica o formato da nova data
-        std::istringstream iss(nova_data);
+        std::istringstream iss(nova_Data);
         int dia, mes, ano;
         char limitador; ///< Limitador deve ser '/'
 
@@ -65,7 +65,7 @@ void Lembrete::setData(const std::string& nova_data) {
             throw std::logic_error("Data no passado");
         }
 
-        this->_data = nova_data; ///< Atribui a nova data
+        this->_data = nova_Data; ///< Atribui a nova data
     }
     catch (const std::invalid_argument& e) {
         
@@ -85,11 +85,11 @@ void Lembrete::setData(const std::string& nova_data) {
     }
 }
 
-void Lembrete::setHorario(const std::string& novo_horario) {
+void Lembrete::setHorario(const std::string& novo_Horario) {
     
     try {
         /// Verifica o formato do novo horario
-        std::istringstream iss(novo_horario);
+        std::istringstream iss(novo_Horario);
         int HH, MM, SS;
         char limitador; ///< Limitador deve ser ':'
 
@@ -141,11 +141,11 @@ void Lembrete::setHorario(const std::string& novo_horario) {
                 throw std::logic_error("Horario no passado");
             }
 
-            this->_horario = novo_horario; ///< Atribui o novo horario
+            this->_horario = novo_Horario; ///< Atribui o novo horario
         }
         else {
 
-            this->_horario = novo_horario; ///< Atribui o novo horario
+            this->_horario = novo_Horario; ///< Atribui o novo horario
         }
     }
     catch (const std::invalid_argument& e) {
@@ -166,15 +166,15 @@ void Lembrete::setHorario(const std::string& novo_horario) {
     }
 }
 
-void Lembrete::setMensagem(std::string nova_mensagem) {
+void Lembrete::setMensagem(std::string nova_Mensagem) {
     
     try {
         const size_t MAX_CARACTERES = 45; ///< Limite de caracteres para a mensagem do lembrete
         
         /// Verifica se a nova mensagem esta vazia, se a nova mensagem eh igual a mensagem atual ou ultrapassa o limite de caracteres
-        if (!nova_mensagem.empty() || nova_mensagem != this->_mensagem || nova_mensagem.length() < MAX_CARACTERES) {
+        if (!nova_Mensagem.empty() || nova_Mensagem != this->_mensagem || nova_Mensagem.length() < MAX_CARACTERES) {
 
-            this->_mensagem = nova_mensagem; ///< Atribui a nova mensagem
+            this->_mensagem = nova_Mensagem; ///< Atribui a nova mensagem
         } 
         else {
 

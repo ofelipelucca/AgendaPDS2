@@ -19,7 +19,7 @@ void PrimeiroMenu::setTitulo(std::string novoTitulo) {
 
 void PrimeiroMenu::setSubtitulo(std::string novoSubstitulo) {
 
-  this->_subtitulo = novoSubstitulo;
+  this->_sub_titulo = novoSubstitulo;
 }
 
 void PrimeiroMenu::setOpcoes(std::vector<std::string> novasOpcoes) {
@@ -34,7 +34,7 @@ void PrimeiroMenu::renderizar() const {
   std::cout << "|| " << _titulo << "||" << '\n';
   std::cout << border << "\n\n";
 
-  std::cout << _subtitulo << '\n' << '\n';
+  std::cout << _sub_titulo << '\n' << '\n';
 
   for (std::string opt : _opcoes) {
     
