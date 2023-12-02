@@ -399,6 +399,15 @@ void ListaTarefa::removerTarefa(Tarefa* tarefa, std::string* user_email) {
     }
 }
 
+Tarefa* ListaTarefa::buscarTarefa(const std::string& tarefa_titulo){
+    auto it =_listadeTarefa.find(tarefa_titulo);
+        if (it != _listadeTarefa.end()) {
+            return (it->second);
+        } else {
+            return nullptr; // Tarefa não encontrada
+        }
+}
+
 unsigned ListaTarefa::tamanho() {
 
     return _listadeTarefa.size(); ///< Retornando o tamanho da lista
@@ -459,6 +468,15 @@ void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string*
         _listadeCompromisso.erase(it); ///< Remove o compromisso da lista
     }
 }
+
+Compromisso* ListaCompromisso::buscarCompromisso(const std::string& compromisso_titulo) {
+        auto it = _listadeCompromisso.find(compromisso_titulo);
+        if (it != _listadeCompromisso.end()) {
+            return (it->second);
+        } else {
+            return nullptr; // Compromisso não encontrado
+        }
+    }
 
 unsigned ListaCompromisso::tamanho() {
 

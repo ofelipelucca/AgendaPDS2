@@ -149,7 +149,7 @@ public:
   /// @brief Busca uma Tarefa pelo seu Título
   ///
   /// @param tarefa_titulo o Título da Tarefa a ser procurada
-  static Tarefa* buscarTarefa(std::string tarefa_titulo);
+  static Tarefa* buscarTarefa(const std::string& tarefa_titulo);
 
   /// @brief Calcula o tamanho da lista
   ///
@@ -181,7 +181,7 @@ public:
   /// @brief Busca uma Compromisso pelo seu Título
   ///
   /// @param compromisso_titulo O Título do Compromisso a ser buscado
-  static Compromisso* buscarCompromisso(std::string compromisso_titulo);
+  static Compromisso* buscarCompromisso(const std::string& compromisso_titulo);
 
   /// @brief Calcula o tamanho da lista
   ///
