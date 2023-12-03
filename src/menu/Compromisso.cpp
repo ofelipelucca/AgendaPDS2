@@ -1,4 +1,5 @@
 #include "../include/menu/Compromisso.hpp"
+#include "Tarefa.hpp"
 
 #include <iostream>
 
