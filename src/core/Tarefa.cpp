@@ -385,17 +385,17 @@ void ListaTarefa::adicionarTarefa(Tarefa* tarefa, std::string* user_email) {
 }
 
 void ListaTarefa::removerTarefa(Tarefa* tarefa, std::string* user_email) {
-
-    /// Itera sobre a lista procurando pela tarefa fornecida e o email do usuario logado
     auto it = std::find_if(
-    _listadeTarefa.begin(),
-    _listadeTarefa.end(), 
-    [user_email, tarefa](const auto & p) { return (p->first == user_email && p->second == tarefa);}
+        _listadeTarefa.begin(),
+        _listadeTarefa.end(),
+        [user_email, tarefa](const auto & p) {
+            return (p.first == *user_email && p.second == tarefa);
+            // Utilize p.first e p.second em vez de p->first e p->second
+        }
     );
 
     if (it != _listadeTarefa.end()) {
-        
-        _listadeTarefa.erase(it); ///< Remove a tarefa da lista
+        _listadeTarefa.erase(it);
     }
 }
 
