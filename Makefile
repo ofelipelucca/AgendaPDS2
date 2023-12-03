@@ -1,118 +1,60 @@
-Certifique-se de ajustar os caminhos e flags de compilação conforme necessário para o seu ambiente.
-Para usar o Makefile, basta executar os comandos make build, make test ou make run no terminal. Certifique-se de ter o g++ instalado em seu sistema.
-Este Makefile assume que você tem a seguinte estrutura de diretórios:
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall
+SRC_DIR = src
+INC_DIR = include
+TEST_DIR = test
+BUILD_DIR = build
+EXECUTABLE = programa
+TEST_EXECUTABLE = test_programa
 
-- AgendaPDS2
-  - .vscode
-    - settings.json
-  - doc
-    - Doxyfile
-      - html
-        - //arquivos de documentação 
-      
-      - rtf 
-        - //arquivos de documentação
+# Lista de todos os arquivos .cpp em src/core e src/menu
+SRCS = $(wildcard $(SRC_DIR)/core/*.cpp) $(wildcard $(SRC_DIR)/menu/*.cpp)
 
-    - Cartoes CRC.pdf
-  - include
-    - core
-      - Calendario.hpp
-      - Excecoes.hpp
-      - Lembrete.hpp
-      - Notificacao.hpp
-      - Tarefa.hpp
-      - Usuario.hpp
-    - menu
-      - Compromisso.hpp
-      - Lembrete.hpp
-      - Login.hpp
-      - Menu
-      - Tarefa.hpp
-      - Usuario.hpp
+# Gera uma lista de nomes de arquivos .o correspondentes
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
-  - src
-   - core
-      - Calendario.cpp
-      - Excecoes.cpp
-      - Lembrete.cpp
-      - Notificacao.cpp
-      - Tarefa.cpp
-      - Usuario.cpp
-    - menu
-      - Compromisso.cpp
-      - Lembrete.cpp
-      - Login.cpp
-      - Menu.cpp
-      - Tarefa.cpp
-      - Usuario.cpp
-  - test
-    - core
-      - Calendario.cpp
-      - Lembrete.hpp
-      - Notificacao.hpp
-      - Tarefa.hpp
-      - Usuario.hpp
+# Lista de todos os arquivos .cpp em test/core e test/storage
+TEST_SRCS = $(wildcard $(TEST_DIR)/core/*.cpp) $(wildcard $(TEST_DIR)/storage/*.cpp)
 
-    - storage
-      - doctest.hpp
-      - driver.cpp
-  - main.cpp
-  - Makefile
-  - README.md
------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Gera uma lista de nomes de arquivos .o correspondentes para os testes
+TEST_OBJS = $(patsubst $(TEST_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(TEST_SRCS))
 
+all: $(EXECUTABLE)
 
-# Makefile para AgendaPDS2
+$(EXECUTABLE): $(OBJS) $(SRC_DIR)/main.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-# Compilador
-CXX := g++
-# Opções de compilação
-CXXFLAGS := -std=c++11 -Wall -Wextra -Iinclude
-
-# Diretórios
-SRCDIR := src
-INCDIR := include
-TESTDIR := test
-BUILDDIR := build
-BINDIR := bin
-
-# Arquivos fonte
-SOURCES := $(wildcard $(SRCDIR)/*/*.cpp)
-TESTSOURCES := $(wildcard $(TESTDIR)/*/*.cpp)
-OBJECTS := $(patsubst $(SRCDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
-TESTOBJECTS := $(patsubst $(TESTDIR)/%.cpp,$(BUILDDIR)/%_test.o,$(TESTSOURCES))
-EXECUTABLE := $(BINDIR)/agenda
-
-# Comando padrão
-default: build
-
-# Regras de compilação
-$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
-	@mkdir -p $(@D)
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/%.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(BUILDDIR)/%_test.o: $(TESTDIR)/%.cpp
-	@mkdir -p $(@D)
+test: $(TEST_EXECUTABLE)
+	./$(TEST_EXECUTABLE)
+
+$(TEST_EXECUTABLE): $(OBJS) $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+$(BUILD_DIR)/%.o: $(TEST_DIR)/%.cpp $(INC_DIR)/%.hpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Regras de construção
-build: $(OBJECTS)
-	@mkdir -p $(BINDIR)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(EXECUTABLE)
+$(BUILD_DIR):
+	mkdir -p $@
 
-# Regras de teste
-test: CXXFLAGS += -I$(TESTDIR)
-test: $(TESTOBJECTS) $(OBJECTS)
-	@mkdir -p $(BINDIR)
-	$(CXX) $(CXXFLAGS) $(TESTOBJECTS) $(OBJECTS) -o $(EXECUTABLE)_test
-	./$(EXECUTABLE)_test
+clean:
+	rm -rf $(BUILD_DIR) $(EXECUTABLE) $(TEST_EXECUTABLE)
 
-# Regras de execução
-run: build
+run: $(EXECUTABLE)
 	./$(EXECUTABLE)
 
-# Limpeza
-clean:
-	rm -rf $(BUILDDIR) $(BINDIR)
+test_run: $(TEST_EXECUTABLE)
+	./$(TEST_EXECUTABLE)
 
-.PHONY: build test run clean
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Este Makefile assume que todos os arquivos .cpp estão localizados nos diretórios src/core e src/menu, e os arquivos .hpp estão localizados
+nos diretórios include/core e include/menu. Certifique-se de ajustar os caminhos de acordo com a estrutura real do seu projeto.
+
+Para compilar, basta digitar make no terminal. Isso criará um diretório de construção (build) e compilará o executável chamado programa.
+Para executar o programa, digite make run no terminal. Para limpar os arquivos de compilação, use make clean.
+
+Você pode usar make test_run para compilar e executar os testes presentes nos diretórios test/core e test/storage.

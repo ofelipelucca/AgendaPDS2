@@ -14,6 +14,8 @@ CompromissoMenu::CompromissoMenu(std::string *login_email) {
 
 PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
     
+    std::string usuario_atual = getUsuario();
+
     switch (option) {
         case 1: {
         std::string nova_compromisso_titulo;
@@ -50,7 +52,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         Compromisso* new_compromisso = new Compromisso(nova_compromisso_data, nova_compromisso_local, nova_compromisso_titulo, nova_compromisso_descricao, nova_compromisso_horario, nova_compromisso_estado,  nova_compromisso_prioridade );
 
-        ListaCompromisso::adicionarCompromisso(new_compromisso, &getUsuario());
+        ListaCompromisso::adicionarCompromisso(new_compromisso, &usuario_atual);
 
         // não achei uma função dessa para compromisso
         if (ListaCompromisso::buscarCompromisso(nova_compromisso_titulo) != nullptr) {
@@ -63,7 +65,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         }
 
             
-            return new CompromissoMenu(&getUsuario());
+            return new CompromissoMenu(&usuario_atual);
         }
         case 2: {
        
@@ -78,7 +80,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         if (compromisso != nullptr) {
             
-            ListaCompromisso::removerCompromisso(compromisso, &getUsuario()); ///< Removendo a compromisso
+            ListaCompromisso::removerCompromisso(compromisso, &usuario_atual); ///< Removendo a compromisso
 
             std::cout << "A compromisso com Título '" << titulo_Compromisso << "' foi removido com sucesso!" << std::endl;
         }
@@ -87,7 +89,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "A compromisso com Título '" << titulo_Compromisso << "' nao foi encontrado." << std::endl;
         }
 
-            return new CompromissoMenu(&getUsuario());
+            return new CompromissoMenu(&usuario_atual);
         }
 
         case 3: {
@@ -273,7 +275,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "O compromisso com Título '" << titulo_compromisso << "' nao foi encontrado." << std::endl;
         }
 
-            return new CompromissoMenu(&getUsuario());
+            return new CompromissoMenu(&usuario_atual);
 
         }
         case 4: {
@@ -291,7 +293,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
             std::cout << "Opcao invalida!" << std::endl;
             std::cout << "Escolha uma opcao valida!" << std::endl;
-            return new CompromissoMenu(&getUsuario());
+            return new CompromissoMenu(&usuario_atual);
     }
 }
 }

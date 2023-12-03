@@ -79,7 +79,7 @@ PrimeiroMenu *MenuLogin::next(unsigned option, PrimeiroMenu *old_menu) {
           
           std::cout << "Usuario " << register_nome << " (" << register_email << ") cadastrado com sucesso!" << std::endl;
           
-          return new UsuarioMenu(&getUsuario());
+          return new UsuarioMenu(&register_email);
         }
         else {
 

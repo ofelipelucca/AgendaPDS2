@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/core/Lembrete.hpp"
 #include "../include/menu/Usuario.hpp"
 #include "../include/menu/Lembrete.hpp"
@@ -18,6 +16,8 @@ LembreteMenu::LembreteMenu(std::string* user_email) {
 }
 
 PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
+
+    std::string usuario_atual = getUsuario();
   
   switch (option) {
     case 1: {
@@ -38,7 +38,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         Lembrete* new_lembrete = new Lembrete(novo_lembrete_horario, novo_lembrete_mensagem, novo_lembrete_data);
 
-        ListaLembrete::adicionarLembrete(new_lembrete, &getUsuario());
+        ListaLembrete::adicionarLembrete(new_lembrete, &usuario_atual);
 
         if (ListaLembrete::buscarLembrete(&novo_lembrete_mensagem) != nullptr) {
 
@@ -49,7 +49,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "Nao foi possivel adicionar o novo lembrete." << std::endl;
         }
         
-        return new LembreteMenu(&getUsuario());
+        return new LembreteMenu(&usuario_atual);
     }
     case 2: {
 
@@ -63,7 +63,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         if (lembrete != nullptr) {
 
-            ListaLembrete::removerLembrete(lembrete, &getUsuario()); ///< Removendo o lembrete
+            ListaLembrete::removerLembrete(lembrete, &usuario_atual); ///< Removendo o lembrete
 
             std::cout << "O lembrete com mensagem '" << mensagem_lembrete << "' foi removido com sucesso!" << std::endl;
         }
@@ -72,7 +72,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "O lembrete com mensagem '" << mensagem_lembrete << "' nao foi encontrado." << std::endl;
         }
 
-        return new LembreteMenu(&getUsuario());
+        return new LembreteMenu(&usuario_atual);
     }
     case 3: {
 
@@ -165,7 +165,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "O lembrete com mensagem '" << mensagem_lembrete << "' nao foi encontrado." << std::endl;
         }
 
-        return new LembreteMenu(&getUsuario());
+        return new LembreteMenu(&usuario_atual);
     }
     case 4: {
 
@@ -183,7 +183,7 @@ PrimeiroMenu *LembreteMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         
         std::cout << "Opcao invalida!" << std::endl;
         std::cout << "Escolha uma opcao valida!" << std::endl;
-        return new LembreteMenu(&getUsuario());
+        return new LembreteMenu(&usuario_atual);
     }
   }
 }

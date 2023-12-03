@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/menu/Usuario.hpp"
 #include "../include/menu/Lembrete.hpp"
 #include "../include/menu/Compromisso.hpp"
@@ -36,32 +34,34 @@ UsuarioMenu::UsuarioMenu(std::string* user_email) {
 
 PrimeiroMenu *UsuarioMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
+  std::string usuario_atual = getUsuario();
+
   switch (option) {
     case 1: {
 
       std::cout << std::endl << "Aqui estao seus lembretes salvos: " << std::endl; 
       
-      ImprimirLembretes::verLembretes(&getUsuario());
+      ImprimirLembretes::verLembretes(&usuario_atual);
       
-      return new LembreteMenu(&getUsuario());
+      return new LembreteMenu(&usuario_atual);
     }
 
     case 2: {
 
       std::cout << std::endl << "Aqui estao seus compromissos salvos: " << std::endl;
       
-      ImprimirCompromissos::verCompromissos(&getUsuario());
+      ImprimirCompromissos::verCompromissos(&usuario_atual);
       
-      return new CompromissoMenu(&getUsuario());
+      return new CompromissoMenu(&usuario_atual);
     }
 
     case 3: {
 
       std::cout << std::endl << "Aqui estao suas tarefas salvas: " << std::endl;
       
-      ImprimirTarefas::verTarefas(&getUsuario());
+      ImprimirTarefas::verTarefas(&usuario_atual);
 
-      return new TarefaMenu(&getUsuario());
+      return new TarefaMenu(&usuario_atual);
     }
 
     case 4: {
@@ -80,7 +80,7 @@ PrimeiroMenu *UsuarioMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
       std::cout << "Opcao invalida!" << std::endl;
       std::cout << "Escolha uma opcao valida!" << std::endl;
-      return new UsuarioMenu(&getUsuario());
+      return new UsuarioMenu(&usuario_atual);
     }
   }
 }

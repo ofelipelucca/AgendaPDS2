@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/core/Usuario.hpp"
 #include "../include/menu/Usuario.hpp"
 #include "../include/menu/Tarefa.hpp"
@@ -19,6 +17,8 @@ TarefaMenu::TarefaMenu(std::string *login_email) {
 
 PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
   
+    std::string usuario_atual = getUsuario();
+
   switch (option) {
     
     case 1: {
@@ -49,7 +49,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         Tarefa* new_Tarefa = new Tarefa(nova_tarefa_titulo, nova_tarefa_descricao, nova_tarefa_data, nova_tarefa_prioridade, nova_tarefa_estado );
 
-        ListaTarefa::adicionarTarefa(new_Tarefa, &getUsuario());
+        ListaTarefa::adicionarTarefa(new_Tarefa, &usuario_atual);
 
         // não achei uma função dessa para Tarefa
         if (ListaTarefa::buscarTarefa(nova_tarefa_titulo) != nullptr) {
@@ -61,7 +61,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "Nao foi possivel adicionar A nova Tarefa." << std::endl;
         }
         
-        return new TarefaMenu(&getUsuario());
+        return new TarefaMenu(&usuario_atual);
     }
     case 2: {
 
@@ -76,7 +76,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
         if (tarefa != nullptr) {
 
-            ListaTarefa::removerTarefa(tarefa, &getUsuario()); ///< Removendo a Tarefa
+            ListaTarefa::removerTarefa(tarefa, &usuario_atual); ///< Removendo a Tarefa
 
             std::cout << "A Tarefa com Título '" << titulo_Tarefa << "' foi removida com sucesso!" << std::endl;
         }
@@ -85,7 +85,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "A Tarefa com Título '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
         }
 
-        return new TarefaMenu(&getUsuario());
+        return new TarefaMenu(&usuario_atual);
     }
     case 3: {
 
@@ -224,7 +224,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             std::cout << "A tarefa com Título '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
         }
 
-        return new TarefaMenu(&getUsuario());
+        return new TarefaMenu(&usuario_atual);
     }
     case 4: {
 
@@ -242,7 +242,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         
         std::cout << "Opcao invalida!" << std::endl;
         std::cout << "Escolha uma opcao valida!" << std::endl;
-        return new TarefaMenu(&getUsuario());
+        return new TarefaMenu(&usuario_atual);
     }
   }
 }
