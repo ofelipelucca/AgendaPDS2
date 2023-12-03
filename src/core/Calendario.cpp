@@ -53,7 +53,7 @@ void Calendario::imprimirCalendario(std::string data) {
         std::cout << "Atividades do dia " << dia_Atual << ": " << std::endl << std::endl;
 
         while (it != (_agenda.find(dia_Atual)->second).end()) {
-            std::cout << "Horário: " << it->first << std::endl << std::endl << "Atividades: " << std::endl << std::endl;
+            std::cout << "Horario: " << it->first << std::endl << std::endl << "Atividades: " << std::endl << std::endl;
 
             if ((it->second).size() == 0) {
                 std::cout << "Nenhuma atividade registrada!" << std::endl << std::endl;

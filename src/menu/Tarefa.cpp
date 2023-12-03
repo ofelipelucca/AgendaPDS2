@@ -24,7 +24,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
     case 1: {
         
         std::string nova_tarefa_titulo;
-        std::cout << "Insira um título para sua Tarefa" << std::endl;
+        std::cout << "Insira um titulo para sua Tarefa" << std::endl;
         std::cin >> nova_tarefa_titulo;
 
         std::string nova_tarefa_descricao;
@@ -66,7 +66,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
     case 2: {
 
         std::string titulo_Tarefa;
-        std::cout << std::endl << "Digite o título da Tarefa que deseja remover: " << std::endl;
+        std::cout << std::endl << "Digite o titulo da Tarefa que deseja remover: " << std::endl;
         std::cin >> titulo_Tarefa;
 
         std::cout << "Buscando pela Tarefa..." << std::endl;
@@ -78,11 +78,11 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
             ListaTarefa::removerTarefa(tarefa, &usuario_atual); ///< Removendo a Tarefa
 
-            std::cout << "A Tarefa com Título '" << titulo_Tarefa << "' foi removida com sucesso!" << std::endl;
+            std::cout << "A Tarefa com Titulo '" << titulo_Tarefa << "' foi removida com sucesso!" << std::endl;
         }
         else {
 
-            std::cout << "A Tarefa com Título '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
+            std::cout << "A Tarefa com Titulo '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
         }
 
         return new TarefaMenu(&usuario_atual);
@@ -90,7 +90,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
     case 3: {
 
         std::string titulo_Tarefa;
-        std::cout << std::endl << "Digite o título da Tarefa que deseja editar: " << std::endl;
+        std::cout << std::endl << "Digite o titulo da Tarefa que deseja editar: " << std::endl;
         std::cin >> titulo_Tarefa;
 
         std::cout << "Buscando pela Tarefa..." << std::endl;
@@ -100,14 +100,14 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         if (tarefa != nullptr) {
 
             std::cout << "Alterando a Tarefa..." << std::endl
-            << "Título: " << tarefa->getTitulo() << std::endl
+            << "Titulo: " << tarefa->getTitulo() << std::endl
             << "Descricao: " << tarefa->getDescricao() << std::endl
             << "Data: " << tarefa->getData() << std::endl
             << "Prioridade: " << tarefa->getPrioridade() << std::endl
             << "Estado: " << tarefa->getEstado() << std::endl;
             
             std::cout << std::endl << "Voce deseja..." << std::endl
-            << "1 --> Editar Título" << std::endl
+            << "1 --> Editar Titulo" << std::endl
             << "2 --> Editar Descricao" << std::endl
             << "3 --> Editar Data" << std::endl
             << "4 --> Editar Prioridade" << std::endl
@@ -119,10 +119,10 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
                 case 1: {
 
                     std::string novo_titulo;
-                    std::cout << "Digite um novo Título pata a Tarefa:" << std::endl;
+                    std::cout << "Digite um novo Titulo pata a Tarefa:" << std::endl;
                     std::cin >> novo_titulo;
 
-                    std::cout << "Alterando Título...";
+                    std::cout << "Alterando Titulo...";
 
                     tarefa->setTitulo(novo_titulo);
 
@@ -130,11 +130,11 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
                     if (tarefa_alterado != nullptr && tarefa_alterado->getData() == tarefa->getData() && tarefa_alterado->getDescricao() == tarefa->getDescricao()) {
 
-                        std::cout << "O Título da tarefa foi alterado com sucesso para: " << tarefa->getTitulo() << "!" << std::endl;
+                        std::cout << "O Titulo da tarefa foi alterado com sucesso para: " << tarefa->getTitulo() << "!" << std::endl;
                     }
                     else {
 
-                        std::cout << "Nao foi possivel alterar o Título da tarefa." << std::endl;
+                        std::cout << "Nao foi possivel alterar o Titulo da tarefa." << std::endl;
                     }
                 }
                 case 3: {
@@ -221,7 +221,7 @@ PrimeiroMenu *TarefaMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         }
         else {
 
-            std::cout << "A tarefa com Título '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
+            std::cout << "A tarefa com Titulo '" << titulo_Tarefa << "' nao foi encontrada." << std::endl;
         }
 
         return new TarefaMenu(&usuario_atual);

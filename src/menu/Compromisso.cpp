@@ -19,7 +19,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
     switch (option) {
         case 1: {
         std::string nova_compromisso_titulo;
-        std::cout << "Insira um título para seu Compromisso" << std::endl;
+        std::cout << "Insira um titulo para seu Compromisso" << std::endl;
         std::cin >> nova_compromisso_titulo;
 
         std::string nova_compromisso_descricao;
@@ -45,7 +45,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         std::cin >> nova_compromisso_local;
 
         std::string nova_compromisso_horario;
-        std::cout << "Insira um horário para seu compromisso no formato HH:MM:SS : " << std::endl;
+        std::cout << "Insira um horario para seu compromisso no formato HH:MM:SS : " << std::endl;
         std::cin >> nova_compromisso_horario;
         
         std::cout << "Adicionando compromisso..." << std::endl;
@@ -70,7 +70,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         case 2: {
        
         std::string titulo_Compromisso;
-        std::cout << std::endl << "Digite o título da compromisso que deseja remover: " << std::endl;
+        std::cout << std::endl << "Digite o titulo da compromisso que deseja remover: " << std::endl;
         std::cin >> titulo_Compromisso;
 
         std::cout << "Buscando pelo Compromisso..." << std::endl;
@@ -82,11 +82,11 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
             
             ListaCompromisso::removerCompromisso(compromisso, &usuario_atual); ///< Removendo a compromisso
 
-            std::cout << "A compromisso com Título '" << titulo_Compromisso << "' foi removido com sucesso!" << std::endl;
+            std::cout << "A compromisso com Titulo '" << titulo_Compromisso << "' foi removido com sucesso!" << std::endl;
         }
         else {
 
-            std::cout << "A compromisso com Título '" << titulo_Compromisso << "' nao foi encontrado." << std::endl;
+            std::cout << "A compromisso com Titulo '" << titulo_Compromisso << "' nao foi encontrado." << std::endl;
         }
 
             return new CompromissoMenu(&usuario_atual);
@@ -95,7 +95,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         case 3: {
 
         std::string titulo_compromisso;
-        std::cout << std::endl << "Digite o título do Compromisso que deseja editar: " << std::endl;
+        std::cout << std::endl << "Digite o titulo do Compromisso que deseja editar: " << std::endl;
         std::cin >> titulo_compromisso;
 
         std::cout << "Buscando pela compromisso..." << std::endl;
@@ -105,22 +105,22 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         if (compromisso != nullptr) {
 
             std::cout << "Alterando o compromisso..." << std::endl
-            << "Título: " << compromisso->getTitulo() << std::endl
+            << "Titulo: " << compromisso->getTitulo() << std::endl
             << "Descricao: " << compromisso->getDescricao() << std::endl
             << "Data: " << compromisso->getData() << std::endl
             << "Prioridade: " << compromisso->getPrioridade() << std::endl
             << "Estado: " << compromisso->getEstado() << std::endl
             << "Local: " << compromisso->getLocal() << std::endl
-            << "Horário: " << compromisso->getHorario() << std::endl;
+            << "horario: " << compromisso->getHorario() << std::endl;
             
             std::cout << std::endl << "Voce deseja..." << std::endl
-            << "1 --> Editar Título" << std::endl
+            << "1 --> Editar Titulo" << std::endl
             << "2 --> Editar Descricao" << std::endl
             << "3 --> Editar Data" << std::endl
             << "4 --> Editar Prioridade" << std::endl
             << "5 --> Editar Estado"<< std::endl
             << "6 --> Editar Local"<< std::endl
-            << "7 --> Editar Horário"<< std::endl;
+            << "7 --> Editar horario"<< std::endl;
 
             unsigned opcao_editar;
 
@@ -128,10 +128,10 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
                 case 1: {
 
                     std::string novo_titulo;
-                    std::cout << "Digite um novo Título pata a compromisso:" << std::endl;
+                    std::cout << "Digite um novo Titulo pata a compromisso:" << std::endl;
                     std::cin >> novo_titulo;
 
-                    std::cout << "Alterando Título...";
+                    std::cout << "Alterando Titulo...";
 
                     compromisso->setTitulo(novo_titulo);
 
@@ -139,11 +139,11 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
 
                     if (compromisso_alterado != nullptr && compromisso_alterado->getData() == compromisso->getData() && compromisso_alterado->getDescricao() == compromisso->getDescricao()) {
 
-                        std::cout << "O Título do Compromisso foi alterado com sucesso para: " << compromisso->getTitulo() << "!" << std::endl;
+                        std::cout << "O Titulo do Compromisso foi alterado com sucesso para: " << compromisso->getTitulo() << "!" << std::endl;
                     }
                     else {
 
-                        std::cout << "Nao foi possivel alterar o Título do compromisso." << std::endl;
+                        std::cout << "Nao foi possivel alterar o Titulo do compromisso." << std::endl;
                     }
                 }
                 case 3: {
@@ -250,20 +250,20 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
                 case 7: {
 
                     std::string nova_horario;
-                    std::cout << "Digite um novo horário para o compromisso (no formato: HH:MM:SS):" << std::endl;
+                    std::cout << "Digite um novo horario para o compromisso (no formato: HH:MM:SS):" << std::endl;
                     std::cin >> nova_horario;
 
-                    std::cout << "Alterando Horário...";
+                    std::cout << "Alterando horario...";
 
                     compromisso->setHorario(nova_horario);  
 
                     if (compromisso->getHorario() == nova_horario) {
 
-                        std::cout << "O horário do compromisso foi alterada com sucesso para: " << compromisso->getHorario() << "!" << std::endl;
+                        std::cout << "O horario do compromisso foi alterada com sucesso para: " << compromisso->getHorario() << "!" << std::endl;
                     }
                     else {
 
-                        std::cout << "Nao foi possivel alterar o horário do compromisso." << std::endl;
+                        std::cout << "Nao foi possivel alterar o horario do compromisso." << std::endl;
                     }
 
                 }
@@ -272,7 +272,7 @@ PrimeiroMenu *CompromissoMenu::next(unsigned option, PrimeiroMenu *old_menu) {
         }
         else {
 
-            std::cout << "O compromisso com Título '" << titulo_compromisso << "' nao foi encontrado." << std::endl;
+            std::cout << "O compromisso com Titulo '" << titulo_compromisso << "' nao foi encontrado." << std::endl;
         }
 
             return new CompromissoMenu(&usuario_atual);
