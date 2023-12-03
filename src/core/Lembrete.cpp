@@ -196,16 +196,15 @@ void ListaLembrete::adicionarLembrete(Lembrete* lembrete, std::string* user_emai
 
 void ListaLembrete::removerLembrete(Lembrete* lembrete, std::string* user_email) {
     
-    /// Itera sobre a lista procurando pelo lembrete fornecido e o email do usuario logado
     auto it = std::find_if(
         _listadeLembretes.begin(), _listadeLembretes.end(), 
         [user_email, lembrete](const auto & p) 
-        { return (p->first == user_email && p->second == lembrete); }
+        { return (p.first == *user_email && p.second == lembrete); }
+        // Utilize p.first e p.second para acessar os elementos do par corretamente
     );
 
     if (it != _listadeLembretes.end()) {
-        
-        _listadeLembretes.erase(it); ///< Remove o lembrete da lista
+        _listadeLembretes.erase(it);
     }
 }
 
