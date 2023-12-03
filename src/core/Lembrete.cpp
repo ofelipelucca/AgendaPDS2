@@ -209,24 +209,18 @@ void ListaLembrete::removerLembrete(Lembrete* lembrete, std::string* user_email)
 }
 
 Lembrete* ListaLembrete::buscarLembrete(std::string* mensagem) {
-
-    /// Itera sobre a lista procurando pelo lembrete
     auto it = std::find_if(
-    _listadeLembretes.begin(),
-    _listadeLembretes.end(), 
-    [mensagem](const auto & p) { return (p->first == user_email && p->second.getMensagem() == *mensagem);}
+        _listadeLembretes.begin(),
+        _listadeLembretes.end(),
+        [mensagem](const auto & p) { return (p.second->getMensagem() == *mensagem); }
+        // Corrigido para acessar a mensagem corretamente com p.second->getMensagem()
     );
 
     if (it != _listadeLembretes.end()) {
-
         return it->second;
+    } else {
+        return nullptr;
     }
-    else return nullptr;
-
-}
-unsigned ListaLembrete::tamanho() {
-
-    return _listadeLembretes.size(); ///< Retorna o tamanho do mapa
 }
 
 void ImprimirLembretes::verLembretes(std::string* user_email) {
