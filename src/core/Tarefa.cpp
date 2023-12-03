@@ -455,17 +455,17 @@ void ListaCompromisso::adicionarCompromisso(Compromisso* compromisso, std::strin
 
 
 void ListaCompromisso::removerCompromisso(Compromisso* compromisso, std::string* user_email) {
-
-    /// Itera sobre a lista procurando pelo compromisso fornecido e o email do usuario logado
     auto it = std::find_if(
-    _listadeCompromisso.begin(),
-    _listadeCompromisso.end(), 
-    [user_email, compromisso](const auto & p) { return (p->first == user_email && p->second == compromisso);}
+        _listadeCompromisso.begin(),
+        _listadeCompromisso.end(),
+        [user_email, compromisso](const auto & p) {
+            return (p.first == *user_email && p.second == compromisso);
+            // Use p.first e p.second em vez de p->first e p->second
+        }
     );
 
     if (it != _listadeCompromisso.end()) {
-        
-        _listadeCompromisso.erase(it); ///< Remove o compromisso da lista
+        _listadeCompromisso.erase(it);
     }
 }
 
