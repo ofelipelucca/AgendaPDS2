@@ -1,6 +1,6 @@
 # Configurações do compilador
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
 # Diretórios dos arquivos fonte e objetos
 SRC_DIR = src
