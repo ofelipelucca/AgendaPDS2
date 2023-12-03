@@ -1,4 +1,5 @@
-#pragma once
+#ifndef USUARIO_HPP
+#define USUARIO_HPP
 
 #include <string>
 #include <unordered_map>
@@ -84,3 +85,5 @@ public:
 private:
   static std::unordered_map<std::string, Usuario> _listadeusuario; ///< Armazena a lista de usuarios <email, Usuario>
 };
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TAREFA_HPP
+#define TAREFA_HPP
 
 #include <string>
 #include <algorithm>
@@ -207,3 +208,5 @@ public:
   /// @param user_email O email do usuario logado
   static void verCompromissos(std::string* user_email);
 };
+
+#endif

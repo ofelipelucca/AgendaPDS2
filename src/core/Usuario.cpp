@@ -1,5 +1,5 @@
-#include "../include/core/Usuario.hpp"
-#include "../include/core/Excecoes.hpp"
+#include "D:\Usuario\Documents\AgendaPDS2\include\core\Usuario.hpp"
+#include "D:\Usuario\Documents\AgendaPDS2\include\core\Excecoes.hpp"
 
 #include <iostream>
 #include <string>

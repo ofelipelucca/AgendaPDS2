@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CALENDARIO_HPP
+#define CALENDARIO_HPP
 
 #include "Tarefa.hpp"
 #include "Lembrete.hpp"
@@ -43,3 +44,5 @@ private:
     std::map<std::string, std::vector<std::string>> _mapa_Horario; ///< Mapa para armazenar as atividades por horário
     std::map<std::string, std::map<std::string, std::vector<std::string>>> _agenda; ///< Mapa para armazenar os horários por dia
 };
+
+#endif

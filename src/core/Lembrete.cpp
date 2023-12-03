@@ -1,5 +1,5 @@
-#include "../include/core/Lembrete.hpp"
-#include "../include/core/Excecoes.hpp"
+#include "D:\Usuario\Documents\AgendaPDS2\include\core\Lembrete.hpp"
+#include "D:\Usuario\Documents\AgendaPDS2\include\core\Excecoes.hpp"
 
 #include <string>
 #include <iostream>

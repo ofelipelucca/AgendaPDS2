@@ -1,4 +1,5 @@
-#pragma once
+#ifndef USUARIOMENU_HPP
+#define USUARIOMENU_HPP
 
 #include "Login.hpp"
 #include "Menu.hpp"
@@ -23,3 +24,5 @@ public:
   /// @return Um ponteiro para o próximo menu
   PrimeiroMenu *next(unsigned option, PrimeiroMenu *old_menu) override;
 };
+
+#endif

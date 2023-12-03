@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MENU_HPP
+#define MENU_HPP
 
 #include <string>
 #include <vector>
@@ -51,3 +52,5 @@ private:
   std::string _sub_titulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
   std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu
 };
+
+#endif

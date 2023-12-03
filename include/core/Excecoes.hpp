@@ -1,4 +1,5 @@
-#pragma once
+#ifndef EXCECOES_HPP
+#define EXCECOES_HPP
 
 #include <stdexcept>
 
@@ -6,3 +7,5 @@
 ///
 /// @param e Objeto da exceçao lançado pelo codigo 
 void handleExcecao(const std::exception& e);
+
+#endif

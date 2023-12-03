@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LEMBRETE_HPP
+#define LEMBRETE_HPP
 
 #include <string>
 #include <algorithm>
@@ -87,3 +88,5 @@ public:
     /// @param user_email O email do usuario logado
     static void verLembretes(std::string* user_email);
 };
+
+#endif

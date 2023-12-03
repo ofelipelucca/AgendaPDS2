@@ -1,4 +1,5 @@
-#pragma once
+#ifndef NOTIFICACAO_HPP
+#define NOTIFICACAO_HPP
 
 #include "Tarefa.hpp"
 #include "Lembrete.hpp"
@@ -36,3 +37,5 @@ private:
     int _hora_Antes; ///< Armazena as horas de antecedencia da notificaçao (1 a 23)
     bool _estado; ///< Armazena o estado da notificação (ativada = true, desativada = false)
 };
+
+#endif
