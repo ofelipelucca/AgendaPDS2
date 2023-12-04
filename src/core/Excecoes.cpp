@@ -1,4 +1,4 @@
-#include "../include/core/Excecoes.hpp"
+#include "..\..\include\core\Excecoes.hpp"
 
 #include <iostream>
 

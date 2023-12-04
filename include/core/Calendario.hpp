@@ -1,8 +1,8 @@
 #ifndef CALENDARIO_HPP
 #define CALENDARIO_HPP
 
-#include "../include/core/Tarefa.hpp"
-#include "../include/core/Lembrete.hpp"
+#include "..\..\include\core\Tarefa.hpp"
+#include "..\..\include\core\Lembrete.hpp"
 
 #include <iostream>
 #include <vector>
