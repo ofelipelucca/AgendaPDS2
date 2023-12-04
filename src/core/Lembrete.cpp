@@ -1,5 +1,5 @@
-#include "D:\Usuario\Documents\AgendaPDS2\include\core\Lembrete.hpp"
-#include "D:\Usuario\Documents\AgendaPDS2\include\core\Excecoes.hpp"
+#include "../include/core/Lembrete.hpp"
+#include "../include/core/Excecoes.hpp"
 
 #include <string>
 #include <iostream>
@@ -7,6 +7,8 @@
 #include <sstream>
 #include <chrono>
 #include <ctime>
+
+static std::unordered_map<std::string, Lembrete*> _listadeLembretes;
 
 Lembrete::Lembrete(const std::string& horario, const std::string& mensagem, const std::string& data) {
     _data = data;
