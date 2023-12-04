@@ -24,6 +24,9 @@ make clean: Remove os diretórios build e bin, limpando os arquivos gerados.
 
 > - Via MINGW:
 >   Caso o arquivo Makefile falhe,você pode compilar manualmente usando código 'g++ -Iinclude/core -Iinclude/menu src/core/Calendario.cpp src/core/Excecoes.cpp src/core/Lembrete.cpp src/core/Notificacao.cpp src/core/Tarefa.cpp src/core/Usuario.cpp src/menu/Menu.cpp main.cpp -o progama.exe' e './progama.exe' no terminal de comando
+>
+> - Via PROGAMA.bat:
+> - Caso deseje basta clicar no arquivo arquivo PROGAMA.bat e o arquivo compilará e execultará automaticamente
 
 
 # Autores (Grupo 5)
