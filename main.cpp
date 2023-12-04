@@ -1,9 +1,4 @@
-#include "../AgendaPDS2/include/menu/Menu.hpp"
-#include "../AgendaPDS2/include/menu/Login.hpp"
-#include "../AgendaPDS2/include/menu/Usuario.hpp"
-#include "../AgendaPDS2/include/menu/Lembrete.hpp"
-#include "../AgendaPDS2/include/menu/Compromisso.hpp"
-#include "../AgendaPDS2/include/menu/Tarefa.hpp"
+#include "../include/menu/Menu.hpp"
 
 #include <iostream>
 
