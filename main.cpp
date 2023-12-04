@@ -8,7 +8,7 @@
 #include <iostream>
 
 int main() {
-  MenuLogin *login;
+  MenuLogin *login = new MenuLogin();
   login->renderizar();
   // renderiza a pagina do menu
   
