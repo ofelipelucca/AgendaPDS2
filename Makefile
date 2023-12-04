@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++17 -Wall
 SRC_DIR = src
 INC_DIR = include
 TEST_DIR = test
