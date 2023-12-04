@@ -10,7 +10,8 @@ O objetivo principal desse tipo de projeto é oferecer uma plataforma intuitiva 
 - `Outros`: outras funcionalidades serão adicionadas ao longo do projeto.
 
 # Instruções de Compilamento e uso 
-> !Pré-requisitos!:Certifique-se de ter o Make instalado no seu sistema. Tenha um compilador C++ (como o g++) instalado.
+
+> - !Pré-requisitos!:Certifique-se de ter o Make instalado no seu sistema. Tenha um compilador C++ (como o g++) instalado.
 
 >- Via MakeFile:
 > Digite os comandos a seguir para uso do Progama:
