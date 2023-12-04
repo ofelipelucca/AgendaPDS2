@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação AgendaPDS2: Código-Fonte de C:/Users/dbpor/OneDrive/Documentos/GitHub/AgendaPDS2/include/core/Lembrete.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo pds2.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentação AgendaPDS2<span id="projectnumber">&#160;2.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3ded6daf0c11d9033a6140180a589f6f.html">AgendaPDS2</a></li><li class="navelem"><a class="el" href="dir_870bc8c7db1e4fadcb67f2b655842fd0.html">include</a></li><li class="navelem"><a class="el" href="dir_9a4da6494ed65870b0bf160a20d9a8c0.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Lembrete.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_lembrete_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef LEMBRETE_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define LEMBRETE_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>   </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_lembrete.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lembrete.html">Lembrete</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="class_lembrete.html">Lembrete</a>(<span class="keyword">const</span> std::string&amp; horario, <span class="keyword">const</span> std::string&amp; mensagem, <span class="keyword">const</span> std::string&amp; data);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::string <a class="code hl_function" href="class_lembrete.html#a1a57c1c044ca809259753ddec07fe199">getData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::string <a class="code hl_function" href="class_lembrete.html#a5664ca0515b6a8404ed38173e5f060d9">getHorario</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::string <a class="code hl_function" href="class_lembrete.html#a87f45dad0a6e4b4aba6e07e005292391">getMensagem</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_lembrete.html#af719c25b3a4be7c3dc8b39dc83b0e886">setData</a>(<span class="keyword">const</span> std::string&amp; nova_Data);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_lembrete.html#a4feeaf52a9314cd57d7842a0846fb74b">setHorario</a>(<span class="keyword">const</span> std::string&amp; novo_Horario);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_lembrete.html#a64571e4ee0903d65d497e814554d0849">setMensagem</a>(std::string texto);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::string _data; </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string _horario; </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::string _mensagem; </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_lista_lembrete.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lista_lembrete.html">ListaLembrete</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_lista_lembrete.html#af2d607caa3412359366e2d52cba6f8fd">   54</a></span>    <a class="code hl_function" href="class_lista_lembrete.html#af2d607caa3412359366e2d52cba6f8fd">ListaLembrete</a>() { <span class="keyword">const</span> <span class="keyword">auto</span> _listadeLembretes = std::unordered_map&lt;std::string, Lembrete*&gt;(); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_lembrete.html#a50887156d3963298df39c0f80f418ae8">adicionarLembrete</a>(<a class="code hl_class" href="class_lembrete.html">Lembrete</a>* lembrete, std::string* user_email);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_lembrete.html#acb9b30f577dc810a9a35060b660280b6">removerLembrete</a>(<a class="code hl_class" href="class_lembrete.html">Lembrete</a>* lembrete, std::string* user_email);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_lembrete.html">Lembrete</a>* <a class="code hl_function" href="class_lista_lembrete.html#a8babfcb5ad5166044a490889d7216f82">buscarLembrete</a>(std::string* mensagem);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_lista_lembrete.html#a4e8cc5011b31c1fe7d646f67bf685a23">   78</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_lista_lembrete.html#a4e8cc5011b31c1fe7d646f67bf685a23">tamanho</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_imprimir_lembretes.html">   82</a></span><span class="keyword">class </span><a class="code hl_class" href="class_imprimir_lembretes.html">ImprimirLembretes</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_lista_lembrete.html">ListaLembrete</a> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_imprimir_lembretes.html#a9bcc08a2db57353e6990debd5d1fe760">verLembretes</a>(std::string* user_email);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_imprimir_lembretes_html"><div class="ttname"><a href="class_imprimir_lembretes.html">ImprimirLembretes</a></div><div class="ttdef"><b>Definição</b> Lembrete.hpp:82</div></div>
+<div class="ttc" id="aclass_imprimir_lembretes_html_a9bcc08a2db57353e6990debd5d1fe760"><div class="ttname"><a href="class_imprimir_lembretes.html#a9bcc08a2db57353e6990debd5d1fe760">ImprimirLembretes::verLembretes</a></div><div class="ttdeci">static void verLembretes(std::string *user_email)</div><div class="ttdoc">Imprime todos lembretes da lista.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:228</div></div>
+<div class="ttc" id="aclass_lembrete_html"><div class="ttname"><a href="class_lembrete.html">Lembrete</a></div><div class="ttdef"><b>Definição</b> Lembrete.hpp:8</div></div>
+<div class="ttc" id="aclass_lembrete_html_a1a57c1c044ca809259753ddec07fe199"><div class="ttname"><a href="class_lembrete.html#a1a57c1c044ca809259753ddec07fe199">Lembrete::getData</a></div><div class="ttdeci">std::string getData() const</div><div class="ttdoc">Busca pela data do lembrete.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:19</div></div>
+<div class="ttc" id="aclass_lembrete_html_a4feeaf52a9314cd57d7842a0846fb74b"><div class="ttname"><a href="class_lembrete.html#a4feeaf52a9314cd57d7842a0846fb74b">Lembrete::setHorario</a></div><div class="ttdeci">void setHorario(const std::string &amp;novo_Horario)</div><div class="ttdoc">Muda o horario de um compromisso.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:90</div></div>
+<div class="ttc" id="aclass_lembrete_html_a5664ca0515b6a8404ed38173e5f060d9"><div class="ttname"><a href="class_lembrete.html#a5664ca0515b6a8404ed38173e5f060d9">Lembrete::getHorario</a></div><div class="ttdeci">std::string getHorario() const</div><div class="ttdoc">Busca pelo horario do lembrete.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:24</div></div>
+<div class="ttc" id="aclass_lembrete_html_a64571e4ee0903d65d497e814554d0849"><div class="ttname"><a href="class_lembrete.html#a64571e4ee0903d65d497e814554d0849">Lembrete::setMensagem</a></div><div class="ttdeci">void setMensagem(std::string texto)</div><div class="ttdoc">Adiciona uma mensagem para um lembrete.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:171</div></div>
+<div class="ttc" id="aclass_lembrete_html_a87f45dad0a6e4b4aba6e07e005292391"><div class="ttname"><a href="class_lembrete.html#a87f45dad0a6e4b4aba6e07e005292391">Lembrete::getMensagem</a></div><div class="ttdeci">std::string getMensagem() const</div><div class="ttdoc">Busca pela mensagem do lembrete.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:29</div></div>
+<div class="ttc" id="aclass_lembrete_html_af719c25b3a4be7c3dc8b39dc83b0e886"><div class="ttname"><a href="class_lembrete.html#af719c25b3a4be7c3dc8b39dc83b0e886">Lembrete::setData</a></div><div class="ttdeci">void setData(const std::string &amp;nova_Data)</div><div class="ttdoc">Muda a data de um lembrete.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:34</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html"><div class="ttname"><a href="class_lista_lembrete.html">ListaLembrete</a></div><div class="ttdef"><b>Definição</b> Lembrete.hpp:52</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html_a4e8cc5011b31c1fe7d646f67bf685a23"><div class="ttname"><a href="class_lista_lembrete.html#a4e8cc5011b31c1fe7d646f67bf685a23">ListaLembrete::tamanho</a></div><div class="ttdeci">unsigned tamanho()</div><div class="ttdoc">Calcula o tamanho do mapa.</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html_a50887156d3963298df39c0f80f418ae8"><div class="ttname"><a href="class_lista_lembrete.html#a50887156d3963298df39c0f80f418ae8">ListaLembrete::adicionarLembrete</a></div><div class="ttdeci">static void adicionarLembrete(Lembrete *lembrete, std::string *user_email)</div><div class="ttdoc">Adiciona um Lembrete a lista de Lembretes.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:194</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html_a8babfcb5ad5166044a490889d7216f82"><div class="ttname"><a href="class_lista_lembrete.html#a8babfcb5ad5166044a490889d7216f82">ListaLembrete::buscarLembrete</a></div><div class="ttdeci">static Lembrete * buscarLembrete(std::string *mensagem)</div><div class="ttdoc">Procura pelo lembrete pela mensagem.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:213</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html_acb9b30f577dc810a9a35060b660280b6"><div class="ttname"><a href="class_lista_lembrete.html#acb9b30f577dc810a9a35060b660280b6">ListaLembrete::removerLembrete</a></div><div class="ttdeci">static void removerLembrete(Lembrete *lembrete, std::string *user_email)</div><div class="ttdoc">Remove um lembrete da lista.</div><div class="ttdef"><b>Definição</b> Lembrete.cpp:199</div></div>
+<div class="ttc" id="aclass_lista_lembrete_html_af2d607caa3412359366e2d52cba6f8fd"><div class="ttname"><a href="class_lista_lembrete.html#af2d607caa3412359366e2d52cba6f8fd">ListaLembrete::ListaLembrete</a></div><div class="ttdeci">ListaLembrete()</div><div class="ttdef"><b>Definição</b> Lembrete.hpp:54</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

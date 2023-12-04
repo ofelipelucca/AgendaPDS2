@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação AgendaPDS2: Código-Fonte de C:/Users/dbpor/OneDrive/Documentos/GitHub/AgendaPDS2/include/menu/Menu.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo pds2.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentação AgendaPDS2<span id="projectnumber">&#160;2.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3ded6daf0c11d9033a6140180a589f6f.html">AgendaPDS2</a></li><li class="navelem"><a class="el" href="dir_870bc8c7db1e4fadcb67f2b655842fd0.html">include</a></li><li class="navelem"><a class="el" href="dir_6400180029f6d4cee409df765df0f4fb.html">menu</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Menu.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_menu_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MENU_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MENU_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;..\..\include\core\Usuario.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;..\..\include\core\Tarefa.hpp&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;..\..\include\core\Lembrete.hpp&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;..\..\include\core\Calendario.hpp&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_primeiro_menu.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_primeiro_menu.html#af694ff378a531c88e6229d016732cc8e">   14</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_primeiro_menu.html#af694ff378a531c88e6229d016732cc8e">~PrimeiroMenu</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_primeiro_menu.html#a8a2d8d772987f9e15a576fbf12c43c54">   23</a></span>  <span class="keyword">virtual</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_primeiro_menu.html#a8a2d8d772987f9e15a576fbf12c43c54">next</a>(<span class="keywordtype">unsigned</span> opcao, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) = 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::string <a class="code hl_function" href="class_primeiro_menu.html#a2965071cfb60c4af7a1155a35e6dc1f0">getUsuario</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_primeiro_menu.html#acda80c3dc7efbd83e5d49798dffe3ef0">setUsuario</a>(std::string user_email);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_primeiro_menu.html#afcc55705d42733b3939f006949c1633b">setTitulo</a>(std::string novo_Titulo);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_primeiro_menu.html#a4bda6b256721ea6b2b691914412756a8">setSubtitulo</a>(std::string novo_Subtitulo);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_primeiro_menu.html#a804d61175b4825407eeee3c4b00dabb4">setOpcoes</a>(std::vector&lt;std::string&gt; novasOpcoes);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_primeiro_menu.html#a0b0ebb275614ffe0e1b96a7f4c865c2f">renderizar</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::string _user_email; </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::string _titulo = <span class="stringliteral">&quot;Gerenciador de Tarefas e Compromissos &quot;</span>; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  std::string _sub_titulo = <span class="stringliteral">&quot;Escolha uma opção:&quot;</span>; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  std::vector&lt;std::string&gt; _opcoes = {<span class="stringliteral">&quot;1 --&gt; Entrar&quot;</span>, <span class="stringliteral">&quot;2 --&gt; Sair&quot;</span>}; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_menu_login.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="class_menu_login.html">MenuLogin</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_function" href="class_menu_login.html#ad10718fecf503a2a9517d9e4f5dce5b7">MenuLogin</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_menu_login.html#a44917e1bf866f3c85fa65dfee25b61cb">next</a>(<span class="keywordtype">unsigned</span> opcao, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_usuario_menu.html">   75</a></span><span class="keyword">class </span><a class="code hl_class" href="class_usuario_menu.html">UsuarioMenu</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_class" href="class_usuario_menu.html">UsuarioMenu</a>(std::string *login_email);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_usuario_menu.html#a3fe39c45ed82ea08b432d3d41c678d8b">next</a>(<span class="keywordtype">unsigned</span> option, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_tarefa_menu.html">   90</a></span><span class="keyword">class </span><a class="code hl_class" href="class_tarefa_menu.html">TarefaMenu</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <a class="code hl_class" href="class_tarefa_menu.html">TarefaMenu</a>(std::string *login_email);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_tarefa_menu.html#adcf5e971947db00ba4b27e360a6ec5bf">next</a>(<span class="keywordtype">unsigned</span> option, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_lembrete_menu.html">  105</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lembrete_menu.html">LembreteMenu</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_class" href="class_lembrete_menu.html">LembreteMenu</a>(std::string *login_email);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_lembrete_menu.html#a6425909d1e480fbce19ff345bd37eb0f">next</a>(<span class="keywordtype">unsigned</span> option, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="};">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_compromisso_menu.html">  120</a></span><span class="keyword">class </span><a class="code hl_class" href="class_compromisso_menu.html">CompromissoMenu</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <a class="code hl_class" href="class_compromisso_menu.html">CompromissoMenu</a>(std::string *login_email);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *<a class="code hl_function" href="class_compromisso_menu.html#a0937b1ea7d23f5a4267b33f523457ce9">next</a>(<span class="keywordtype">unsigned</span> option, <a class="code hl_class" href="class_primeiro_menu.html">PrimeiroMenu</a> *old_menu) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_compromisso_menu_html"><div class="ttname"><a href="class_compromisso_menu.html">CompromissoMenu</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:120</div></div>
+<div class="ttc" id="aclass_compromisso_menu_html_a0937b1ea7d23f5a4267b33f523457ce9"><div class="ttname"><a href="class_compromisso_menu.html#a0937b1ea7d23f5a4267b33f523457ce9">CompromissoMenu::next</a></div><div class="ttdeci">PrimeiroMenu * next(unsigned option, PrimeiroMenu *old_menu) override</div><div class="ttdoc">Constroi o proximo menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:480</div></div>
+<div class="ttc" id="aclass_lembrete_menu_html"><div class="ttname"><a href="class_lembrete_menu.html">LembreteMenu</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:105</div></div>
+<div class="ttc" id="aclass_lembrete_menu_html_a6425909d1e480fbce19ff345bd37eb0f"><div class="ttname"><a href="class_lembrete_menu.html#a6425909d1e480fbce19ff345bd37eb0f">LembreteMenu::next</a></div><div class="ttdeci">PrimeiroMenu * next(unsigned option, PrimeiroMenu *old_menu) override</div><div class="ttdoc">Constroi o proximo menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:779</div></div>
+<div class="ttc" id="aclass_menu_login_html"><div class="ttname"><a href="class_menu_login.html">MenuLogin</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:60</div></div>
+<div class="ttc" id="aclass_menu_login_html_a44917e1bf866f3c85fa65dfee25b61cb"><div class="ttname"><a href="class_menu_login.html#a44917e1bf866f3c85fa65dfee25b61cb">MenuLogin::next</a></div><div class="ttdeci">PrimeiroMenu * next(unsigned opcao, PrimeiroMenu *old_menu) override</div><div class="ttdoc">Constroi o proximo menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:64</div></div>
+<div class="ttc" id="aclass_menu_login_html_ad10718fecf503a2a9517d9e4f5dce5b7"><div class="ttname"><a href="class_menu_login.html#ad10718fecf503a2a9517d9e4f5dce5b7">MenuLogin::MenuLogin</a></div><div class="ttdeci">MenuLogin()</div><div class="ttdoc">Constroi o menu de login.</div><div class="ttdef"><b>Definição</b> Menu.cpp:57</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html"><div class="ttname"><a href="class_primeiro_menu.html">PrimeiroMenu</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:11</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_a0b0ebb275614ffe0e1b96a7f4c865c2f"><div class="ttname"><a href="class_primeiro_menu.html#a0b0ebb275614ffe0e1b96a7f4c865c2f">PrimeiroMenu::renderizar</a></div><div class="ttdeci">virtual void renderizar() const</div><div class="ttdoc">Renderiza as opçoes do menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:38</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_a2965071cfb60c4af7a1155a35e6dc1f0"><div class="ttname"><a href="class_primeiro_menu.html#a2965071cfb60c4af7a1155a35e6dc1f0">PrimeiroMenu::getUsuario</a></div><div class="ttdeci">std::string getUsuario() const</div><div class="ttdoc">Busca pelo usuario logado.</div><div class="ttdef"><b>Definição</b> Menu.cpp:13</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_a4bda6b256721ea6b2b691914412756a8"><div class="ttname"><a href="class_primeiro_menu.html#a4bda6b256721ea6b2b691914412756a8">PrimeiroMenu::setSubtitulo</a></div><div class="ttdeci">void setSubtitulo(std::string novo_Subtitulo)</div><div class="ttdoc">Muda o subtitulo do menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:28</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_a804d61175b4825407eeee3c4b00dabb4"><div class="ttname"><a href="class_primeiro_menu.html#a804d61175b4825407eeee3c4b00dabb4">PrimeiroMenu::setOpcoes</a></div><div class="ttdeci">void setOpcoes(std::vector&lt; std::string &gt; novasOpcoes)</div><div class="ttdoc">Muda as opcoes do menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:33</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_a8a2d8d772987f9e15a576fbf12c43c54"><div class="ttname"><a href="class_primeiro_menu.html#a8a2d8d772987f9e15a576fbf12c43c54">PrimeiroMenu::next</a></div><div class="ttdeci">virtual PrimeiroMenu * next(unsigned opcao, PrimeiroMenu *old_menu)=0</div><div class="ttdoc">Constroi o proximo menu.</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_acda80c3dc7efbd83e5d49798dffe3ef0"><div class="ttname"><a href="class_primeiro_menu.html#acda80c3dc7efbd83e5d49798dffe3ef0">PrimeiroMenu::setUsuario</a></div><div class="ttdeci">void setUsuario(std::string user_email)</div><div class="ttdoc">Guarda o usuario logado.</div><div class="ttdef"><b>Definição</b> Menu.cpp:18</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_af694ff378a531c88e6229d016732cc8e"><div class="ttname"><a href="class_primeiro_menu.html#af694ff378a531c88e6229d016732cc8e">PrimeiroMenu::~PrimeiroMenu</a></div><div class="ttdeci">virtual ~PrimeiroMenu()=default</div><div class="ttdoc">Destrutor para destruiçao de subclasses.</div></div>
+<div class="ttc" id="aclass_primeiro_menu_html_afcc55705d42733b3939f006949c1633b"><div class="ttname"><a href="class_primeiro_menu.html#afcc55705d42733b3939f006949c1633b">PrimeiroMenu::setTitulo</a></div><div class="ttdeci">void setTitulo(std::string novo_Titulo)</div><div class="ttdoc">Muda o titulo do menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:23</div></div>
+<div class="ttc" id="aclass_tarefa_menu_html"><div class="ttname"><a href="class_tarefa_menu.html">TarefaMenu</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:90</div></div>
+<div class="ttc" id="aclass_tarefa_menu_html_adcf5e971947db00ba4b27e360a6ec5bf"><div class="ttname"><a href="class_tarefa_menu.html#adcf5e971947db00ba4b27e360a6ec5bf">TarefaMenu::next</a></div><div class="ttdeci">PrimeiroMenu * next(unsigned option, PrimeiroMenu *old_menu) override</div><div class="ttdoc">Constroi o proximo menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:240</div></div>
+<div class="ttc" id="aclass_usuario_menu_html"><div class="ttname"><a href="class_usuario_menu.html">UsuarioMenu</a></div><div class="ttdef"><b>Definição</b> Menu.hpp:75</div></div>
+<div class="ttc" id="aclass_usuario_menu_html_a3fe39c45ed82ea08b432d3d41c678d8b"><div class="ttname"><a href="class_usuario_menu.html#a3fe39c45ed82ea08b432d3d41c678d8b">UsuarioMenu::next</a></div><div class="ttdeci">PrimeiroMenu * next(unsigned option, PrimeiroMenu *old_menu) override</div><div class="ttdoc">Constroi o proximo menu.</div><div class="ttdef"><b>Definição</b> Menu.cpp:179</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

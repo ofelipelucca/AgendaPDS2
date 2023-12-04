@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação AgendaPDS2: Código-Fonte de C:/Users/dbpor/OneDrive/Documentos/GitHub/AgendaPDS2/include/core/Tarefa.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo pds2.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentação AgendaPDS2<span id="projectnumber">&#160;2.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3ded6daf0c11d9033a6140180a589f6f.html">AgendaPDS2</a></li><li class="navelem"><a class="el" href="dir_870bc8c7db1e4fadcb67f2b655842fd0.html">include</a></li><li class="navelem"><a class="el" href="dir_9a4da6494ed65870b0bf160a20d9a8c0.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Tarefa.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_tarefa_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TAREFA_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TAREFA_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string <a class="code hl_function" href="_tarefa_8hpp.html#ae94dfbe8c66aa60b0d1f31f38ee4f710">setCorPrioridade</a>(<span class="keywordtype">unsigned</span> prioridade);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_tarefa.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_tarefa.html">Tarefa</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_class" href="class_tarefa.html">Tarefa</a>(std::string&amp; titulo, std::string&amp; descricao, std::string&amp; data, <span class="keywordtype">unsigned</span> prioridade, std::string&amp; estado);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::string <a class="code hl_function" href="class_tarefa.html#ad5dba190bcf81866ab1b8a7e7cfb9213">getTitulo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  std::string <a class="code hl_function" href="class_tarefa.html#a55ac0323625949d76b2bf98cec73f6e1">getDescricao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  std::string <a class="code hl_function" href="class_tarefa.html#a5e750e0e171dd56b32a9194fe578d8d0">getData</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_tarefa.html#a2e4332085f1377d1a125d36f0f9b3f79">getPrioridade</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  std::string <a class="code hl_function" href="class_tarefa.html#a613ea4236fa81fc1b29d760de61e664d">getEstado</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tarefa.html#ad2be390f34e53b726e9754dfe9d97b27">setTitulo</a>(<span class="keyword">const</span> std::string&amp; novo_Titulo);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tarefa.html#aa9af4ecd8a2fc7c5621cac831fbbd7be">setDescricao</a>(<span class="keyword">const</span> std::string&amp; nova_Descricao);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tarefa.html#a14264b772a8346956edfff99ebf254b5">setData</a>(<span class="keyword">const</span> std::string&amp; nova_Data);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tarefa.html#a737ef47ee1faeade136eec14fc98b787">setPrioridade</a>(<span class="keywordtype">unsigned</span> nova_Prioridade);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tarefa.html#aa4ec31870bfd613b2bf5a12c38031645">setEstado</a>(<span class="keyword">const</span> std::string&amp; novo_Estado);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  std::string _titulo; </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  std::string _descricao; </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  std::string _data; </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">unsigned</span> _prioridade; </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  std::string _estado; </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> };</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="};">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_compromisso.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="class_compromisso.html">Compromisso</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_tarefa.html">Tarefa</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_class" href="class_compromisso.html">Compromisso</a>(std::string&amp; data, std::string&amp; local,std::string&amp; titulo, std::string&amp; descricao, std::string&amp; horario, std::string&amp; estado, <span class="keywordtype">unsigned</span> prioridade);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::string <a class="code hl_function" href="class_compromisso.html#abd17f0f4cd7f20b62f136d0da7c638d4">getCor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  std::string <a class="code hl_function" href="class_compromisso.html#a6783f6a8be558c73e35e9f4d6b90c52e">getLocal</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  std::string <a class="code hl_function" href="class_compromisso.html#a4eaea42880799047dbf2aa387c8a269c">getHorario</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_compromisso.html#a0ebd8d8e221bf82456503f1eb89d1fb4">setCor</a>(<span class="keyword">const</span> std::string&amp; nova_Cor);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_compromisso.html#a3e5444cfaf95a936c642377ad946a6b9">setLocal</a>(<span class="keyword">const</span> std::string&amp; novo_Local);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_compromisso.html#ad4ff35a84361957fd5ef7fdade6dbf02">setHorario</a>(<span class="keyword">const</span> std::string&amp; novo_Horario);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  std::string _cor; </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  std::string _local; </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  std::string _horario; </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_lista_tarefa.html">  132</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lista_tarefa.html">ListaTarefa</a> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_lista_tarefa.html#a37290ccea0b8d76313134a6f8c4f66d2">  134</a></span>  <a class="code hl_function" href="class_lista_tarefa.html#a37290ccea0b8d76313134a6f8c4f66d2">ListaTarefa</a>() { <span class="keyword">const</span> <span class="keyword">auto</span> _listadeTarefa = std::unordered_map&lt;std::string, Tarefa*&gt;(); }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_tarefa.html#aa6d9666810b82c135312aebf2b7abeb2">adicionarTarefa</a>(<a class="code hl_class" href="class_tarefa.html">Tarefa</a>* tarefa, std::string* user_email);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_tarefa.html#abef9ba3ea2a57ffea7558e92057dceb1">removerTarefa</a>(<a class="code hl_class" href="class_tarefa.html">Tarefa</a>* tarefa, std::string* user_email);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keyword">static</span> <a class="code hl_class" href="class_tarefa.html">Tarefa</a>* <a class="code hl_function" href="class_lista_tarefa.html#af14b488fcf152568c692b90b6414e0f6">buscarTarefa</a>(<span class="keyword">const</span> std::string&amp; tarefa_titulo);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_lista_tarefa.html#a586bb4c5d733f08854e01e472a9d149c">tamanho</a>();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="};">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_lista_compromisso.html">  163</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lista_compromisso.html">ListaCompromisso</a> {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_lista_compromisso.html#a0f6d6d20abdaeea03011a10c94452729">  165</a></span>  <a class="code hl_function" href="class_lista_compromisso.html#a0f6d6d20abdaeea03011a10c94452729">ListaCompromisso</a>() { <span class="keyword">const</span> <span class="keyword">auto</span> _listadeCompromisso = std::unordered_map&lt;std::string, Compromisso*&gt;(); }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_compromisso.html#a81f48eb2fe775702656e9f61f9d6253c">adicionarCompromisso</a>(<a class="code hl_class" href="class_compromisso.html">Compromisso</a>* compromisso, std::string* user_email);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_lista_compromisso.html#a7b95736f52fafbc5530633c7d87f51a3">removerCompromisso</a>(<a class="code hl_class" href="class_compromisso.html">Compromisso</a>* compromisso, std::string* user_email);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keyword">static</span> <a class="code hl_class" href="class_compromisso.html">Compromisso</a>* <a class="code hl_function" href="class_lista_compromisso.html#a2cf11f2d659776a9641ab4ba04b6af37">buscarCompromisso</a>(<span class="keyword">const</span> std::string&amp; compromisso_titulo);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_lista_compromisso.html#a913df59551ea703ce93b4c58ce5b39eb">tamanho</a>();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
+</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="};">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_imprimir_tarefas.html">  193</a></span><span class="keyword">class </span><a class="code hl_class" href="class_imprimir_tarefas.html">ImprimirTarefas</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_lista_tarefa.html">ListaTarefa</a> {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_imprimir_tarefas.html#a02fc703cf166bd02802a904d2ca3c352">verTarefas</a>(std::string* user_email);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>};</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="};">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="class_imprimir_compromissos.html">  201</a></span><span class="keyword">class </span><a class="code hl_class" href="class_imprimir_compromissos.html">ImprimirCompromissos</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_lista_compromisso.html">ListaCompromisso</a> {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_imprimir_compromissos.html#a26b95562c8c67e425772a606fa648ea1">verCompromissos</a>(std::string* user_email);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>};</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_tarefa_8hpp_html_ae94dfbe8c66aa60b0d1f31f38ee4f710"><div class="ttname"><a href="_tarefa_8hpp.html#ae94dfbe8c66aa60b0d1f31f38ee4f710">setCorPrioridade</a></div><div class="ttdeci">std::string setCorPrioridade(unsigned prioridade)</div><div class="ttdoc">Obtem a cor para imprimir de acordo com o nivel de prioridade.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:361</div></div>
+<div class="ttc" id="aclass_compromisso_html"><div class="ttname"><a href="class_compromisso.html">Compromisso</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:86</div></div>
+<div class="ttc" id="aclass_compromisso_html_a0ebd8d8e221bf82456503f1eb89d1fb4"><div class="ttname"><a href="class_compromisso.html#a0ebd8d8e221bf82456503f1eb89d1fb4">Compromisso::setCor</a></div><div class="ttdeci">void setCor(const std::string &amp;nova_Cor)</div><div class="ttdoc">Muda a cor de um compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:216</div></div>
+<div class="ttc" id="aclass_compromisso_html_a3e5444cfaf95a936c642377ad946a6b9"><div class="ttname"><a href="class_compromisso.html#a3e5444cfaf95a936c642377ad946a6b9">Compromisso::setLocal</a></div><div class="ttdeci">void setLocal(const std::string &amp;novo_Local)</div><div class="ttdoc">Muda o local de um compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:256</div></div>
+<div class="ttc" id="aclass_compromisso_html_a4eaea42880799047dbf2aa387c8a269c"><div class="ttname"><a href="class_compromisso.html#a4eaea42880799047dbf2aa387c8a269c">Compromisso::getHorario</a></div><div class="ttdeci">std::string getHorario() const</div><div class="ttdoc">Busca pelo horario do compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:211</div></div>
+<div class="ttc" id="aclass_compromisso_html_a6783f6a8be558c73e35e9f4d6b90c52e"><div class="ttname"><a href="class_compromisso.html#a6783f6a8be558c73e35e9f4d6b90c52e">Compromisso::getLocal</a></div><div class="ttdeci">std::string getLocal() const</div><div class="ttdoc">Busca pelo local do compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:206</div></div>
+<div class="ttc" id="aclass_compromisso_html_abd17f0f4cd7f20b62f136d0da7c638d4"><div class="ttname"><a href="class_compromisso.html#abd17f0f4cd7f20b62f136d0da7c638d4">Compromisso::getCor</a></div><div class="ttdeci">std::string getCor() const</div><div class="ttdoc">Busca pela cor do compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:201</div></div>
+<div class="ttc" id="aclass_compromisso_html_ad4ff35a84361957fd5ef7fdade6dbf02"><div class="ttname"><a href="class_compromisso.html#ad4ff35a84361957fd5ef7fdade6dbf02">Compromisso::setHorario</a></div><div class="ttdeci">void setHorario(const std::string &amp;novo_Horario)</div><div class="ttdoc">Muda o horario de um compromisso.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:279</div></div>
+<div class="ttc" id="aclass_imprimir_compromissos_html"><div class="ttname"><a href="class_imprimir_compromissos.html">ImprimirCompromissos</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:201</div></div>
+<div class="ttc" id="aclass_imprimir_compromissos_html_a26b95562c8c67e425772a606fa648ea1"><div class="ttname"><a href="class_imprimir_compromissos.html#a26b95562c8c67e425772a606fa648ea1">ImprimirCompromissos::verCompromissos</a></div><div class="ttdeci">static void verCompromissos(std::string *user_email)</div><div class="ttdoc">Mostra a lista de compromissos do usuario logado.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:489</div></div>
+<div class="ttc" id="aclass_imprimir_tarefas_html"><div class="ttname"><a href="class_imprimir_tarefas.html">ImprimirTarefas</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:193</div></div>
+<div class="ttc" id="aclass_imprimir_tarefas_html_a02fc703cf166bd02802a904d2ca3c352"><div class="ttname"><a href="class_imprimir_tarefas.html#a02fc703cf166bd02802a904d2ca3c352">ImprimirTarefas::verTarefas</a></div><div class="ttdeci">static void verTarefas(std::string *user_email)</div><div class="ttdoc">Mostra a lista de tarefas do usuario logado.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:419</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html"><div class="ttname"><a href="class_lista_compromisso.html">ListaCompromisso</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:163</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html_a0f6d6d20abdaeea03011a10c94452729"><div class="ttname"><a href="class_lista_compromisso.html#a0f6d6d20abdaeea03011a10c94452729">ListaCompromisso::ListaCompromisso</a></div><div class="ttdeci">ListaCompromisso()</div><div class="ttdef"><b>Definição</b> Tarefa.hpp:165</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html_a2cf11f2d659776a9641ab4ba04b6af37"><div class="ttname"><a href="class_lista_compromisso.html#a2cf11f2d659776a9641ab4ba04b6af37">ListaCompromisso::buscarCompromisso</a></div><div class="ttdeci">static Compromisso * buscarCompromisso(const std::string &amp;compromisso_titulo)</div><div class="ttdoc">Busca uma Compromisso pelo seu Título.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:475</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html_a7b95736f52fafbc5530633c7d87f51a3"><div class="ttname"><a href="class_lista_compromisso.html#a7b95736f52fafbc5530633c7d87f51a3">ListaCompromisso::removerCompromisso</a></div><div class="ttdeci">static void removerCompromisso(Compromisso *compromisso, std::string *user_email)</div><div class="ttdoc">Remove um compromisso da lista de compromissos.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:460</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html_a81f48eb2fe775702656e9f61f9d6253c"><div class="ttname"><a href="class_lista_compromisso.html#a81f48eb2fe775702656e9f61f9d6253c">ListaCompromisso::adicionarCompromisso</a></div><div class="ttdeci">static void adicionarCompromisso(Compromisso *compromisso, std::string *user_email)</div><div class="ttdoc">Adiciona um compromisso a lista de compromissos.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:454</div></div>
+<div class="ttc" id="aclass_lista_compromisso_html_a913df59551ea703ce93b4c58ce5b39eb"><div class="ttname"><a href="class_lista_compromisso.html#a913df59551ea703ce93b4c58ce5b39eb">ListaCompromisso::tamanho</a></div><div class="ttdeci">unsigned tamanho()</div><div class="ttdoc">Calcula o tamanho da lista.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:484</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html"><div class="ttname"><a href="class_lista_tarefa.html">ListaTarefa</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:132</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html_a37290ccea0b8d76313134a6f8c4f66d2"><div class="ttname"><a href="class_lista_tarefa.html#a37290ccea0b8d76313134a6f8c4f66d2">ListaTarefa::ListaTarefa</a></div><div class="ttdeci">ListaTarefa()</div><div class="ttdef"><b>Definição</b> Tarefa.hpp:134</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html_a586bb4c5d733f08854e01e472a9d149c"><div class="ttname"><a href="class_lista_tarefa.html#a586bb4c5d733f08854e01e472a9d149c">ListaTarefa::tamanho</a></div><div class="ttdeci">unsigned tamanho()</div><div class="ttdoc">Calcula o tamanho da lista.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:414</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html_aa6d9666810b82c135312aebf2b7abeb2"><div class="ttname"><a href="class_lista_tarefa.html#aa6d9666810b82c135312aebf2b7abeb2">ListaTarefa::adicionarTarefa</a></div><div class="ttdeci">static void adicionarTarefa(Tarefa *tarefa, std::string *user_email)</div><div class="ttdoc">Adiciona uma tarefa na lista de tarefas.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:385</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html_abef9ba3ea2a57ffea7558e92057dceb1"><div class="ttname"><a href="class_lista_tarefa.html#abef9ba3ea2a57ffea7558e92057dceb1">ListaTarefa::removerTarefa</a></div><div class="ttdeci">static void removerTarefa(Tarefa *tarefa, std::string *user_email)</div><div class="ttdoc">Remove uma tarefa da lista de tarefas.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:390</div></div>
+<div class="ttc" id="aclass_lista_tarefa_html_af14b488fcf152568c692b90b6414e0f6"><div class="ttname"><a href="class_lista_tarefa.html#af14b488fcf152568c692b90b6414e0f6">ListaTarefa::buscarTarefa</a></div><div class="ttdeci">static Tarefa * buscarTarefa(const std::string &amp;tarefa_titulo)</div><div class="ttdoc">Busca uma Tarefa pelo seu Título.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:405</div></div>
+<div class="ttc" id="aclass_tarefa_html"><div class="ttname"><a href="class_tarefa.html">Tarefa</a></div><div class="ttdef"><b>Definição</b> Tarefa.hpp:17</div></div>
+<div class="ttc" id="aclass_tarefa_html_a14264b772a8346956edfff99ebf254b5"><div class="ttname"><a href="class_tarefa.html#a14264b772a8346956edfff99ebf254b5">Tarefa::setData</a></div><div class="ttdeci">void setData(const std::string &amp;nova_Data)</div><div class="ttdoc">Muda a data de uma tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:91</div></div>
+<div class="ttc" id="aclass_tarefa_html_a2e4332085f1377d1a125d36f0f9b3f79"><div class="ttname"><a href="class_tarefa.html#a2e4332085f1377d1a125d36f0f9b3f79">Tarefa::getPrioridade</a></div><div class="ttdeci">unsigned getPrioridade() const</div><div class="ttdoc">Busca pela prioridade da tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:35</div></div>
+<div class="ttc" id="aclass_tarefa_html_a55ac0323625949d76b2bf98cec73f6e1"><div class="ttname"><a href="class_tarefa.html#a55ac0323625949d76b2bf98cec73f6e1">Tarefa::getDescricao</a></div><div class="ttdeci">std::string getDescricao() const</div><div class="ttdoc">Busca pela descriçao da tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:25</div></div>
+<div class="ttc" id="aclass_tarefa_html_a5e750e0e171dd56b32a9194fe578d8d0"><div class="ttname"><a href="class_tarefa.html#a5e750e0e171dd56b32a9194fe578d8d0">Tarefa::getData</a></div><div class="ttdeci">std::string getData() const</div><div class="ttdoc">Busca pela data da tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:30</div></div>
+<div class="ttc" id="aclass_tarefa_html_a613ea4236fa81fc1b29d760de61e664d"><div class="ttname"><a href="class_tarefa.html#a613ea4236fa81fc1b29d760de61e664d">Tarefa::getEstado</a></div><div class="ttdeci">std::string getEstado() const</div><div class="ttdoc">Busca pelo estado da tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:40</div></div>
+<div class="ttc" id="aclass_tarefa_html_a737ef47ee1faeade136eec14fc98b787"><div class="ttname"><a href="class_tarefa.html#a737ef47ee1faeade136eec14fc98b787">Tarefa::setPrioridade</a></div><div class="ttdeci">void setPrioridade(unsigned nova_Prioridade)</div><div class="ttdoc">Muda a prioridade de uma tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:148</div></div>
+<div class="ttc" id="aclass_tarefa_html_aa4ec31870bfd613b2bf5a12c38031645"><div class="ttname"><a href="class_tarefa.html#aa4ec31870bfd613b2bf5a12c38031645">Tarefa::setEstado</a></div><div class="ttdeci">void setEstado(const std::string &amp;novo_Estado)</div><div class="ttdoc">Muda o estado de uma tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:171</div></div>
+<div class="ttc" id="aclass_tarefa_html_aa9af4ecd8a2fc7c5621cac831fbbd7be"><div class="ttname"><a href="class_tarefa.html#aa9af4ecd8a2fc7c5621cac831fbbd7be">Tarefa::setDescricao</a></div><div class="ttdeci">void setDescricao(const std::string &amp;nova_Descricao)</div><div class="ttdoc">Muda a descriçao de uma tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:68</div></div>
+<div class="ttc" id="aclass_tarefa_html_ad2be390f34e53b726e9754dfe9d97b27"><div class="ttname"><a href="class_tarefa.html#ad2be390f34e53b726e9754dfe9d97b27">Tarefa::setTitulo</a></div><div class="ttdeci">void setTitulo(const std::string &amp;novo_Titulo)</div><div class="ttdoc">Muda o titulo de uma tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:45</div></div>
+<div class="ttc" id="aclass_tarefa_html_ad5dba190bcf81866ab1b8a7e7cfb9213"><div class="ttname"><a href="class_tarefa.html#ad5dba190bcf81866ab1b8a7e7cfb9213">Tarefa::getTitulo</a></div><div class="ttdeci">std::string getTitulo() const</div><div class="ttdoc">Busca pelo titulo da tarefa.</div><div class="ttdef"><b>Definição</b> Tarefa.cpp:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
