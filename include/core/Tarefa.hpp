@@ -157,8 +157,7 @@ public:
   /// @return Um unsigned com o tamanho
   unsigned tamanho();
   
-protected:
-  static std::unordered_map<std::string, Tarefa*> _listadeTarefa; ///< Armazena a lista de tarefas <email, Tarefa>
+
 };
 
 class ListaCompromisso {
@@ -189,8 +188,6 @@ public:
   /// @return Um unsigned com o tamanho
   unsigned tamanho();
 
-protected:
-  static std::unordered_map<std::string, Compromisso*> _listadeCompromisso; ///< Armazena a lista de comprimissos
 };
 
 class ImprimirTarefas : public ListaTarefa {
