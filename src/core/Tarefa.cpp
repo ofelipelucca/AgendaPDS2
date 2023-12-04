@@ -1,10 +1,13 @@
-#include "D:\Usuario\Documents\AgendaPDS2\include\core\Tarefa.hpp"
-#include "D:\Usuario\Documents\AgendaPDS2\include\core\Excecoes.hpp"
+#include "../include/core/Tarefa.hpp"
+#include "../include/core/Excecoes.hpp"
 
 #include <iostream>
 #include <sstream>
 #include <chrono>
 #include <ctime>
+
+static std::unordered_map<std::string, Compromisso*> _listadeCompromisso;
+static std::unordered_map<std::string, Tarefa*> _listadeTarefa;
 
 Tarefa::Tarefa(std::string& titulo, std::string& descricao, std::string& data, unsigned prioridade, std::string& estado) {
     _titulo = titulo;
