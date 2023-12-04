@@ -1,8 +1,8 @@
 #ifndef NOTIFICACAO_HPP
 #define NOTIFICACAO_HPP
 
-#include "Tarefa.hpp"
-#include "Lembrete.hpp"
+#include "../include/core/Tarefa.hpp"
+#include "../include/core/Lembrete.hpp"
 
 #include <ctime>
 #include <chrono>
