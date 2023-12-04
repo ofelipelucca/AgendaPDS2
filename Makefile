@@ -1,63 +1,52 @@
-# CXX = g++
-# CXXFLAGS = -std=c++11 -Wall
-# SRC_DIR = src
-# INC_DIR = include
-# TEST_DIR = test
-# BUILD_DIR = build
-# EXECUTABLE = programa
-# TEST_EXECUTABLE = test_programa
+<<<<<<< HEAD
 
-# # Lista de todos os arquivos .cpp em src/core e src/menu
-# SRCS = $(wildcard $(SRC_DIR)/core/*.cpp) $(wildcard $(SRC_DIR)/menu/*.cpp)
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
-# # Gera uma lista de nomes de arquivos .o correspondentes
-# OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+# Diretórios dos arquivos fonte e objetos
+SRC_DIR = src
+OBJ_DIR = obj
+TEST_DIR = test
+INCLUDE_DIR = include
 
-# # Lista de todos os arquivos .cpp em test/core e test/storage
-# TEST_SRCS = $(wildcard $(TEST_DIR)/core/*.cpp) $(wildcard $(TEST_DIR)/storage/*.cpp)
+# Arquivos fonte
+SRCS = $(wildcard $(SRC_DIR)/**/*.cpp) main.cpp
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
-# # Gera uma lista de nomes de arquivos .o correspondentes para os testes
-# TEST_OBJS = $(patsubst $(TEST_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(TEST_SRCS))
+# Alvos
+TARGET = AgendaPDS2
+TEST_TARGET = test
 
-# all: $(EXECUTABLE)
+# Compilar tudo
+.PHONY: all
+all: build test run
 
-# $(EXECUTABLE): $(OBJS) $(SRC_DIR)/main.cpp
-# 	$(CXX) $(CXXFLAGS) $^ -o $@
+# Compilar aplicação principal
+.PHONY: build
+build: $(TARGET)
 
-# $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/%.hpp | $(BUILD_DIR)
-# 	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# test: $(TEST_EXECUTABLE)
-# 	./$(TEST_EXECUTABLE)
+# Compilar testes
+.PHONY: test
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
 
-# $(TEST_EXECUTABLE): $(OBJS) $(TEST_OBJS)
-# 	$(CXX) $(CXXFLAGS) $^ -o $@
+$(TEST_TARGET): $(filter-out $(OBJ_DIR)/main.o, $(OBJS))
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# $(BUILD_DIR)/%.o: $(TEST_DIR)/%.cpp $(INC_DIR)/%.hpp | $(BUILD_DIR)
-# 	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Executar a aplicação
+.PHONY: run
+run: build
+	./$(TARGET)
 
-# $(BUILD_DIR):
-# 	mkdir -p $@
+# Compilar objetos
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c -o $@ $< -I$(INCLUDE_DIR)
 
-# clean:
-# 	rm -rf $(BUILD_DIR) $(EXECUTABLE) $(TEST_EXECUTABLE)
-
-# run: $(EXECUTABLE)
-# 	./$(EXECUTABLE)
-
-# test_run: $(TEST_EXECUTABLE)
-# 	./$(TEST_EXECUTABLE)
-
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------
-
-# Este Makefile assume que todos os arquivos .cpp estão localizados nos diretórios src/core e src/menu, e os arquivos .hpp estão localizados
-# nos diretórios include/core e include/menu. Certifique-se de ajustar os caminhos de acordo com a estrutura real do seu projeto.
-
-# Para compilar, basta digitar make no terminal. Isso criará um diretório de construção (build) e compilará o executável chamado programa.
-# Para executar o programa, digite make run no terminal. Para limpar os arquivos de compilação, use make clean.
-
-# Você pode usar make test_run para compilar e executar os testes presentes nos diretórios test/core e test/storage.
-
-alvo:
-	g++ include/core/Calendario.hpp include/core/Excecoes.hpp include/core/Lembrete.hpp include/core/Notificacao.hpp include/core/Tarefa.hpp include/core/Usuario.hpp include/menu/Compromisso.hpp include/menu/Lembrete.hpp include/menu/Login.hpp include/menu/Menu.hpp include/menu/Tarefa.hpp include/menu/Usuario.hpp main.cpp -o a.exe
+# Limpar arquivos temporários
+.PHONY: clean
+clean:
+	rm -f $(OBJ_DIR)/*.o $(TARGET) $(TEST_TARGET)
+>>>>>>> 060eb6945b643ed0cf601fb903867b6bc924c781
