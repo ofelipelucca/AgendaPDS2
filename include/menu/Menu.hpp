@@ -3,6 +3,10 @@
 
 #include <string>
 #include <vector>
+#include "Usuario.hpp"
+#include "Tarefa.hpp"
+#include "Lembrete.hpp"
+#include "Calendario.hpp"
 
 class PrimeiroMenu {
 public:
@@ -51,6 +55,81 @@ private:
   std::string _titulo = "Gerenciador de Tarefas e Compromissos "; ///< Armazena o titulo do menu
   std::string _sub_titulo = "Escolha uma opção:"; ///< Armazena o subtitulo do menu
   std::vector<std::string> _opcoes = {"1 --> Entrar", "2 --> Sair"}; ///< Armazena as opçoes do menu
+};
+
+class MenuLogin : public PrimeiroMenu {
+public:
+  /// @brief Constroi o menu de login
+  MenuLogin();
+
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
+  PrimeiroMenu *next(unsigned opcao, PrimeiroMenu *old_menu) override;
+};
+
+class UsuarioMenu : public PrimeiroMenu {
+public:
+  /// @brief Constroi o menu do usuario.  
+  UsuarioMenu(std::string *login_email);
+
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
+  PrimeiroMenu *next(unsigned option, PrimeiroMenu *old_menu) override;
+};
+
+class TarefaMenu : public PrimeiroMenu {
+public:
+  /// @brief Constroi o menu das tarefas  
+  TarefaMenu(std::string *login_email);
+
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
+  PrimeiroMenu *next(unsigned option, PrimeiroMenu *old_menu) override;
+};
+
+class LembreteMenu : public PrimeiroMenu {
+public:
+  /// @brief Constroi o menu dos lembretes  
+  LembreteMenu(std::string *login_email);
+
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
+  PrimeiroMenu *next(unsigned option, PrimeiroMenu *old_menu) override;
+};
+
+class CompromissoMenu : public PrimeiroMenu {
+public:
+  /// @brief Constroi o menu dos compromissos  
+  CompromissoMenu(std::string *login_email);
+
+  /// @brief Constroi o proximo menu
+  ///
+  /// @param opcao A opção que o usuário escolheu
+  ///
+  /// @param old_menu Um ponteiro que aponta para o menu anterior
+  ///
+  /// @return Um ponteiro para o próximo menu
+  PrimeiroMenu *next(unsigned option, PrimeiroMenu *old_menu) override;
 };
 
 #endif
