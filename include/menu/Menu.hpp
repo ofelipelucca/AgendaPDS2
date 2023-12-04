@@ -3,10 +3,10 @@
 
 #include <string>
 #include <vector>
-#include "Usuario.hpp"
-#include "Tarefa.hpp"
-#include "Lembrete.hpp"
-#include "Calendario.hpp"
+#include "../include/core/Usuario.hpp"
+#include "../include/core/Tarefa.hpp"
+#include "../include/core/Lembrete.hpp"
+#include "../include/core/Calendario.hpp"
 
 class PrimeiroMenu {
 public:
