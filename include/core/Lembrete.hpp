@@ -77,8 +77,6 @@ public:
     /// @return Um unsigned com o tamanho
     unsigned tamanho();
     
-protected:
-    static std::unordered_map<std::string, Lembrete*> _listadeLembretes; ///< Armazena todos os lembretes ativos para cada usuario
 };
 
 class ImprimirLembretes : public ListaLembrete {
