@@ -3,8 +3,6 @@
 #include "..\..\include\core\Lembrete.hpp"
 #include "..\..\include\core\Tarefa.hpp"
 
-
-
 #include <iostream>
 #include <string>
 #include <ctime>
